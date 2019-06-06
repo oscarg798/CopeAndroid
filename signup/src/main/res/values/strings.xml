@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Signup</string>
+    <string name="btn_sign_up_text">Sign Up</string>
+    <string name="email_hint">Email</string>
+    <string name="et_password_hint">Password</string>
+    <string name="et_password_confirmation_hint">Password Confirmation</string>
+    <string name="et_name_hint">Full name</string>
+    <string name="name_error">Name must not be empty</string>
+    <string name="email_error">You must provide a valid email</string>
+    <string name="password_confirmation_error">Password should have at least 6 characters</string>
+    <string name="password_error">Password should have at least 6 characters</string>
+    <string name="general_error">Something went wrong please try again</string>
+    <string name="password_do_not_match_error">Password and password confirmation should match</string>
+</resources>
