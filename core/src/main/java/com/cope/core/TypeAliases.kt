@@ -5,3 +5,4 @@ package com.cope.core
  */
 typealias StringResourceId = Int
 typealias Token = String
+typealias DeepLink = String

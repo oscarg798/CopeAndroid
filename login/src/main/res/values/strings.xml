@@ -4,4 +4,5 @@
     <string name="password_error">Password should be greater that 6</string>
     <string name="general_error">Something when wrong try again</string>
     <string name="btn_login_text">Login</string>
+    <string name="sign_up_link_text">Sign Up</string>
 </resources>

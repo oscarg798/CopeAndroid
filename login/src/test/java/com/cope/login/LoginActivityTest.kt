@@ -1,11 +1,14 @@
 package com.cope.login
 
+import android.widget.TextView
+import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cope.core.CoreApplication
+import org.amshove.kluent.shouldEqual
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
@@ -38,8 +41,18 @@ class LoginActivityTest {
 
     @Test
     fun `login button should have proper text`() {
-        val x = ActivityScenario.launch(LoginActivity::class.java)
-
+        ActivityScenario.launch(LoginActivity::class.java)
         onView(withText(R.string.btn_login_text)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun `should show signup link`() {
+        val activity = ActivityScenario.launch(LoginActivity::class.java)
+
+        activity.moveToState(Lifecycle.State.RESUMED)
+
+        activity.onActivity {
+            it.findViewById<TextView>(R.id.tvSignUp).text shouldEqual it.getString(R.string.sign_up_link_text)
+        }
     }
 }

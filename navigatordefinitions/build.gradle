@@ -1,19 +1,24 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 28
+
+
     defaultConfig {
-        applicationId "com.cope"
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,10 +26,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
@@ -38,7 +39,6 @@ dependencies {
     //Kotlin
     implementation applicationDependencies.kotlinJDK
 
-    //Support libraries
     implementation androidDependencies.appCompat
     implementation androidDependencies.cardView
     implementation androidDependencies.recyclerView
@@ -51,15 +51,38 @@ dependencies {
     implementation androidDependencies.customTabs
     implementation androidDependencies.multidex
 
+
+    //Dagger
+    implementation applicationDependencies.dagger
+    implementation applicationDependencies.daggerAndroidSupport
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt applicationDependencies.daggerCompiler
+    kapt applicationDependencies.daggerAndroidProcessor
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
     //Coroutines
     implementation applicationDependencies.kotlinCoroutines
     implementation applicationDependencies.kotlinCoroutinesAndroid
 
+    implementation networkingDependencies.retrofit
+    implementation networkingDependencies.gsonConverter
+    implementation networkingDependencies.coroutineAdapter
+    implementation networkingDependencies.okhttp3
+    implementation networkingDependencies.okhttpLoggingInterceptor
+
     //Test
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation testDependencies.mockk
     testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.junit
+    testImplementation testDependencies.kluent
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.14.0'
+    testImplementation 'org.robolectric:robolectric:4.2.1'
+    testImplementation("androidx.test:runner:1.1.0")
+    testImplementation("androidx.test.ext:junit:1.0.0")
+    testImplementation("androidx.test.espresso:espresso-intents:3.1.0")
+    testImplementation("androidx.test.espresso:espresso-core:3.1.0")
+    testImplementation("androidx.test.ext:truth:1.0.0")
 
     //Aceptance Testing
     androidTestImplementation acceptanceTesting.androidAnnotations
@@ -73,14 +96,8 @@ dependencies {
     androidTestImplementation testDependencies.mockitoCore
     androidTestImplementation acceptanceTesting.daggerMock
     androidTestImplementation testDependencies.mockk
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
-    implementation project(path: ':core')
-    implementation project(path: ':login')
     implementation project(path: ':signup')
+}
+repositories {
+    mavenCentral()
 }

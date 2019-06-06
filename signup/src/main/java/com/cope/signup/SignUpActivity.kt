@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.cope.core.StringResourceId
+import com.cope.core.di.CoreComponentProvider
+import com.cope.signup.di.DaggerSignUpComponent
+import com.cope.signup.di.SignUpModule
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import javax.inject.Inject
 
@@ -15,6 +18,12 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+
+        DaggerSignUpComponent.builder()
+            .coreComponent((application as CoreComponentProvider).getCoreComponent())
+            .signUpModule(SignUpModule())
+            .build()
+            .inject(this)
 
         btnSignUp?.setOnClickListener {
             val name = etName?.text?.toString() ?: return@setOnClickListener

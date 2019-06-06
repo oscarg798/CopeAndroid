@@ -9,11 +9,16 @@ import com.cope.login.di.DaggerLoginComponent
 import com.cope.login.di.LoginModule
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
+import android.content.Intent
+import android.net.Uri
+
 
 class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
 
     @Inject
     lateinit var presenter: LoginActivityContract.Presenter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +31,16 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
             .inject(this)
 
         btnLogin?.setOnClickListener {
-            presenter.onLoginButtonPressed(etEmail.text.toString(), etPassword.text.toString())
+            val email = etEmail?.text?.toString() ?: return@setOnClickListener
+            val password = etPassword?.text?.toString() ?: return@setOnClickListener
+
+            presenter.onLoginButtonPressed(email, password)
+        }
+
+        tvSignUp?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("deep://signup")
+            startActivity(intent)
         }
     }
 
@@ -35,16 +49,18 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
         presenter.bind(this)
     }
 
+    override fun onStop() {
+        super.onStop()
+        presenter.unBind()
+    }
+
     override fun onLoginSuccess() {
-        Toast.makeText(this, "Login Fine", Toast.LENGTH_LONG).show()
     }
 
     override fun showError(error: StringResourceId) {
         Toast.makeText(this, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun onStop() {
-        super.onStop()
-        presenter.unBind()
+    override fun onBackPressed() {
     }
 }
