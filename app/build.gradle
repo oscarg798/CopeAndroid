@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -50,6 +50,10 @@ dependencies {
     implementation androidDependencies.preferenceV14
     implementation androidDependencies.customTabs
     implementation androidDependencies.multidex
+
+
+    implementation 'com.airbnb:deeplinkdispatch:4.1.0'
+    kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
 
     //Coroutines
     implementation applicationDependencies.kotlinCoroutines

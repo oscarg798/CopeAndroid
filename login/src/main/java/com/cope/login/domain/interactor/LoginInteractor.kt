@@ -1,6 +1,6 @@
 package com.cope.login.domain.interactor
 
-import com.cope.core.Token
+import com.cope.core.constants.Token
 import com.cope.core.interactor.Interactor
 import com.cope.login.domain.entities.LoginParams
 import com.cope.login.domain.repositories.LoginRepository

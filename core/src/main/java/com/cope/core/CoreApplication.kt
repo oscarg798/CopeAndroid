@@ -11,7 +11,6 @@ class CoreApplication : Application(), CoreComponentProvider {
 
     private var coreComponent: CoreComponent? = null
 
-
     override fun getCoreComponent(): CoreComponent {
         if (coreComponent == null) {
             coreComponent = DaggerCoreComponent.builder()

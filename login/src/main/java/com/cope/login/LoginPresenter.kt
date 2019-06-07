@@ -2,7 +2,7 @@ package com.cope.login
 
 import android.util.Log
 import com.cope.core.CoroutineContextProvider
-import com.cope.core.Token
+import com.cope.core.constants.Token
 import com.cope.core.interactor.Interactor
 import com.cope.login.domain.entities.LoginParams
 import kotlinx.coroutines.Job

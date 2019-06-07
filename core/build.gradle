@@ -63,6 +63,8 @@ dependencies {
     implementation networkingDependencies.okhttp3
     implementation networkingDependencies.okhttpLoggingInterceptor
 
+    testImplementation testDependencies.kluent
+
     //Test
     testImplementation testDependencies.mockk
     testImplementation testDependencies.mockitoCore

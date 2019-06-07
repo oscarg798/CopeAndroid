@@ -1,4 +1,4 @@
-package com.cope.core
+package com.cope.core.constants
 
 /**
  * @author Oscar Gallon on 2019-06-06.
@@ -6,3 +6,4 @@ package com.cope.core
 typealias StringResourceId = Int
 typealias Token = String
 typealias DeepLink = String
+typealias Password = String

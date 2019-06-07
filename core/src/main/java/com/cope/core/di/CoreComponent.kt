@@ -1,7 +1,7 @@
 package com.cope.core.di
 
-import com.cope.core.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
-import com.cope.core.COROUTINE_IO_CONTEXT_PROVIDER
+import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
+import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.CoroutineContextProvider
 import dagger.Component
 import retrofit2.Retrofit

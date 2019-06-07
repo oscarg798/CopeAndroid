@@ -3,22 +3,22 @@ package com.cope.login
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.cope.core.StringResourceId
+import com.airbnb.deeplinkdispatch.DeepLink
+import com.cope.core.constants.LOGIN_DEEPLINK
+import com.cope.core.constants.SIGNUP_DEEPLINK
+import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
+import com.cope.core.extensions.startDeepLinkIntent
 import com.cope.login.di.DaggerLoginComponent
 import com.cope.login.di.LoginModule
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
-import android.content.Intent
-import android.net.Uri
 
-
+@DeepLink(LOGIN_DEEPLINK)
 class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
 
     @Inject
     lateinit var presenter: LoginActivityContract.Presenter
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +38,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
         }
 
         tvSignUp?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("deep://signup")
-            startActivity(intent)
+            startDeepLinkIntent(SIGNUP_DEEPLINK)
         }
     }
 
@@ -61,6 +59,4 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
         Toast.makeText(this, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun onBackPressed() {
-    }
 }

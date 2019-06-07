@@ -1,6 +1,6 @@
 package com.cope.login.data
 
-import com.cope.core.Token
+import com.cope.core.constants.Token
 import com.cope.login.data.entities.APiLoginParams
 import com.cope.login.data.services.LoginService
 import com.cope.login.domain.repositories.LoginRepository

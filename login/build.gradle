@@ -56,6 +56,9 @@ dependencies {
     implementation androidDependencies.multidex
 
 
+    implementation 'com.airbnb:deeplinkdispatch:4.1.0'
+    kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
+
     //Dagger
     implementation applicationDependencies.dagger
     implementation applicationDependencies.daggerAndroidSupport

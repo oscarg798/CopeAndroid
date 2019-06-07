@@ -1,6 +1,6 @@
 package com.cope.signup
 
-import com.cope.core.StringResourceId
+import com.cope.core.constants.StringResourceId
 import com.cope.core.contract.BasePresenter
 import com.cope.core.contract.BaseView
 

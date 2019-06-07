@@ -1,9 +1,9 @@
 package com.cope.core.di
 
 import android.content.Context
-import com.cope.core.BASE_URL
-import com.cope.core.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
-import com.cope.core.COROUTINE_IO_CONTEXT_PROVIDER
+import com.cope.core.constants.BASE_URL
+import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
+import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.CoroutineContextProvider
 import dagger.Module
 import dagger.Provides

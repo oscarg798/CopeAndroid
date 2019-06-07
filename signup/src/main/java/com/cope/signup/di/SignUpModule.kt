@@ -1,6 +1,6 @@
 package com.cope.signup.di
 
-import com.cope.core.COROUTINE_IO_CONTEXT_PROVIDER
+import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.interactor.Interactor
 import com.cope.core.models.User

@@ -3,13 +3,16 @@ package com.cope.signup
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.cope.core.StringResourceId
+import com.airbnb.deeplinkdispatch.DeepLink
+import com.cope.core.constants.SIGNUP_DEEPLINK
+import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
 import com.cope.signup.di.DaggerSignUpComponent
 import com.cope.signup.di.SignUpModule
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import javax.inject.Inject
 
+@DeepLink(SIGNUP_DEEPLINK)
 class SignUpActivity : AppCompatActivity(), SignUpContract.View {
 
     @Inject
