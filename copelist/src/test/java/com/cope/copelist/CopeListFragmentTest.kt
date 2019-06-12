@@ -14,6 +14,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cope.copelist.fragment.CopeAdapter
 import com.cope.copelist.fragment.CopeListFragment
 import com.cope.core.CoreApplication
+import com.cope.core.DateParser
 import com.cope.core.models.Cope
 import org.amshove.kluent.shouldEqual
 import org.hamcrest.Description
@@ -22,6 +23,7 @@ import org.hamcrest.TypeSafeMatcher
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
+import java.util.*
 
 
 /**
@@ -70,7 +72,9 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google")))
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
+                Date()
+            )))
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(matches(hasDescendant(withText("My search on google"))))
         }
@@ -87,7 +91,7 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google")))
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),Date())))
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(matches(hasDescendant(withText("My search on google"))))
             onView(nthChildOf(withId(R.id.rvCopes), 0))
@@ -106,12 +110,81 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google")))
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),Date())))
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(
                     matches(
                         hasDescendant(
                             withId(R.id.ivArrowIndicator)
+                        )
+                    )
+                )
+        }
+    }
+
+    @Test
+    fun `each cope should have its icon`(){
+        val scenario = launchFragmentInContainer<CopeListFragment>(
+            Bundle.EMPTY,
+            android.R.style.ThemeOverlay_Material_Dark_ActionBar
+        )
+
+        scenario.moveToState(Lifecycle.State.RESUMED)
+
+        scenario.onFragment {
+            val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),Date())))
+            onView(nthChildOf(withId(R.id.rvCopes), 0))
+                .check(
+                    matches(
+                        hasDescendant(
+                            withId(R.id.ivIcon)
+                        )
+                    )
+                )
+        }
+    }
+
+    @Test
+    fun `each cope should show created at`(){
+        val scenario = launchFragmentInContainer<CopeListFragment>(
+            Bundle.EMPTY,
+            android.R.style.ThemeOverlay_Material_Dark_ActionBar
+        )
+
+        scenario.moveToState(Lifecycle.State.RESUMED)
+
+        scenario.onFragment {
+            val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.510Z"),Date())))
+            onView(nthChildOf(withId(R.id.rvCopes), 0))
+                .check(
+                    matches(
+                        hasDescendant(
+                            withId(R.id.tvCreatedAt)
+                        )
+                    )
+                )
+        }
+    }
+
+    @Test
+    fun `each cope should show updated at`(){
+        val scenario = launchFragmentInContainer<CopeListFragment>(
+            Bundle.EMPTY,
+            android.R.style.ThemeOverlay_Material_Dark_ActionBar
+        )
+
+        scenario.moveToState(Lifecycle.State.RESUMED)
+
+        scenario.onFragment {
+            val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
+            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.510Z"),Date())))
+            onView(nthChildOf(withId(R.id.rvCopes), 0))
+                .check(
+                    matches(
+                        hasDescendant(
+                            withId(R.id.tvUpdatedAt)
                         )
                     )
                 )

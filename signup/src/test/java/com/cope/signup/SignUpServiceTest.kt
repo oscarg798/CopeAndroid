@@ -59,7 +59,6 @@ class SignUpServiceTest : MockServerTest {
         then {
             result `should equal` APIUser(
                 "5cf9541257fb9d072a902490",
-                "f68f5e23-d351-40ca-9298-412aa804fb38",
                 "Oscar Gallon",
                 "oscarg798@gmail.com"
             )

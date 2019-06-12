@@ -8,3 +8,6 @@ const val COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER = "COROUTINE_COMPUTATIONAL_CO
 const val TIME_OUT_SECONDS = 30000.toLong()
 const val BASE_URL = "http://167.99.146.126:3000"
 const val TOKEN = "token"
+const val BACKEND_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+const val DATE_FORMAT = "mm/dd/yyyy"
+const val DISPLAY_DATE_FORMAT ="MMM dd, yyyy"

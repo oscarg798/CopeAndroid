@@ -8,7 +8,7 @@ import com.cope.signup.data.entities.APIUser
  */
 object UserMapper {
 
-    fun map(apiUser: APIUser): User{
-        return User(apiUser._id, apiUser.uuid, apiUser.name, apiUser.email)
+    fun map(apiUser: APIUser): User {
+        return User(apiUser._id, apiUser.name, apiUser.email)
     }
 }

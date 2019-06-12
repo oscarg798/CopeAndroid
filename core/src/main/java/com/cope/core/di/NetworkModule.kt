@@ -1,7 +1,8 @@
 package com.cope.core.di
 
-import com.google.gson.Gson
+import com.cope.core.constants.BACKEND_DATE_FORMAT
 import com.cope.core.constants.TIME_OUT_SECONDS
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -18,7 +19,10 @@ class NetworkModule {
 
     @Provides
     fun provideGsonConverter(): GsonConverterFactory {
-        return GsonConverterFactory.create(Gson())
+        val gson = GsonBuilder()
+            .setDateFormat(BACKEND_DATE_FORMAT)
+            .create()
+        return GsonConverterFactory.create(gson)
     }
 
     @Provides

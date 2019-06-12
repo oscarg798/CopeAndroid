@@ -58,6 +58,8 @@ class CopeListFragment : Fragment(), CopeListContract.View {
         rvCopes?.setHasFixedSize(true)
         rvCopes?.adapter = CopeAdapter()
 
+        srMain?.setOnRefreshListener(presenter)
+
         presenter.onViewCreated()
     }
 

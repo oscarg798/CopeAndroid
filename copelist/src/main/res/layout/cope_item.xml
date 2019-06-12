@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:padding="16dp"
-                                                   android:layout_height="wrap_content">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   app:cardCornerRadius="8dp"
+                                   app:cardUseCompatPadding="true"
+                                   app:cardBackgroundColor="@color/cope_item_bg"
+                                   android:layout_height="wrap_content">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:layout_height="wrap_content">
 
-    <TextView android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintEnd_toStartOf="@+id/ivArrowIndicator"
-              android:id="@+id/tvTitle"
-              tools:text="The greating you are waiting for"
-              app:layout_constraintStart_toStartOf="parent"
-              android:fontFamily="@font/open_sans_semibold"/>
+        <ImageView android:layout_width="30dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   tools:src="@drawable/ic_icon"
+                   app:layout_constraintBottom_toBottomOf="@+id/tvUrl"
+                   android:id="@+id/ivIcon"
+                   android:layout_height="30dp"/>
 
-    <TextView android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-              android:fontFamily="@font/open_sans"
-              app:layout_constraintEnd_toStartOf="@+id/ivArrowIndicator"
-              android:id="@+id/tvUrl"
-              tools:text="www.hello.com"
-              app:layout_constraintStart_toStartOf="parent"/>
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintEnd_toStartOf="@+id/ivArrowIndicator"
+                  android:id="@+id/tvTitle"
+                  android:layout_marginEnd="8dp"
+                  android:textColor="@color/white"
+                  android:maxLines="2"
+                  android:layout_marginStart="8dp"
+                  tools:text="The greating you are waiting for"
+                  app:layout_constraintStart_toEndOf="@+id/ivIcon"
+                  android:fontFamily="@font/open_sans_semibold"/>
 
-    <ImageView android:layout_width="30dp"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               android:src="@drawable/ic_arrow_right"
-               app:layout_constraintBottom_toBottomOf="parent"
-               android:id="@+id/ivArrowIndicator"
-               android:layout_height="30dp"/>
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+                  android:id="@+id/tvUrl"
+                  android:textColor="@color/cope_url_text_color"
+                  tools:text="www.hello.com"
+                  android:maxLines="2"
+                  app:layout_constraintStart_toStartOf="@+id/tvTitle"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView android:layout_width="30dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:src="@drawable/ic_arrow_right"
+                   app:layout_constraintBottom_toBottomOf="@+id/tvUrl"
+                   android:id="@+id/ivArrowIndicator"
+                   android:layout_height="30dp"/>
+
+        <ImageView android:layout_width="match_parent" android:layout_height="1dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   android:background="@color/cope_item_divider_bg"
+                   android:layout_marginTop="8dp"
+                   android:id="@+id/ivDivider"
+                   app:layout_constraintTop_toBottomOf="@+id/tvUrl"
+                   app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView android:layout_width="0dp"
+                  android:layout_marginTop="8dp"
+                  android:id="@+id/tvCreatedAt"
+                  android:textColor="@color/cope_url_text_color"
+                  android:text="@string/created_at_format"
+                  android:textSize="12sp"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/ivDivider"
+                  app:layout_constraintEnd_toStartOf="@+id/glDates"
+                  android:layout_height="wrap_content"/>
+
+        <TextView android:layout_width="0dp"
+                  android:layout_marginTop="8dp"
+                  android:id="@+id/tvUpdatedAt"
+                  android:textColor="@color/cope_url_text_color"
+                  android:text="@string/updated_at_format"
+                  android:textSize="12sp"
+                  android:gravity="end
+"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintTop_toBottomOf="@+id/ivDivider"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@+id/glDates"
+                  android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+                                                    android:orientation="vertical"
+                                                    android:id="@+id/glDates"
+                                                    app:layout_constraintGuide_percent="0.5"
+                                                    android:layout_height="match_parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

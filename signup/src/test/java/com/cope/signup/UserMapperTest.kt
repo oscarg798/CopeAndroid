@@ -14,7 +14,7 @@ class UserMapperTest  {
     @Test
     fun `should map from api user`(){
         val apiUser = given {
-            APIUser("1","2","3","4")
+            APIUser("1","2","3")
         }
 
         val result = whenever {
@@ -22,7 +22,7 @@ class UserMapperTest  {
         }
 
         then {
-            result `should equal` User("1","2","3","4")
+            result `should equal` User("1","2","3")
         }
     }
 }

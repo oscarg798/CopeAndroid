@@ -27,7 +27,7 @@ class SignUpRepositoryTest: MockableTest {
         coEvery {
             signupService.signUp(any())
         }.answers {
-            APIUser("1","2","3","4")
+            APIUser("1","2","3")
         }
     }
 
@@ -44,7 +44,7 @@ class SignUpRepositoryTest: MockableTest {
         }
 
         then {
-            result `should equal` User("1","2","3","4")
+            result `should equal` User("1","2","3")
         }
     }
 }

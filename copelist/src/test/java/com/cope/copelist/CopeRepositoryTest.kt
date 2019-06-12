@@ -10,6 +10,7 @@ import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.shouldEqual
 import org.junit.Before
 import org.junit.Test
+import java.util.*
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -19,6 +20,9 @@ class CopeRepositoryTest : MockableTest {
     @MockK
     lateinit var getCopeService: GetCopeService
 
+    private val createdAt = Date()
+    private val updatedAt = Date()
+
     @Before
     override fun setup() {
         super.setup()
@@ -26,7 +30,7 @@ class CopeRepositoryTest : MockableTest {
         coEvery {
             getCopeService.getCopes()
         }.answers {
-            listOf(APICope("1", "2", "3", "4"))
+            listOf(APICope("1", "2", "3", createdAt, updatedAt,"4"))
         }
     }
 
@@ -43,7 +47,7 @@ class CopeRepositoryTest : MockableTest {
         }
 
         then {
-            result shouldEqual listOf(Cope("2","3","4"))
+            result shouldEqual listOf(Cope("1","2","3",createdAt, updatedAt,"4"))
         }
     }
 }

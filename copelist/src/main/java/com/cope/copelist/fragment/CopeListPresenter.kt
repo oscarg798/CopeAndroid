@@ -19,11 +19,16 @@ class CopeListPresenter(
     override val parentJob: Job = Job()
 
     override fun onViewCreated() {
+        getCopes()
+    }
+
+    private fun getCopes() {
+        view?.showProgressDialog()
         launchJobOnMainDispatchers {
             try {
-                view?.showProgressDialog()
                 val copes = withContext(coroutinesContextProvider.backgroundContext) {
                     getCopeInteractor(None)
+
                 }
                 view?.showCopes(copes)
             } catch (t: Throwable) {
@@ -33,5 +38,14 @@ class CopeListPresenter(
             }
 
         }
+    }
+
+    override fun onRefresh() {
+        if (parentJob.children.filter { it.isActive }.count() > 0) {
+            view?.hideProgressDialog()
+            return
+        }
+
+        onViewCreated()
     }
 }

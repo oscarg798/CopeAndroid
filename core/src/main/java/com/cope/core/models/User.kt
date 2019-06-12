@@ -5,7 +5,6 @@ package com.cope.core.models
  */
 data class User(
     val id: String,
-    val uuid: String,
     val name: String,
     val email: String
 )

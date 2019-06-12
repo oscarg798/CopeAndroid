@@ -4,6 +4,8 @@
                                                        xmlns:app="http://schemas.android.com/apk/res-auto"
                                                        android:layout_width="match_parent"
                                                        android:id="@+id/srMain"
+                                                       android:padding="16dp"
+                                                       android:background="@color/cope_list_bg"
                                                        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +18,7 @@
                                                    app:layout_constraintStart_toStartOf="parent"
                                                    app:layout_constraintEnd_toEndOf="parent"
                                                    android:id="@+id/rvCopes"
+                                                   tools:listitem="@layout/cope_item"
                                                    android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

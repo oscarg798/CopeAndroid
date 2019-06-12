@@ -30,6 +30,7 @@ class CopeAdapter(private val copes: ArrayList<Cope> = ArrayList()) : RecyclerVi
     }
 
     fun add(copes: List<Cope>){
+        this.copes.clear()
         this.copes.addAll(copes)
         notifyDataSetChanged()
     }

@@ -5,7 +5,6 @@ package com.cope.signup.data.entities
  */
 data class APIUser(
     val _id: String,
-    val uuid: String,
     val name: String,
     val email: String
 )

@@ -26,7 +26,7 @@ class SignUpInteractorTest : MockableTest {
         coEvery {
             signUpRepository.signUp(any())
         }.answers {
-            User("1", "2", "3", "4")
+            User("1", "2", "3")
         }
     }
 
@@ -43,7 +43,7 @@ class SignUpInteractorTest : MockableTest {
         }
 
         then {
-            result `should equal` User("1", "2", "3", "4")
+            result `should equal` User("1", "2", "3")
         }
     }
 }

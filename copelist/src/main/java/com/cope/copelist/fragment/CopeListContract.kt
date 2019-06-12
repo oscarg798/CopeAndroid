@@ -1,5 +1,6 @@
 package com.cope.copelist.fragment
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.cope.core.constants.StringResourceId
 import com.cope.core.contract.BasePresenter
 import com.cope.core.contract.BaseView
@@ -24,7 +25,7 @@ interface CopeListContract {
 
     }
 
-    interface Presenter : BasePresenter<View> {
+    interface Presenter : BasePresenter<View>, SwipeRefreshLayout.OnRefreshListener {
 
         fun onViewCreated()
     }
