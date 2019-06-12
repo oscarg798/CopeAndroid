@@ -1,6 +1,5 @@
 package com.cope.login
 
-import android.util.Log
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.Token
 import com.cope.core.interactor.Interactor
@@ -13,6 +12,7 @@ import kotlinx.coroutines.withContext
  */
 class LoginPresenter(
     private val loginInteractor: Interactor<Token, LoginParams>,
+    private val saveTokenInteractor: Interactor<Unit, Token>,
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : LoginActivityContract.Presenter {
 
@@ -34,11 +34,11 @@ class LoginPresenter(
         launchJobOnMainDispatchers {
             try {
 
-                val token = withContext(coroutinesContextProvider.backgroundContext) {
-                    loginInteractor(LoginParams(username, password))
+                withContext(coroutinesContextProvider.backgroundContext) {
+                    val token = loginInteractor(LoginParams(username, password))
+                    saveTokenInteractor(token)
                 }
 
-                Log.i("Token", token)
                 view?.onLoginSuccess()
             } catch (t: Throwable) {
                 view?.showError(R.string.general_error)

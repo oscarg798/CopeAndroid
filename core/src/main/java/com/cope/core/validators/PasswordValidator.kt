@@ -1,6 +1,5 @@
 package com.cope.core.validators
 
-import android.text.TextUtils
 import com.cope.core.constants.Password
 import java.util.regex.Pattern
 

@@ -1,6 +1,5 @@
 package com.cope.signup
 
-import android.widget.EditText
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.assertion.ViewAssertions
@@ -64,7 +63,6 @@ class SignUpActivityTest {
             val etEmail = it.findViewById<TextInputLayout>(R.id.tilEmail)
             etEmail.hint shouldEqual it.getString(R.string.email_hint)
         }
-
     }
 
     @Test

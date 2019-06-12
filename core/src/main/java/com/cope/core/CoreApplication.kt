@@ -16,6 +16,7 @@ class CoreApplication : Application(), CoreComponentProvider {
             coreComponent = DaggerCoreComponent.builder()
                 .coreModule(CoreModule(this))
                 .networkModule(NetworkModule())
+                .repositoryModule(RepositoryModule(this))
                 .build()
         }
 
