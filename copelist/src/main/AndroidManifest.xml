@@ -3,7 +3,8 @@
           package="com.cope.copelist">
 
     <application>
-        <activity android:name=".CopeListActivity">
+        <activity android:name=".CopeListActivity"
+                  android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
         </activity>
         <activity android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"/>
         <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>

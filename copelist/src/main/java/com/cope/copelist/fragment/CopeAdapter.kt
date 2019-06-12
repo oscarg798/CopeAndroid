@@ -1,8 +1,9 @@
-package com.cope.copelist
+package com.cope.copelist.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.cope.copelist.R
 import com.cope.core.models.Cope
 
 /**
@@ -19,7 +20,13 @@ class CopeAdapter(private val copes: ArrayList<Cope> = ArrayList()) : RecyclerVi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CopeItemViewHolder {
-        return CopeItemViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.cope_item, parent, false))
+        return CopeItemViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.cope_item,
+                parent,
+                false
+            )
+        )
     }
 
     fun add(copes: List<Cope>){

@@ -14,16 +14,16 @@
               android:id="@+id/tvTitle"
               tools:text="The greating you are waiting for"
               app:layout_constraintStart_toStartOf="parent"
-              android:fontFamily="@font/open_sans"/>
+              android:fontFamily="@font/open_sans_semibold"/>
 
     <TextView android:layout_width="0dp"
               android:layout_height="wrap_content"
               app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+              android:fontFamily="@font/open_sans"
               app:layout_constraintEnd_toStartOf="@+id/ivArrowIndicator"
               android:id="@+id/tvUrl"
               tools:text="www.hello.com"
-              app:layout_constraintStart_toStartOf="parent"
-              android:fontFamily="@font/open_sans_semibold"/>
+              app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView android:layout_width="30dp"
                app:layout_constraintEnd_toEndOf="parent"

@@ -1,8 +1,9 @@
-package com.cope.copelist
+package com.cope.copelist.fragment
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cope.copelist.R
 import com.cope.core.models.Cope
 
 /**

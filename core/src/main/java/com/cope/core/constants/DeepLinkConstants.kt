@@ -5,3 +5,4 @@ package com.cope.core.constants
  */
 const val SIGNUP_DEEPLINK = "deep://signUp"
 const val LOGIN_DEEPLINK = "deep://login"
+const val COPE_LIST_DEEP_LINK =  "deep://copeList"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
+import com.cope.core.constants.COPE_LIST_DEEP_LINK
 import com.cope.core.constants.LOGIN_DEEPLINK
 import com.cope.core.constants.SIGNUP_DEEPLINK
 import com.cope.core.constants.StringResourceId
@@ -53,6 +54,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
     }
 
     override fun onLoginSuccess() {
+        startDeepLinkIntent(COPE_LIST_DEEP_LINK)
     }
 
     override fun showError(error: StringResourceId) {
