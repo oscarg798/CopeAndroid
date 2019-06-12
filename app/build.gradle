@@ -95,4 +95,5 @@ dependencies {
     implementation project(path: ':login')
     implementation project(path: ':signup')
     implementation project(path: ':copelist')
+    implementation project(path: ':copedetail')
 }

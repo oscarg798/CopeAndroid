@@ -13,12 +13,13 @@ interface BasePresenter<View : BaseView> {
 
     var view: View?
 
-    val parentJob: Job
+    var parentJob: Job
 
     val coroutinesContextProvider: CoroutineContextProvider
 
     fun bind(view: View) {
         this.view = view
+        parentJob = Job()
     }
 
     fun unBind(){

@@ -5,7 +5,7 @@
                                                        android:layout_width="match_parent"
                                                        android:id="@+id/srMain"
                                                        android:padding="16dp"
-                                                       android:background="@color/cope_list_bg"
+                                                       android:background="@color/background_color"
                                                        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout

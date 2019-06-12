@@ -5,14 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cope.copelist.R
 import com.cope.copelist.di.CopeListModule
 import com.cope.copelist.di.DaggerCopeListComponent
+import com.cope.core.constants.ARGUMENT_COPE
+import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
 import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
+import com.cope.core.extensions.startDeepLinkIntent
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
 
@@ -56,11 +61,17 @@ class CopeListFragment : Fragment(), CopeListContract.View {
         val context = context ?: return
         rvCopes?.layoutManager = LinearLayoutManager(context)
         rvCopes?.setHasFixedSize(true)
-        rvCopes?.adapter = CopeAdapter()
+        rvCopes?.adapter = CopeAdapter(presenter)
 
         srMain?.setOnRefreshListener(presenter)
 
         presenter.onViewCreated()
+    }
+
+    override fun openCopeDetails(viewCope: ViewCope) {
+        (activity as? AppCompatActivity)?.startDeepLinkIntent(COPE_DETAIL_DEEP_LINK, Bundle().apply {
+            putParcelable(ARGUMENT_COPE, viewCope)
+        })
     }
 
     override fun showCopes(copes: List<Cope>) {

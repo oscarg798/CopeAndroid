@@ -17,7 +17,7 @@ class SplashPresenter(
 ) : SplashContract.Presenter {
 
 
-    override val parentJob: Job = Job()
+    override lateinit var parentJob: Job
     override var view: SplashContract.View? = null
 
     override fun bind(view: SplashContract.View) {

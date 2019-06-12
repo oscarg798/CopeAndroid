@@ -12,5 +12,6 @@ data class APICope(
     val title: String,
     val createdAt: Date,
     val updatedAt: Date,
+    val content: List<APICopeContent>,
     val icon: String?
 )

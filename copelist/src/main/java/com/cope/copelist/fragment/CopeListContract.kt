@@ -5,6 +5,7 @@ import com.cope.core.constants.StringResourceId
 import com.cope.core.contract.BasePresenter
 import com.cope.core.contract.BaseView
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -23,10 +24,13 @@ interface CopeListContract {
 
         fun showError(error: String)
 
+        fun openCopeDetails(viewCope: ViewCope)
+
     }
 
-    interface Presenter : BasePresenter<View>, SwipeRefreshLayout.OnRefreshListener {
+    interface Presenter : BasePresenter<View>, SwipeRefreshLayout.OnRefreshListener, CopeClickListener {
 
         fun onViewCreated()
     }
 }
+

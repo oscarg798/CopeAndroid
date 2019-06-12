@@ -14,3 +14,5 @@ typealias Password = String
 typealias LocalStorageKey = String
 
 typealias sharePreferenceGetter = (Context) -> SharedPreferences
+
+typealias BackgroundColor =  Int

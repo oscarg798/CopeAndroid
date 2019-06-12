@@ -11,5 +11,6 @@ data class Cope(
     val title: String,
     val createdAt: Date,
     val updateAt: Date,
+    val content: List<CopeContent>,
     val icon: String? = null
 )

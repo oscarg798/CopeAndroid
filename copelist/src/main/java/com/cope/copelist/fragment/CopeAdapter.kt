@@ -9,14 +9,15 @@ import com.cope.core.models.Cope
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
-class CopeAdapter(private val copes: ArrayList<Cope> = ArrayList()) : RecyclerView.Adapter<CopeItemViewHolder>() {
+class CopeAdapter(private val copeClickListener: CopeClickListener, private val copes: ArrayList<Cope> = ArrayList()) :
+    RecyclerView.Adapter<CopeItemViewHolder>() {
 
     override fun getItemCount(): Int {
         return copes.size
     }
 
     override fun onBindViewHolder(holder: CopeItemViewHolder, position: Int) {
-        holder.bind(copes[position])
+        holder.bind(copes[position], copeClickListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CopeItemViewHolder {
@@ -29,7 +30,7 @@ class CopeAdapter(private val copes: ArrayList<Cope> = ArrayList()) : RecyclerVi
         )
     }
 
-    fun add(copes: List<Cope>){
+    fun add(copes: List<Cope>) {
         this.copes.clear()
         this.copes.addAll(copes)
         notifyDataSetChanged()

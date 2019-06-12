@@ -1,13 +1,15 @@
 package com.cope.copelist.di
 
-import com.cope.copelist.fragment.CopeListContract
-import com.cope.copelist.fragment.CopeListPresenter
+import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.copelist.data.service.GetCopeService
 import com.cope.copelist.domain.GetCopesInteractor
 import com.cope.copelist.domain.repository.CopeRepositoryImpl
+import com.cope.copelist.fragment.CopeListContract
+import com.cope.copelist.fragment.CopeListPresenter
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.interactor.Interactor
+import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
 import com.cope.core.models.None
 import com.cope.core.repositories.CopeRepository
@@ -29,7 +31,7 @@ class CopeListModule {
 
     @Provides
     fun provideGetCopeRepository(getCopeService: GetCopeService): CopeRepository {
-        return CopeRepositoryImpl(getCopeService)
+        return CopeRepositoryImpl(getCopeService, APICopeMapper)
     }
 
     @Provides
@@ -43,6 +45,6 @@ class CopeListModule {
             COROUTINE_IO_CONTEXT_PROVIDER
         ) coroutineContextProvider: CoroutineContextProvider
     ): CopeListContract.Presenter {
-        return CopeListPresenter(getCopeListInteractor, coroutineContextProvider)
+        return CopeListPresenter(getCopeListInteractor, ViewCopeMapper, coroutineContextProvider)
     }
 }

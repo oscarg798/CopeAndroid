@@ -24,13 +24,17 @@ class CopeItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private val dateFormatter = SimpleDateFormat(DISPLAY_DATE_FORMAT, Locale.ENGLISH)
 
-    fun bind(cope: Cope) {
+    fun bind(cope: Cope, copeClickListener: CopeClickListener) {
         tvTitle?.text = cope.title
         tvUrl?.text = cope.url
         tvCreatedAt?.text =
             String.format(itemView.context.getString(R.string.created_at_format), dateFormatter.format(cope.createdAt))
         tvUpdatedAt?.text =
             String.format(itemView.context.getString(R.string.updated_at_format), dateFormatter.format(cope.updateAt))
+
+        itemView.setOnClickListener {
+            copeClickListener.onCopeClick(cope)
+        }
 
         val iconView = ivICon ?: return
         val iconUrl = cope.icon ?: return

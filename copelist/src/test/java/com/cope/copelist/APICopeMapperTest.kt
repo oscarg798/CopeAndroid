@@ -1,8 +1,10 @@
 package com.cope.copelist
 
 import com.cope.copelist.data.entities.APICope
+import com.cope.copelist.data.entities.APICopeContent
 import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.core.models.Cope
+import com.cope.core.models.CopeContent
 import org.amshove.kluent.shouldEqual
 import org.junit.Test
 import java.util.*
@@ -17,7 +19,7 @@ class APICopeMapperTest {
         val createdAt = Date()
         val updatedAt = Date()
         val apiCope = given {
-            APICope("1", "2", "3", createdAt, updatedAt, "4")
+            APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("5","6")),"4")
         }
 
         val result = whenever {
@@ -25,7 +27,7 @@ class APICopeMapperTest {
         }
 
         then {
-            result shouldEqual Cope("1", "2", "3", createdAt, updatedAt, "4")
+            result shouldEqual Cope("1", "2", "3", createdAt, updatedAt, listOf(CopeContent("5","6")),"4")
         }
     }
 }

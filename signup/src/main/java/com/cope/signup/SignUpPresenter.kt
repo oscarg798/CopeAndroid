@@ -16,9 +16,8 @@ class SignUpPresenter(
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : SignUpContract.Presenter {
 
-
     override var view: SignUpContract.View? = null
-    override val parentJob: Job = Job()
+    override lateinit var parentJob: Job
 
     override fun onLoginButtonClick(name: String, email: String, password: String, passwordConfirmation: String) {
         if (name.isEmpty()) {

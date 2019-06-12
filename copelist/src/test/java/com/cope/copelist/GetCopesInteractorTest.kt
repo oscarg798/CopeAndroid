@@ -30,7 +30,7 @@ class GetCopesInteractorTest : MockableTest {
         coEvery {
             copeRepository.getCopes()
         }.answers {
-            listOf(Cope("2", "3", "4",createdAt, updatedAt))
+            listOf(Cope("2", "3", "4",createdAt, updatedAt, listOf()))
         }
     }
 
@@ -47,7 +47,7 @@ class GetCopesInteractorTest : MockableTest {
         }
 
         then {
-            result shouldEqual listOf(Cope("2", "3", "4", createdAt, updatedAt))
+            result shouldEqual listOf(Cope("2", "3", "4", createdAt, updatedAt, listOf()))
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.cope.copelist
 
 import com.cope.copelist.data.entities.APICope
+import com.cope.copelist.data.entities.APICopeContent
 import com.cope.copelist.data.service.GetCopeService
 import com.cope.core.DateParser
 import com.cope.core.di.NetworkModule
@@ -77,6 +78,7 @@ class GetCopeServiceTest : MockServerTest {
                 "RecyclerView.RecycledViewPool  |  Android Developers",
                 DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
                 DateParser.getBackendDate("2019-06-12T16:48:13.510Z"),
+                listOf(APICopeContent("5d012ccdd252d3a6f7ef1edf", "Lindo")),
                 "nace una flor"
             )
         }

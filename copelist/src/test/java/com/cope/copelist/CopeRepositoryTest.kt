@@ -1,9 +1,11 @@
 package com.cope.copelist
 
 import com.cope.copelist.data.entities.APICope
+import com.cope.copelist.data.entities.APICopeContent
 import com.cope.copelist.data.service.GetCopeService
 import com.cope.copelist.domain.repository.CopeRepositoryImpl
 import com.cope.core.models.Cope
+import com.cope.core.models.CopeContent
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
@@ -30,7 +32,9 @@ class CopeRepositoryTest : MockableTest {
         coEvery {
             getCopeService.getCopes()
         }.answers {
-            listOf(APICope("1", "2", "3", createdAt, updatedAt,"4"))
+            listOf(APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("12","13"),
+                APICopeContent("15","16")
+            ),"4"))
         }
     }
 
@@ -47,7 +51,8 @@ class CopeRepositoryTest : MockableTest {
         }
 
         then {
-            result shouldEqual listOf(Cope("1","2","3",createdAt, updatedAt,"4"))
+            result shouldEqual listOf(Cope("1","2","3",createdAt, updatedAt, listOf(CopeContent("12","13"),
+                CopeContent("15","16")),"4"))
         }
     }
 }
