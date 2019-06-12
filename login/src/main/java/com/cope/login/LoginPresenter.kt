@@ -18,7 +18,7 @@ class LoginPresenter(
 
     override var view: LoginActivityContract.View? = null
 
-    override var parentJob: Job = Job()
+    override val parentJob: Job = Job()
 
     override fun onLoginButtonPressed(username: String, password: String) {
         if (username.isEmpty()) {

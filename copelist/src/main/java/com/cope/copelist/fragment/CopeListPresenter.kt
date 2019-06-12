@@ -18,7 +18,7 @@ class CopeListPresenter(
 ) : CopeListContract.Presenter {
 
     override var view: CopeListContract.View? = null
-    override var parentJob: Job = Job()
+    override val parentJob: Job = Job()
 
     override fun onViewCreated() {
         getCopes()

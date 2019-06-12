@@ -17,7 +17,7 @@ class SignUpPresenter(
 ) : SignUpContract.Presenter {
 
     override var view: SignUpContract.View? = null
-    override lateinit var parentJob: Job
+    override val parentJob: Job = Job()
 
     override fun onLoginButtonClick(name: String, email: String, password: String, passwordConfirmation: String) {
         if (name.isEmpty()) {

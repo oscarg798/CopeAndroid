@@ -12,10 +12,6 @@ class CopePresenter(override val coroutinesContextProvider: CoroutineContextProv
     override var parentJob: Job = Job()
     override var view: CopeDetailContract.View? = null
 
-    override fun bind(view: CopeDetailContract.View) {
-        this.view = view
-    }
-
     override fun onViewCreated(viewCope: ViewCope) {
         view?.showCopeTitle(viewCope.title)
         view?.showCopeUrl(viewCope.url)

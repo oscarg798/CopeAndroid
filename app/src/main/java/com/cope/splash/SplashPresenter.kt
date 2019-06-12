@@ -16,8 +16,7 @@ class SplashPresenter(
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : SplashContract.Presenter {
 
-
-    override lateinit var parentJob: Job
+    override val parentJob: Job = Job()
     override var view: SplashContract.View? = null
 
     override fun bind(view: SplashContract.View) {
