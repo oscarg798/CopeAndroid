@@ -33,6 +33,16 @@ class CopeListFragment : Fragment(), CopeListContract.View {
             .inject(this)
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.bind(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.unBind()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,7 +52,6 @@ class CopeListFragment : Fragment(), CopeListContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.bind(this)
 
         val context = context ?: return
         rvCopes?.layoutManager = LinearLayoutManager(context)

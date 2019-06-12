@@ -1,4 +1,4 @@
-package com.cope
+package com.cope.deeplink
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +18,11 @@ class DeepLinkHandlerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val deepLinkDelegate = DeepLinkDelegate(SignUpDeepLinkModuleLoader(), LoginDeepLinkModuleLoader(), CopeListDeepLinkModuleLoader())
+        val deepLinkDelegate = DeepLinkDelegate(
+            SignUpDeepLinkModuleLoader(),
+            LoginDeepLinkModuleLoader(),
+            CopeListDeepLinkModuleLoader()
+        )
         deepLinkDelegate.dispatchFrom(this)
         finish()
     }

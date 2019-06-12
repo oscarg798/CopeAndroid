@@ -59,6 +59,13 @@ dependencies {
     implementation applicationDependencies.kotlinCoroutines
     implementation applicationDependencies.kotlinCoroutinesAndroid
 
+    //Dagger
+    implementation applicationDependencies.dagger
+    implementation applicationDependencies.daggerAndroidSupport
+    kapt applicationDependencies.daggerCompiler
+    kapt applicationDependencies.daggerAndroidProcessor
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
     //Test
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation testDependencies.mockk
