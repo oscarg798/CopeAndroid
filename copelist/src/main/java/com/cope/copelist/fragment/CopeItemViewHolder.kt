@@ -39,6 +39,5 @@ class CopeItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val iconView = ivICon ?: return
         val iconUrl = cope.icon ?: return
         Picasso.get().load(iconUrl).into(iconView)
-
     }
 }

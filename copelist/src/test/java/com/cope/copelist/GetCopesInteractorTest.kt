@@ -30,7 +30,7 @@ class GetCopesInteractorTest : MockableTest {
         coEvery {
             copeRepository.getCopes()
         }.answers {
-            listOf(Cope("2", "3", "4",createdAt, updatedAt, listOf()))
+            listOf(Cope("2", "3", "4", createdAt, updatedAt, listOf()))
         }
     }
 

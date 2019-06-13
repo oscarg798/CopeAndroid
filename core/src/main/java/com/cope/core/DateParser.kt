@@ -21,7 +21,6 @@ object DateParser {
         return formatter.parse(formatter.format(candidateDate))
     }
 
-
     fun getBackendDate(candidateDate: String): Date {
         return backendFormatter.parse(candidateDate)
     }

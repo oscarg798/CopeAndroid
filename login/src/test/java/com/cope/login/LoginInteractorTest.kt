@@ -15,7 +15,6 @@ import org.junit.Test
  */
 class LoginInteractorTest : MockableTest {
 
-
     @MockK
     lateinit var loginRepository: LoginRepository
 
@@ -24,14 +23,14 @@ class LoginInteractorTest : MockableTest {
         super.setup()
 
         coEvery {
-            loginRepository.login(any(),any())
+            loginRepository.login(any(), any())
         }.answers {
             "123"
         }
     }
 
     @Test
-    fun `should login`(){
+    fun `should login`() {
        val interactor = given {
            LoginInteractor(loginRepository)
        }
@@ -43,8 +42,7 @@ class LoginInteractorTest : MockableTest {
         }
 
         then {
-            result `should equal`  "123"
+            result `should equal` "123"
         }
     }
-
 }

@@ -8,7 +8,7 @@ import com.cope.signup.domain.repositories.SignUpRepository
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
-class SignUpInteractor(private val signUpRepository: SignUpRepository): Interactor<User,SignUpParams>{
+class SignUpInteractor(private val signUpRepository: SignUpRepository) : Interactor<User, SignUpParams> {
 
     override suspend fun invoke(params: SignUpParams): User {
         return signUpRepository.signUp(params)

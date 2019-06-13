@@ -8,14 +8,12 @@ import com.cope.core.contract.BaseView
  */
 interface SplashContract {
 
-    interface View:BaseView {
+    interface View : BaseView {
 
         fun navigateToLogin()
 
         fun navigateDashboard()
     }
 
-    interface Presenter: BasePresenter<View>{
-
-    }
+    interface Presenter : BasePresenter<View>
 }

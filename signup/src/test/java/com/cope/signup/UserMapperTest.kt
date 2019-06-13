@@ -9,12 +9,12 @@ import org.junit.Test
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
-class UserMapperTest  {
+class UserMapperTest {
 
     @Test
-    fun `should map from api user`(){
+    fun `should map from api user`() {
         val apiUser = given {
-            APIUser("1","2","3")
+            APIUser("1", "2", "3")
         }
 
         val result = whenever {
@@ -22,7 +22,7 @@ class UserMapperTest  {
         }
 
         then {
-            result `should equal` User("1","2","3")
+            result `should equal` User("1", "2", "3")
         }
     }
 }

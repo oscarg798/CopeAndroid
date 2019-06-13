@@ -9,11 +9,10 @@ import java.util.regex.Pattern
 object PasswordValidator {
 
     fun validate(password: Password): Boolean {
-        if(!Pattern.matches("^((?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{6,})\$",password)){
+        if (!Pattern.matches("^((?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{6,})\$", password)) {
             return false
         }
 
         return true
     }
-
 }

@@ -21,12 +21,10 @@ import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
 
-
 class CopeListFragment : Fragment(), CopeListContract.View {
 
     @Inject
     lateinit var presenter: CopeListContract.Presenter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +47,8 @@ class CopeListFragment : Fragment(), CopeListContract.View {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_cope_list, container, false)

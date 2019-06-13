@@ -9,5 +9,5 @@ import retrofit2.http.GET
 interface GetCopeService {
 
     @GET("cope")
-    suspend fun getCopes():List<APICope>
+    suspend fun getCopes(): List<APICope>
 }

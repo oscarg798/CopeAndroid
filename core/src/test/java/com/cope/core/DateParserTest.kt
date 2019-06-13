@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat
  */
 class DateParserTest {
 
-
     private val dateFormat = SimpleDateFormat("mm/dd/yyyy")
 
     @Test
@@ -27,7 +26,6 @@ class DateParserTest {
             result.day shouldEqual assertionResult.day
             result.month shouldEqual assertionResult.month
             result.year shouldEqual assertionResult.year
-
         }
     }
 
@@ -47,7 +45,6 @@ class DateParserTest {
             result.day shouldEqual assertionResult.day
             result.month shouldEqual assertionResult.month
             result.year shouldEqual assertionResult.year
-
         }
     }
 }

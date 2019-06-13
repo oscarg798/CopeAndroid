@@ -40,7 +40,7 @@ class LoginModule {
     }
 
     @Provides
-    fun provideSaveTokenInteractor(localStorageRepository: LocalStorageRepository): Interactor<Unit,Token>{
+    fun provideSaveTokenInteractor(localStorageRepository: LocalStorageRepository): Interactor<Unit, Token> {
         return SaveTokenInteractor(localStorageRepository)
     }
 

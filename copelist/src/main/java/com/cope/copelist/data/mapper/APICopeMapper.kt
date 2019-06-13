@@ -16,7 +16,7 @@ object APICopeMapper {
             apiCope.title,
             DateParser.getCopeDateFromBackendDate(apiCope.createdAt),
             DateParser.getCopeDateFromBackendDate(apiCope.updatedAt),
-            apiCope.content.map { APICopeContentMapper.map(it)},
+            apiCope.content.map { APICopeContentMapper.map(it) },
             apiCope.icon
         )
     }

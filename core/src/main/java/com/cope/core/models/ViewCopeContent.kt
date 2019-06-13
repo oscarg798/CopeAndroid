@@ -2,7 +2,6 @@ package com.cope.core.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
 /**
  * @author Oscar Gallon on 2019-06-12.

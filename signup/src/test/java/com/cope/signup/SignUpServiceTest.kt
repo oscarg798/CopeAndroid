@@ -52,7 +52,7 @@ class SignUpServiceTest : MockServerTest {
 
         val result = whenever {
             runBlocking {
-                service.signUp(APISignUpParams("1", "2","3"))
+                service.signUp(APISignUpParams("1", "2", "3"))
             }
         }
 

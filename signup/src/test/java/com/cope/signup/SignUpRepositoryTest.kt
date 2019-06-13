@@ -15,7 +15,7 @@ import org.junit.Test
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
-class SignUpRepositoryTest: MockableTest {
+class SignUpRepositoryTest : MockableTest {
 
     @MockK
     lateinit var signupService: SignupService
@@ -27,24 +27,24 @@ class SignUpRepositoryTest: MockableTest {
         coEvery {
             signupService.signUp(any())
         }.answers {
-            APIUser("1","2","3")
+            APIUser("1", "2", "3")
         }
     }
 
     @Test
-    fun `should singUp user`(){
-        val repository  = given {
+    fun `should singUp user`() {
+        val repository = given {
             SignUpRepositoryImpl(signupService)
         }
 
         val result = whenever {
             runBlocking {
-                repository.signUp(SignUpParams("1","2","3"))
+                repository.signUp(SignUpParams("1", "2", "3"))
             }
         }
 
         then {
-            result `should equal` User("1","2","3")
+            result `should equal` User("1", "2", "3")
         }
     }
 }

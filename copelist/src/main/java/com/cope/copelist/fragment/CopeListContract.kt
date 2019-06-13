@@ -25,7 +25,6 @@ interface CopeListContract {
         fun showError(error: String)
 
         fun openCopeDetails(viewCope: ViewCope)
-
     }
 
     interface Presenter : BasePresenter<View>, SwipeRefreshLayout.OnRefreshListener, CopeClickListener {
@@ -33,4 +32,3 @@ interface CopeListContract {
         fun onViewCreated()
     }
 }
-

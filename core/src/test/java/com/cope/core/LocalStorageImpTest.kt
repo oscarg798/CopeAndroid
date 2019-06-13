@@ -79,7 +79,7 @@ class LocalStorageImpTest : MockableTest {
         }
 
         every {
-            sharedPreferences.getString("myMissingKey",null)
+            sharedPreferences.getString("myMissingKey", null)
         }.answers {
             null
         }
@@ -190,7 +190,7 @@ class LocalStorageImpTest : MockableTest {
     }
 
     @Test(expected = DataNoFoundOnLocalStorageException::class)
-    fun `should get an exception if no exception is found`(){
+    fun `should get an exception if no exception is found`() {
         val repository = given {
             LocalStorageRepositoryImpl(context) {
                 sharedPreferences

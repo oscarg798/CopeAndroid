@@ -12,6 +12,6 @@ class SaveTokenInteractor(private val localStorageRepository: LocalStorageReposi
     Interactor<Unit, Token> {
 
     override suspend fun invoke(params: Token) {
-        localStorageRepository.saveData(TOKEN,params)
+        localStorageRepository.saveData(TOKEN, params)
     }
 }

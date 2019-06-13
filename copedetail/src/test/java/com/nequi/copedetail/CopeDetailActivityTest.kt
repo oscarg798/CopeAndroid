@@ -11,7 +11,6 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.cope.core.constants.ARGUMENT_COPE
-import com.cope.core.models.Cope
 import com.cope.core.models.ViewCope
 import com.cope.core.models.ViewCopeContent
 import com.nequi.copedetail.domian.CopeDetailActivity
@@ -62,7 +61,7 @@ class CopeDetailActivityTest {
         val recyclerView = activity!!.findViewById<RecyclerView>(R.id.rvCopeContent)
         (recyclerView.adapter as CopeDetailAdapter).add(
             listOf(
-                ViewCopeContent("1","This is a content that was search")
+                ViewCopeContent("1", "This is a content that was search")
             )
         )
         Espresso.onView(nthChildOf(ViewMatchers.withId(R.id.rvCopeContent), 0))
@@ -86,4 +85,3 @@ fun nthChildOf(parentMatcher: Matcher<View>, childPosition: Int): Matcher<View> 
         }
     }
 }
-

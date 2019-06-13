@@ -19,7 +19,7 @@ class APICopeMapperTest {
         val createdAt = Date()
         val updatedAt = Date()
         val apiCope = given {
-            APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("5","6")),"4")
+            APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("5", "6")), "4")
         }
 
         val result = whenever {
@@ -27,7 +27,7 @@ class APICopeMapperTest {
         }
 
         then {
-            result shouldEqual Cope("1", "2", "3", createdAt, updatedAt, listOf(CopeContent("5","6")),"4")
+            result shouldEqual Cope("1", "2", "3", createdAt, updatedAt, listOf(CopeContent("5", "6")), "4")
         }
     }
 }

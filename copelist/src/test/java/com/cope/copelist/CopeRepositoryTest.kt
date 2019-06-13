@@ -32,27 +32,27 @@ class CopeRepositoryTest : MockableTest {
         coEvery {
             getCopeService.getCopes()
         }.answers {
-            listOf(APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("12","13"),
-                APICopeContent("15","16")
-            ),"4"))
+            listOf(APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("12", "13"),
+                APICopeContent("15", "16")
+            ), "4"))
         }
     }
 
     @Test
-    fun `should get copes`(){
+    fun `should get copes`() {
         val repository = given {
             CopeRepositoryImpl(getCopeService)
         }
 
-        val  result = whenever {
+        val result = whenever {
             runBlocking {
                 repository.getCopes()
             }
         }
 
         then {
-            result shouldEqual listOf(Cope("1","2","3",createdAt, updatedAt, listOf(CopeContent("12","13"),
-                CopeContent("15","16")),"4"))
+            result shouldEqual listOf(Cope("1", "2", "3", createdAt, updatedAt, listOf(CopeContent("12", "13"),
+                CopeContent("15", "16")), "4"))
         }
     }
 }

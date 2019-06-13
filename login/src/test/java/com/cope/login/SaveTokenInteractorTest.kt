@@ -26,7 +26,7 @@ class SaveTokenInteractorTest : MockableTest {
         super.setup()
 
         every {
-            localStorageRepository.saveData("token","123")
+            localStorageRepository.saveData("token", "123")
         }.answers {
             Unit
         }

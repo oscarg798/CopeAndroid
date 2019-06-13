@@ -15,7 +15,6 @@ interface MockServerTest {
     fun setUp() {
         mockServer = MockWebServer()
         mockServer.start()
-
     }
 
     @After

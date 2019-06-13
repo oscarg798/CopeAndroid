@@ -16,7 +16,6 @@ import javax.inject.Named
 @Module
 class CoreModule(private val appContext: Context) {
 
-
     @Provides
     fun provideAppContext(): Context {
         return appContext

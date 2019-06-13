@@ -9,20 +9,20 @@ import org.junit.Test
 /**
  * @author Oscar Gallon on 2019-06-12.
  */
-class ViewCopeContentMapperTest  {
+class ViewCopeContentMapperTest {
 
     @Test
-    fun `should get view cope content from cope content`(){
+    fun `should get view cope content from cope content`() {
         val mapper = given {
             ViewCopeContentMapper
         }
 
         val result = whenever {
-            mapper.map(CopeContent("1","2"))
+            mapper.map(CopeContent("1", "2"))
         }
 
         then {
-            result shouldEqual ViewCopeContent("1","2")
+            result shouldEqual ViewCopeContent("1", "2")
         }
     }
 }

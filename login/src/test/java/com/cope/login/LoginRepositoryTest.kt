@@ -20,7 +20,6 @@ class LoginRepositoryTest : MockableTest {
     @MockK
     lateinit var loginService: LoginService
 
-
     @Before
     override fun setup() {
         super.setup()
@@ -34,7 +33,7 @@ class LoginRepositoryTest : MockableTest {
         coEvery {
             loginService.login(APiLoginParams("1", "3"))
         }.answers {
-           throw  NullPointerException()
+           throw NullPointerException()
         }
     }
 

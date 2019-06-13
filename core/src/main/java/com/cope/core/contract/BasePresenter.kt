@@ -21,19 +21,16 @@ interface BasePresenter<View : BaseView> {
         this.view = view
     }
 
-    fun unBind(){
+    fun unBind() {
         view = null
         parentJob.apply {
             cancelChildren()
         }
     }
 
-
-
     fun launchJobOnMainDispatchers(job: suspend CoroutineScope.() -> Unit) {
         CoroutineScope(coroutinesContextProvider.mainContext + parentJob).launch {
             job()
         }
     }
-
 }

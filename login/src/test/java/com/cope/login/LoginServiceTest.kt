@@ -49,7 +49,7 @@ class LoginServiceTest : MockServerTest {
 
         val result = whenever {
            runBlocking {
-               service.login(APiLoginParams("1","2"))
+               service.login(APiLoginParams("1", "2"))
            }
         }
 

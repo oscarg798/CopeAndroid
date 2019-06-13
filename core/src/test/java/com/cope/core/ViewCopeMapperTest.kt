@@ -28,7 +28,7 @@ class ViewCopeMapperTest {
                     "1", "2", "3", createdAndUpdatedAtDate, createdAndUpdatedAtDate, listOf(
                         CopeContent("11", "12"),
                         CopeContent("13", "14")
-                    ),"7"
+                    ), "7"
                 )
             )
         }
@@ -37,7 +37,7 @@ class ViewCopeMapperTest {
             result shouldEqual ViewCope(
                 "1", "2", "3", createdAndUpdatedAtDate, createdAndUpdatedAtDate, listOf(
                     ViewCopeContent("11", "12"), ViewCopeContent("13", "14")
-                ),"7"
+                ), "7"
             )
         }
     }

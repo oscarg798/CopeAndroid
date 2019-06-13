@@ -15,11 +15,11 @@ class APICopeContentMapperTest {
     fun `should map from api cope content`() {
         val mapper = given { APICopeContentMapper }
         val result = whenever {
-            mapper.map(APICopeContent("1","2"))
+            mapper.map(APICopeContent("1", "2"))
         }
 
-        then{
-            result shouldEqual  CopeContent("1","2")
+        then {
+            result shouldEqual CopeContent("1", "2")
         }
     }
 }

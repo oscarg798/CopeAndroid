@@ -49,7 +49,6 @@ class CopeListPresenter(
             try {
                 val copes = withContext(coroutinesContextProvider.backgroundContext) {
                     getCopeInteractor(None)
-
                 }
                 view?.showCopes(copes)
             } catch (t: Throwable) {
@@ -57,7 +56,6 @@ class CopeListPresenter(
             } finally {
                 view?.hideProgressDialog()
             }
-
         }
     }
 }

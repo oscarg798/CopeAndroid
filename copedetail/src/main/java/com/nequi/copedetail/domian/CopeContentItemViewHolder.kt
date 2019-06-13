@@ -20,5 +20,4 @@ class CopeContentItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemVi
         tvText?.text = viewCopeContent.text
         clContent?.background = ColorDrawable(CopeContentColorFactory.getBackgroundColor())
     }
-
 }

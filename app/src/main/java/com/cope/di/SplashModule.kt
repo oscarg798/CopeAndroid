@@ -30,6 +30,6 @@ class SplashModule {
         @Named(COROUTINE_IO_CONTEXT_PROVIDER)
         coroutineContextProvider: CoroutineContextProvider
     ): SplashContract.Presenter {
-        return SplashPresenter(getTokenInteractor,coroutineContextProvider)
+        return SplashPresenter(getTokenInteractor, coroutineContextProvider)
     }
 }

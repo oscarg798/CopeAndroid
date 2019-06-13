@@ -13,7 +13,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
 
-
 /**
  * @author Oscar Gallon on 2019-06-06.
  */

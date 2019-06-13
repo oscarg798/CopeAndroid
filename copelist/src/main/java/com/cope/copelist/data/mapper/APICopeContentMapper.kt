@@ -6,9 +6,9 @@ import com.cope.core.models.CopeContent
 /**
  * @author Oscar Gallon on 2019-06-12.
  */
-object APICopeContentMapper  {
+object APICopeContentMapper {
 
-    fun map(apiCopeContent: APICopeContent):CopeContent {
+    fun map(apiCopeContent: APICopeContent): CopeContent {
         return CopeContent(apiCopeContent.id, apiCopeContent.text)
     }
 }

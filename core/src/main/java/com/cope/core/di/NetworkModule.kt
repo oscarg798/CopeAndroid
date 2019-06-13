@@ -33,7 +33,6 @@ class NetworkModule {
         return loggingInterceptor
     }
 
-
     @Provides
     fun provideHttpClient(
         loggingInterceptor: HttpLoggingInterceptor
@@ -58,6 +57,5 @@ class NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .client(httpClient)
             .build()
-
     }
 }

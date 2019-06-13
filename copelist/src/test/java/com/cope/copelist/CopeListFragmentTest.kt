@@ -1,6 +1,5 @@
 package com.cope.copelist
 
-
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cope.copelist.fragment.CopeAdapter
 import com.cope.copelist.fragment.CopeListFragment
 import com.cope.core.CoreApplication
-import com.cope.core.DateParser
 import com.cope.core.models.Cope
 import org.amshove.kluent.shouldEqual
 import org.hamcrest.Description
@@ -24,7 +22,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
 import java.util.*
-
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -57,7 +54,6 @@ class CopeListFragmentTest {
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
             (recyclerView.adapter is CopeAdapter) shouldEqual true
-
         }
     }
 
@@ -124,7 +120,7 @@ class CopeListFragmentTest {
     }
 
     @Test
-    fun `each cope should have its icon`(){
+    fun `each cope should have its icon`() {
         val scenario = launchFragmentInContainer<CopeListFragment>(
             Bundle.EMPTY,
             android.R.style.ThemeOverlay_Material_Dark_ActionBar
@@ -148,7 +144,7 @@ class CopeListFragmentTest {
     }
 
     @Test
-    fun `each cope should show created at`(){
+    fun `each cope should show created at`() {
         val scenario = launchFragmentInContainer<CopeListFragment>(
             Bundle.EMPTY,
             android.R.style.ThemeOverlay_Material_Dark_ActionBar
@@ -172,7 +168,7 @@ class CopeListFragmentTest {
     }
 
     @Test
-    fun `each cope should show updated at`(){
+    fun `each cope should show updated at`() {
         val scenario = launchFragmentInContainer<CopeListFragment>(
             Bundle.EMPTY,
             android.R.style.ThemeOverlay_Material_Dark_ActionBar

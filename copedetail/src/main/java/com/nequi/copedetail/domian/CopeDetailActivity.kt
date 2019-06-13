@@ -30,16 +30,14 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
             .inject(this)
 
         initComponents()
-
     }
 
     override fun onResume() {
         super.onResume()
         presenter.bind(this)
-        val intentExtras = intent?.extras ?: throw  RuntimeException()
-        val viewCope = intentExtras.getParcelable<ViewCope>(ARGUMENT_COPE) ?: throw  RuntimeException()
+        val intentExtras = intent?.extras ?: throw RuntimeException()
+        val viewCope = intentExtras.getParcelable<ViewCope>(ARGUMENT_COPE) ?: throw RuntimeException()
         presenter.onViewCreated(viewCope)
-
     }
 
     override fun onStop() {

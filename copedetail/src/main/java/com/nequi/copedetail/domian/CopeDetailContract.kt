@@ -12,14 +12,14 @@ interface CopeDetailContract {
 
     interface View : BaseView {
 
-        fun showCopeTitle(title:String)
+        fun showCopeTitle(title: String)
 
-        fun showCopeUrl(url:String)
+        fun showCopeUrl(url: String)
 
         fun showCopeContent(viewCopeContents: List<ViewCopeContent>)
     }
 
-    interface Presenter: BasePresenter<View>{
+    interface Presenter : BasePresenter<View> {
 
         fun onViewCreated(viewCope: ViewCope)
     }

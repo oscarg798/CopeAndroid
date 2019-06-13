@@ -41,9 +41,10 @@ class CopeListModule {
 
     @Provides
     fun provideCopeListPresenter(
-        getCopeListInteractor: Interactor<List<Cope>, None>, @Named(
-            COROUTINE_IO_CONTEXT_PROVIDER
-        ) coroutineContextProvider: CoroutineContextProvider
+        getCopeListInteractor: Interactor<List<Cope>, None>,
+        @Named(        
+                    COROUTINE_IO_CONTEXT_PROVIDER        
+                ) coroutineContextProvider: CoroutineContextProvider
     ): CopeListContract.Presenter {
         return CopeListPresenter(getCopeListInteractor, ViewCopeMapper, coroutineContextProvider)
     }

@@ -6,7 +6,6 @@ import com.cope.core.constants.sharePreferenceGetter
 import com.cope.core.exceptions.DataNoFoundOnLocalStorageException
 import com.google.gson.Gson
 
-
 /**
  * @author Oscar Gallon on 2019-06-11.
  */

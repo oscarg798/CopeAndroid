@@ -44,6 +44,5 @@ class LoginPresenter(
                 view?.showError(R.string.general_error)
             }
         }
-
     }
 }

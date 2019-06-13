@@ -17,4 +17,3 @@ fun AppCompatActivity.startDeepLinkIntent(deepLink: DeepLink, arguments: Bundle?
     }
     startActivity(intent)
 }
-

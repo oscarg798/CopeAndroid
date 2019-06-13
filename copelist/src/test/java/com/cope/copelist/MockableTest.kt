@@ -6,7 +6,7 @@ import org.junit.Before
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
-interface MockableTest{
+interface MockableTest {
 
     @Before
     fun setup() {

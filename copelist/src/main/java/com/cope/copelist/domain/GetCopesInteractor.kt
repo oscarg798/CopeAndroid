@@ -8,7 +8,7 @@ import com.cope.core.repositories.CopeRepository
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
-class GetCopesInteractor(private val copeRepository: CopeRepository) : Interactor<List<Cope>,None> {
+class GetCopesInteractor(private val copeRepository: CopeRepository) : Interactor<List<Cope>, None> {
 
     override suspend fun invoke(params: None): List<Cope> {
         return copeRepository.getCopes()

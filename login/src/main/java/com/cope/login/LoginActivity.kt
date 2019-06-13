@@ -60,5 +60,4 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
     override fun showError(error: StringResourceId) {
         Toast.makeText(this, getString(error), Toast.LENGTH_LONG).show()
     }
-
 }

@@ -2,7 +2,6 @@ package com.cope.core.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 import java.util.*
 
 /**
@@ -16,7 +15,7 @@ data class ViewCope(
     val updateAt: Date,
     val content: List<ViewCopeContent>,
     val icon: String? = null
-) : Parcelable{
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -51,5 +50,4 @@ data class ViewCope(
             return arrayOfNulls(size)
         }
     }
-
 }

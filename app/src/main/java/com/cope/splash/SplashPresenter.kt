@@ -34,8 +34,6 @@ class SplashPresenter(
                     this@SplashPresenter.view?.navigateToLogin()
                 }
             }
-
         }
     }
-
 }
