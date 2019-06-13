@@ -3,7 +3,7 @@ package com.cope.copelist.di
 import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.copelist.data.service.GetCopeService
 import com.cope.copelist.domain.GetCopesInteractor
-import com.cope.copelist.domain.repository.CopeRepositoryImpl
+import com.cope.copelist.data.repository.CopeRepositoryImpl
 import com.cope.copelist.fragment.CopeListContract
 import com.cope.copelist.fragment.CopeListPresenter
 import com.cope.core.CoroutineContextProvider

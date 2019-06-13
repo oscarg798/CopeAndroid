@@ -1,4 +1,4 @@
-package com.cope.copelist.domain.repository
+package com.cope.copelist.data.repository
 
 import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.copelist.data.service.GetCopeService

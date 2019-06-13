@@ -3,7 +3,7 @@ package com.cope.copelist
 import com.cope.copelist.data.entities.APICope
 import com.cope.copelist.data.entities.APICopeContent
 import com.cope.copelist.data.service.GetCopeService
-import com.cope.copelist.domain.repository.CopeRepositoryImpl
+import com.cope.copelist.data.repository.CopeRepositoryImpl
 import com.cope.core.models.Cope
 import com.cope.core.models.CopeContent
 import io.mockk.coEvery
