@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/copecontentdetail" />
             <option value="$PROJECT_DIR$/copedetail" />
             <option value="$PROJECT_DIR$/copelist" />
             <option value="$PROJECT_DIR$/core" />
