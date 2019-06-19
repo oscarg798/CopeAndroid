@@ -9,6 +9,6 @@ import com.cope.core.models.ViewCopeContent
 object ViewCopeContentMapper {
 
     fun map(copeContent: CopeContent): ViewCopeContent {
-        return ViewCopeContent(copeContent.id, copeContent.text)
+        return ViewCopeContent(copeContent.id, copeContent.text, copeContent.createdAt, copeContent.updatedAt)
     }
 }

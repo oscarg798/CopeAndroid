@@ -24,11 +24,39 @@
                   android:id="@+id/tvText"
                   android:layout_marginEnd="8dp"
                   android:textColor="@color/white"
+                  android:ellipsize="end"
                   android:maxLines="10"
                   android:layout_marginStart="8dp"
                   tools:text="The greating you are waiting for"
                   app:layout_constraintStart_toStartOf="parent"
                   android:fontFamily="@font/open_sans_semibold"/>
 
+        <ImageView android:layout_width="match_parent" android:layout_height="1dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   android:background="@color/cope_item_divider_bg"
+                   android:layout_marginTop="8dp"
+                   android:id="@+id/ivDivider"
+                   app:layout_constraintTop_toBottomOf="@+id/tvText"
+                   app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView android:layout_width="0dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/ivDivider"
+                  android:id="@+id/tvCreatedAt"
+                  android:textColor="@color/cope_url_text_color"
+                  android:textSize="12sp"
+                  tools:text="@string/created_at_format"
+                  android:layout_height="wrap_content"/>
+
+        <TextView android:layout_width="0dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/tvCreatedAt"
+                  android:id="@+id/tvUpdatedAt"
+                  android:textColor="@color/cope_url_text_color"
+                  android:textSize="12sp"
+                  tools:text="@string/updated_at_format"
+                  android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

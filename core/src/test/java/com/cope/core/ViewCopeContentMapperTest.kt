@@ -18,11 +18,17 @@ class ViewCopeContentMapperTest {
         }
 
         val result = whenever {
-            mapper.map(CopeContent("1", "2"))
+            mapper.map(CopeContent("1", "2", DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")))
         }
 
         then {
-            result shouldEqual ViewCopeContent("1", "2")
+            result shouldEqual ViewCopeContent(
+                "1",
+                "2",
+                DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")
+            )
         }
     }
 }

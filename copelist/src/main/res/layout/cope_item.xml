@@ -82,8 +82,7 @@
                   android:textColor="@color/cope_url_text_color"
                   android:text="@string/updated_at_format"
                   android:textSize="12sp"
-                  android:gravity="end
-"
+                  android:gravity="end"
                   android:fontFamily="@font/open_sans"
                   app:layout_constraintTop_toBottomOf="@+id/ivDivider"
                   app:layout_constraintEnd_toEndOf="parent"

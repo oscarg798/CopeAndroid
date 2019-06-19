@@ -12,7 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cope.copelist.fragment.CopeAdapter
 import com.cope.copelist.fragment.CopeListFragment
-import com.cope.core.CoreApplication
+import com.cope.core.CoreTestApplication
 import com.cope.core.models.Cope
 import org.amshove.kluent.shouldEqual
 import org.hamcrest.Description
@@ -27,7 +27,7 @@ import java.util.*
  * @author Oscar Gallon on 2019-06-11.
  */
 @RunWith(AndroidJUnit4::class)
-@Config(manifest = "AndroidManifest.xml", application = CoreApplication::class)
+@Config(manifest = "AndroidManifest.xml", application = CoreTestApplication::class)
 class CopeListFragmentTest {
 
     @Test
@@ -68,8 +68,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(matches(hasDescendant(withText("My search on google"))))
         }
@@ -86,8 +92,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-           (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(matches(hasDescendant(withText("My search on google"))))
             onView(nthChildOf(withId(R.id.rvCopes), 0))
@@ -106,8 +118,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-           (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(
                     matches(
@@ -130,8 +148,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-           (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(
                     matches(
@@ -154,8 +178,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(
                     matches(
@@ -178,8 +208,14 @@ class CopeListFragmentTest {
 
         scenario.onFragment {
             val recyclerView = it.view!!.findViewById<RecyclerView>(R.id.rvCopes)
-            (recyclerView.adapter as CopeAdapter).add(listOf(Cope("1", "www.google.com", "My search on google", Date(),
-                Date(), listOf())))
+            (recyclerView.adapter as CopeAdapter).add(
+                listOf(
+                    Cope(
+                        "1", "www.google.com", "My search on google", Date(),
+                        Date(), listOf()
+                    )
+                )
+            )
             onView(nthChildOf(withId(R.id.rvCopes), 0))
                 .check(
                     matches(

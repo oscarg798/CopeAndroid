@@ -26,8 +26,18 @@ class ViewCopeMapperTest {
             mapper.map(
                 Cope(
                     "1", "2", "3", createdAndUpdatedAtDate, createdAndUpdatedAtDate, listOf(
-                        CopeContent("11", "12"),
-                        CopeContent("13", "14")
+                        CopeContent(
+                            "11",
+                            "12",
+                            DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                            DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")
+                        ),
+                        CopeContent(
+                            "13",
+                            "14",
+                            DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                            DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")
+                        )
                     ), "7"
                 )
             )
@@ -36,7 +46,18 @@ class ViewCopeMapperTest {
         then {
             result shouldEqual ViewCope(
                 "1", "2", "3", createdAndUpdatedAtDate, createdAndUpdatedAtDate, listOf(
-                    ViewCopeContent("11", "12"), ViewCopeContent("13", "14")
+                    ViewCopeContent(
+                        "11",
+                        "12",
+                        DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                        DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")
+                    ),
+                    ViewCopeContent(
+                        "13",
+                        "14",
+                        DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z"),
+                        DateParser.getCopeDateFromBackendDateAsString("2019-06-12T16:48:13.477Z")
+                    )
                 ), "7"
             )
         }

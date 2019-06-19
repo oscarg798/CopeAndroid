@@ -11,7 +11,6 @@ import okhttp3.mockwebserver.MockWebServer
 import org.amshove.kluent.shouldEqual
 import org.junit.Before
 import org.junit.Test
-import java.util.*
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -34,7 +33,7 @@ class GetCopeServiceTest : MockServerTest {
                             "        \"content\": [\n" +
                             "            {\n" +
                             "                \"_id\": \"5d012ccdd252d3a6f7ef1edf\",\n" +
-                            "                \"text\": \"Lindo \",\n" +
+                            "                \"text\": \"Lindo\",\n" +
                             "                \"cope\": \"5d012ccdd252d3a6f7ef1ede\",\n" +
                             "                \"createdAt\": \"2019-06-12T16:48:13.507Z\",\n" +
                             "                \"updatedAt\": \"2019-06-12T16:48:13.507Z\",\n" +
@@ -78,7 +77,14 @@ class GetCopeServiceTest : MockServerTest {
                 "RecyclerView.RecycledViewPool  |  Android Developers",
                 DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
                 DateParser.getBackendDate("2019-06-12T16:48:13.510Z"),
-                listOf(APICopeContent("5d012ccdd252d3a6f7ef1edf", "Lindo")),
+                listOf(
+                    APICopeContent(
+                        "5d012ccdd252d3a6f7ef1edf",
+                        "Lindo",
+                        DateParser.getBackendDate("2019-06-12T16:48:13.507Z"),
+                        DateParser.getBackendDate("2019-06-12T16:48:13.507Z")
+                    )
+                ),
                 "nace una flor"
             )
         }

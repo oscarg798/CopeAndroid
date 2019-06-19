@@ -43,6 +43,19 @@ dependencies {
     def networkingDependencies = rootProject.ext.networking
     def developmentDependencies = rootProject.ext.development
 
+    implementation applicationDependencies.picasso
+    implementation androidDependencies.appCompat
+    implementation androidDependencies.cardView
+    implementation androidDependencies.recyclerView
+    implementation androidDependencies.design
+    implementation androidDependencies.constraintLayout
+    implementation androidDependencies.appCompatV4
+    implementation androidDependencies.appCompatV7
+    implementation androidDependencies.preferenceV7
+    implementation androidDependencies.preferenceV14
+    implementation androidDependencies.customTabs
+    implementation androidDependencies.multidex
+
     //Kotlin
     implementation applicationDependencies.kotlinJDK
 

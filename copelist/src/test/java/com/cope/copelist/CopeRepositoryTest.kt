@@ -2,9 +2,10 @@ package com.cope.copelist
 
 import com.cope.copelist.data.entities.APICope
 import com.cope.copelist.data.entities.APICopeContent
-import com.cope.copelist.data.service.GetCopeService
+import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.copelist.data.repository.CopeRepositoryImpl
-import com.cope.core.models.Cope
+import com.cope.copelist.data.service.GetCopeService
+import com.cope.core.DateParser
 import com.cope.core.models.CopeContent
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
@@ -21,10 +22,6 @@ class CopeRepositoryTest : MockableTest {
 
     @MockK
     lateinit var getCopeService: GetCopeService
-
-    private val createdAt = Date()
-    private val updatedAt = Date()
-
     @Before
     override fun setup() {
         super.setup()
@@ -32,16 +29,23 @@ class CopeRepositoryTest : MockableTest {
         coEvery {
             getCopeService.getCopes()
         }.answers {
-            listOf(APICope("1", "2", "3", createdAt, updatedAt, listOf(APICopeContent("12", "13"),
-                APICopeContent("15", "16")
-            ), "4"))
+            listOf(
+                APICope(
+                    "1", "2", "3", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"), DateParser.getBackendDate("2019-06-12T16:48:13.477Z"), listOf(
+                        APICopeContent("12", "13", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z")),
+                        APICopeContent("15", "16", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z"))
+                    ), "4"
+                )
+            )
         }
     }
 
     @Test
     fun `should get copes`() {
         val repository = given {
-            CopeRepositoryImpl(getCopeService)
+            CopeRepositoryImpl(getCopeService, APICopeMapper)
         }
 
         val result = whenever {
@@ -51,8 +55,26 @@ class CopeRepositoryTest : MockableTest {
         }
 
         then {
-            result shouldEqual listOf(Cope("1", "2", "3", createdAt, updatedAt, listOf(CopeContent("12", "13"),
-                CopeContent("15", "16")), "4"))
+            result[0].id shouldEqual "1"
+            result[0].url shouldEqual "2"
+            result[0].title shouldEqual "3"
+            val calendar1 = Calendar.getInstance().apply {
+                result[0].createdAt
+            }
+
+            val calendar2 = Calendar.getInstance().apply {
+                DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
+            }
+            calendar1.get(Calendar.DAY_OF_MONTH) shouldEqual calendar2.get(Calendar.DAY_OF_MONTH)
+            calendar1.get(Calendar.MONTH) shouldEqual calendar2.get(Calendar.MONTH)
+            calendar1.get(Calendar.YEAR) shouldEqual calendar2.get(Calendar.YEAR)
+            result[0].icon shouldEqual "4"
+            calendar1.apply {
+                result[0].updateAt
+            }
+            calendar1.get(Calendar.DAY_OF_MONTH) shouldEqual calendar2.get(Calendar.DAY_OF_MONTH)
+            calendar1.get(Calendar.MONTH) shouldEqual calendar2.get(Calendar.MONTH)
+            calendar1.get(Calendar.YEAR) shouldEqual calendar2.get(Calendar.YEAR)
         }
     }
 }

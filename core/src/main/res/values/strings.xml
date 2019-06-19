@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Core</string>
+    <string name="created_at_format">Created at: %s</string>
+    <string name="updated_at_format">Updated at: %s</string>
 </resources>

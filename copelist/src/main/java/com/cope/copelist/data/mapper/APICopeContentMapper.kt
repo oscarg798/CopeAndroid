@@ -1,6 +1,7 @@
 package com.cope.copelist.data.mapper
 
 import com.cope.copelist.data.entities.APICopeContent
+import com.cope.core.DateParser
 import com.cope.core.models.CopeContent
 
 /**
@@ -9,6 +10,10 @@ import com.cope.core.models.CopeContent
 object APICopeContentMapper {
 
     fun map(apiCopeContent: APICopeContent): CopeContent {
-        return CopeContent(apiCopeContent.id, apiCopeContent.text)
+        return CopeContent(
+            apiCopeContent.id, apiCopeContent.text,
+            DateParser.getCopeDateFromBackendDate(apiCopeContent.createdAt),
+            DateParser.getCopeDateFromBackendDate(apiCopeContent.updatedAt)
+        )
     }
 }

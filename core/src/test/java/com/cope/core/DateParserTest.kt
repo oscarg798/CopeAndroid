@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat
  */
 class DateParserTest {
 
-    private val dateFormat = SimpleDateFormat("mm/dd/yyyy")
+    private val dateFormat = SimpleDateFormat("MM/dd/yyyy")
 
     @Test
     fun `should parse date`() {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="AppThemeAppBarMaterialAnimatedRightToLeft" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowAnimationStyle">@style/RightToLeftAnimation</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="RightToLeftAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/enter_animation_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/exit_animation_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/enter_animation_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/exit_animation_right</item>
+    </style>
+</resources>

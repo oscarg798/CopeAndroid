@@ -3,4 +3,6 @@
     <color name="white">#ffffff</color>
     <color name="cope_url_text_color">#50ffffff</color>
     <color name="background_color">#23262e</color>
+    <color name="cope_item_divider_bg">#90ffffff</color>
+    <color name="cope_item_bg">#343845</color>
 </resources>

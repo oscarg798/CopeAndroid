@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <library-updates>
+      <library-update>
+        <group-id>androidx.cardview</group-id>
+        <name>cardview</name>
+        <version>1.0.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test</group-id>
+        <name>runner</name>
+        <version>1.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>org.jetbrains.kotlin</group-id>
+        <name>kotlin-stdlib-jdk7</name>
+        <version>1.3.31</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>org.jetbrains.kotlinx</group-id>
+        <name>kotlinx-coroutines-core</name>
+        <version>1.3.0-M1</version>
+        <repository>Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>org.jetbrains.kotlinx</group-id>
+        <name>kotlinx-coroutines-android</name>
+        <version>1.3.0-M1</version>
+        <repository>Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.airbnb</group-id>
+        <name>deeplinkdispatch</name>
+        <version>4.1.0</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.multidex</group-id>
+        <name>multidex</name>
+        <version>2.0.1</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.espresso</group-id>
+        <name>espresso-contrib</name>
+        <version>3.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.espresso</group-id>
+        <name>espresso-intents</name>
+        <version>3.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test</group-id>
+        <name>rules</name>
+        <version>1.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.annotation</group-id>
+        <name>annotation</name>
+        <version>1.1.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.espresso</group-id>
+        <name>espresso-core</name>
+        <version>3.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.recyclerview</group-id>
+        <name>recyclerview</name>
+        <version>1.1.0-alpha06</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.legacy</group-id>
+        <name>legacy-support-v4</name>
+        <version>1.0.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>io.mockk</group-id>
+        <name>mockk</name>
+        <version>1.9.3.kotlin12</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.browser</group-id>
+        <name>browser</name>
+        <version>1.0.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.squareup.okhttp3</group-id>
+        <name>mockwebserver</name>
+        <version>4.0.0-alpha02</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.android.material</group-id>
+        <name>material</name>
+        <version>1.1.0-alpha07</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.airbnb</group-id>
+        <name>deeplinkdispatch-processor</name>
+        <version>4.1.0</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.legacy</group-id>
+        <name>legacy-preference-v14</name>
+        <version>1.0.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>org.mockito</group-id>
+        <name>mockito-core</name>
+        <version>2.28.2</version>
+        <repository>Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.constraintlayout</group-id>
+        <name>constraintlayout</name>
+        <version>2.0.0-beta1</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>junit</group-id>
+        <name>junit</name>
+        <version>4.13-beta-3</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.uiautomator</group-id>
+        <name>uiautomator</name>
+        <version>2.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.appcompat</group-id>
+        <name>appcompat</name>
+        <version>1.1.0-beta01</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.preference</group-id>
+        <name>preference</name>
+        <version>1.1.0-beta01</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.dagger</group-id>
+        <name>dagger-android-support</name>
+        <version>2.23.1</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.squareup.okhttp3</group-id>
+        <name>okhttp</name>
+        <version>4.0.0-alpha02</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>org.robolectric</group-id>
+        <name>robolectric</name>
+        <version>4.3</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.code.findbugs</group-id>
+        <name>jsr305</name>
+        <version>3.0.2</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.squareup.retrofit2</group-id>
+        <name>converter-gson</name>
+        <version>2.6.0</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.fragment</group-id>
+        <name>fragment-testing</name>
+        <version>1.1.0-beta01</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.squareup.okhttp3</group-id>
+        <name>logging-interceptor</name>
+        <version>4.0.0-alpha02</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.dagger</group-id>
+        <name>dagger-android-processor</name>
+        <version>2.23.1</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.jakewharton.retrofit</group-id>
+        <name>retrofit2-kotlin-coroutines-adapter</name>
+        <version>0.9.2</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.ext</group-id>
+        <name>truth</name>
+        <version>1.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.dagger</group-id>
+        <name>dagger</name>
+        <version>2.23.1</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.dagger</group-id>
+        <name>dagger-compiler</name>
+        <version>2.23.1</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.test.ext</group-id>
+        <name>junit</name>
+        <version>1.1.1</version>
+        <repository>Google</repository>
+      </library-update>
+    </library-updates>
+    <last-search-timestamp>1560308123744</last-search-timestamp>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0a526471-2aca-4afc-a102-09dcd90953f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cope/deeplink/DeepLinkHandlerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cope/deeplink/DeepLinkHandlerActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copedetail/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copedetail/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copedetail/src/main/res/layout/activity_cope_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copedetail/src/main/res/layout/activity_cope_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copedetail/src/main/res/layout/cope_content_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copedetail/src/main/res/layout/cope_content_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/CopeDetailActivityTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/CopeDetailActivityTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/entities/APICopeContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/entities/APICopeContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeContentMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeContentMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/main/res/layout/cope_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/main/res/layout/cope_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeContentMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeContentMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeListFragmentTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeListFragmentTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/GetCopeServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/GetCopeServiceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/CoreApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/CoreApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Argument+Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Argument+Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/DeepLink+Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/DeepLink+Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/mapper/ViewCopeContentMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/mapper/ViewCopeContentMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/CopeContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/CopeContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCope.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCopeContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCopeContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/cope/core/DateParserTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/cope/core/DateParserTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeContentMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeContentMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CopeAndroid" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/fragment/CopeItemViewHolder.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Constants.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeContentItemViewHolder.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/copedetail/src/main/res/layout/cope_content_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>re</find>
+      <find>String</find>
+      <find>picas</find>
+      <find>parse</find>
+      <find>settings</find>
+      <find>robo</find>
+      <find>picass</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/exceptions/CopeContentArgumentNotFoundException.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/di/CopeContentDetailContract.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeDetailPresenter.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeDetailContentModule.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/di/CopeDetailContentModule.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/di/CopeContentDetailComponent.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/di/CopeDetailComponent.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/res/layout/activity_cope_content_detail.xml" />
+        <option value="$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/Test+Extensions.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/test/java/com/nequi/copecontentdetail/Test+Extensions.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/deeplink/CopeContentDetailDeepLinkModule.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/DeepLink+Constants.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeContentDetailActivity.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeClickListener.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeContentClickListener.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeContentClickListener.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailAdapter.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cope/deeplink/DeepLinkHandlerActivity.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopePresenter.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailActivity.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/main/res/layout/cope_item.xml" />
+        <option value="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/fragment/CopeItemViewHolder.kt" />
+        <option value="$PROJECT_DIR$/core/build.gradle" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/cope/core/CoreTestApplication.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/CoreApplication.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeListFragmentTest.kt" />
+        <option value="$PROJECT_DIR$/copecontentdetail/src/test/java/com/nequi/copecontentdetail/CopeDetailActivityTest.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/copelist/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCopeContent.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCope.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/models/CopeContent.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/entities/APICopeContent.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeContentMapper.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/mapper/ViewCopeContentMapper.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/GetCopeServiceTest.kt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Constants.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeMapperTest.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeContentMapperTest.kt" />
+        <option value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeRepositoryTest.kt" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeMapperTest.kt" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeContentMapperTest.kt" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/cope/core/DateParserTest.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/CopeDetailActivityTest.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeContentItemViewHolder.kt" />
+        <option value="$PROJECT_DIR$/copedetail/src/main/res/layout/cope_content_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="17" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="943" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CopeAndroid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopeAndroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="FEO [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.cope" />
+    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="device.picker.selection" value="FEO" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.nequi.copedetail" />
+      <recent name="com.nequi.copecontentdetail" />
+      <recent name="com.nequi.copecontentdetail.di" />
+      <recent name="com.nequi.copedetail.colorfactory" />
+      <recent name="com.nequi.copedetail.deeplink" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.cope.core" />
+      <recent name="com.cope.copelist" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.nequi.copecontentdetail" />
+      <recent name="com.nequi.copedetail.domian" />
+      <recent name="com.cope.copelist" />
+      <recent name="com.cope" />
+      <recent name="com.cope.signup" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nequi.copedetail" />
+      <recent name="com.cope.core" />
+      <recent name="com.cope.signup.data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/src/main/java/com/cope/core/constants" />
+      <recent name="$PROJECT_DIR$/core/src/main/java/com/cope/core/extensions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/copecontentdetail/src/test/java/com/nequi/copecontentdetail" />
+      <recent name="$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail" />
+      <recent name="$PROJECT_DIR$/core/src/test/java/com/cope/core" />
+      <recent name="$PROJECT_DIR$/core/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/copelist/src/main" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration name="DateParserTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cope.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cope.core" />
+      <option name="MAIN_CLASS_NAME" value="com.cope.core.DateParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewCopeMapperTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cope.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cope.core" />
+      <option name="MAIN_CLASS_NAME" value="com.cope.core.ViewCopeMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="copelist in copelist" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="copelist" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <dir value="$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="core in core" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <dir value="$PROJECT_DIR$/core/src/test/java/com/cope/core" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="login" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CopeDetailActivityTest.should  display content created at" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="copedetail" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nequi.copedetail.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nequi.copedetail" />
+      <option name="MAIN_CLASS_NAME" value="com.nequi.copedetail.CopeDetailActivityTest" />
+      <option name="METHOD_NAME" value="should  display content created at" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android JUnit.copelist in copelist" />
+      <item itemvalue="Android JUnit.ViewCopeMapperTest" />
+      <item itemvalue="Android JUnit.core in core" />
+      <item itemvalue="Android JUnit.DateParserTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.DateParserTest" />
+        <item itemvalue="Android JUnit.core in core" />
+        <item itemvalue="Android JUnit.copelist in copelist" />
+        <item itemvalue="Android JUnit.ViewCopeMapperTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a526471-2aca-4afc-a102-09dcd90953f7" name="Default Changelist" comment="" />
+      <created>1559317121752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559317121752</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="APICopeMapperTest - 2019.06.13 at 18h 56m 59s.xml">
+      <configuration name="APICopeMapperTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="APICopeContentMapperTest - 2019.06.13 at 19h 00m 52s.xml">
+      <configuration name="APICopeContentMapperTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="copelist_in_copelist - 2019.06.13 at 19h 01m 25s.xml">
+      <configuration name="copelist in copelist" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="copelist_in_copelist - 2019.06.13 at 19h 02m 36s.xml">
+      <configuration name="copelist in copelist" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ViewCopeMapperTest - 2019.06.13 at 19h 04m 13s.xml">
+      <configuration name="ViewCopeMapperTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="copelist_in_copelist - 2019.06.13 at 19h 04m 36s.xml">
+      <configuration name="copelist in copelist" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="core_in_core - 2019.06.13 at 19h 04m 51s.xml">
+      <configuration name="core in core" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="DateParserTest - 2019.06.13 at 19h 05m 41s.xml">
+      <configuration name="DateParserTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CopeDetailActivityTest_should__display_content_created_at - 2019.06.13 at 19h 07m 26s.xml">
+      <configuration name="CopeDetailActivityTest.should  display content created at" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CopeDetailActivityTest_should__display_content_created_at - 2019.06.13 at 19h 08m 30s.xml">
+      <configuration name="CopeDetailActivityTest.should  display content created at" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="17" y="23" width="1680" height="943" extended-state="1" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49914238" visible="true" weight="0.2918193" />
+      <window_info id="Structure" order="3" sideWeight="0.50085765" side_tool="true" weight="0.2918193" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Build Variants" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Designer" order="7" />
+      <window_info id="Resources Explorer" order="8" weight="0.32967034" />
+      <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.4993895" weight="0.52408934" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="0.32902467" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3560517" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32902467" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.501221" side_tool="true" weight="0.26909518" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.498779" weight="0.26909518" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.42890716" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.40188015" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32967034" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Fabric" order="4" weight="0.32967034" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.32967034" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49914238" visible="true" weight="0.2918193" />
+      <window_info id="Structure" order="3" sideWeight="0.50085765" side_tool="true" weight="0.2918193" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Build Variants" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Designer" order="7" />
+      <window_info id="Resources Explorer" order="8" weight="0.32967034" />
+      <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.4993895" weight="0.52408934" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="0.32902467" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3560517" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32902467" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.501221" side_tool="true" weight="0.26909518" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.498779" weight="0.26909518" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.42890716" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.3149236" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32967034" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Fabric" order="4" weight="0.32967034" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Preview" order="6" visible="true" weight="0.32967034" />
+    </layout-to-restore>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/login/src/test/java/com/cope/login/LoginActivityTest.kt</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/signup/src/main/java/com/cope/signup/SignUpActivity.kt</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/fragment/CopeListPresenter.kt</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailActivity.kt</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/CopeDetailActivityTest.kt</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeMapper.kt</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>formatter.format(candidateDate)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>candidateDate</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>formatter.parse(backendFormatter.format(candidateDate))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>candidateDate.time</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>formatter.format(backendFormatter.parse(candidateDate))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>formatter.format(backendFormatter.format(candidateDate))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>backendFormatter.format(candidateDate)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>formatter.parse(formatter.format(candidateDate))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>apiCope</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/deeplink/CopeContentDetailDeepLinkModule.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/DeepLink+Constants.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeContentClickListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cope/deeplink/DeepLinkHandlerActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding>
+            <element signature="e#27#584#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/contract/BasePresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/fragment/CopeListFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopePresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copecontentdetail/src/main/java/com/nequi/copecontentdetail/CopeContentDetailActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/res/layout/cope_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="60" column="58" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/res/layout/activity_cope_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/models/Cope.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="59" selection-start-line="59" selection-end-line="59" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/CoreApplication.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/cope/core/CoreTestApplication.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#23#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/CoreTestApplication.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copecontentdetail/src/test/java/com/nequi/copecontentdetail/CopeDetailActivityTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCopeContent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <element signature="e#30#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/models/ViewCope.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/models/CopeContent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/entities/APICopeContent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#41#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeListFragmentTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#27#888#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/mapper/ViewCopeContentMapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="86" selection-start-line="11" selection-start-column="86" selection-end-line="11" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+          <folding>
+            <element signature="e#2922#2923#0" expanded="true" />
+            <element signature="e#2966#2967#0" expanded="true" />
+            <element signature="e#11040#11204#0" expanded="true" />
+            <element signature="e#11203#11204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/GetCopeServiceTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeContentMapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/entities/APICope.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/DateParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/data/mapper/APICopeMapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeMapperTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="47" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/APICopeContentMapperTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="76" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/test/java/com/cope/copelist/CopeRepositoryTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="34" column="77" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeMapperTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="54" column="97" selection-start-line="54" selection-start-column="97" selection-end-line="54" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/cope/core/ViewCopeContentMapperTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/cope/core/DateParserTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/test/java/com/nequi/copedetail/CopeDetailActivityTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeDetailAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copelist/src/main/java/com/cope/copelist/fragment/CopeItemViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/cope/core/constants/Constants.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/java/com/nequi/copedetail/CopeContentItemViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copedetail/src/main/res/layout/cope_content_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

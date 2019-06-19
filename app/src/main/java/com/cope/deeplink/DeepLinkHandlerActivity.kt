@@ -9,13 +9,21 @@ import com.cope.login.LoginDeepLinkModule
 import com.cope.login.LoginDeepLinkModuleLoader
 import com.cope.signup.SignUpDeepLinkModule
 import com.cope.signup.SignUpDeepLinkModuleLoader
-import com.nequi.copedetail.domian.CopeDetailDeepLinkModule
-import com.nequi.copedetail.domian.CopeDetailDeepLinkModuleLoader
+import com.nequi.copecontentdetail.deeplink.CopeContentDetailDeepLinkModule
+import com.nequi.copecontentdetail.deeplink.CopeContentDetailDeepLinkModuleLoader
+import com.nequi.copedetail.deeplink.CopeDetailDeepLinkModule
+import com.nequi.copedetail.deeplink.CopeDetailDeepLinkModuleLoader
 
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
-@DeepLinkHandler(SignUpDeepLinkModule::class, LoginDeepLinkModule::class, CopeListDeepLinkModule::class, CopeDetailDeepLinkModule::class)
+@DeepLinkHandler(
+    SignUpDeepLinkModule::class,
+    LoginDeepLinkModule::class,
+    CopeListDeepLinkModule::class,
+    CopeDetailDeepLinkModule::class,
+    CopeContentDetailDeepLinkModule::class
+)
 class DeepLinkHandlerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +32,8 @@ class DeepLinkHandlerActivity : AppCompatActivity() {
             SignUpDeepLinkModuleLoader(),
             LoginDeepLinkModuleLoader(),
             CopeListDeepLinkModuleLoader(),
-            CopeDetailDeepLinkModuleLoader()
+            CopeDetailDeepLinkModuleLoader(),
+            CopeContentDetailDeepLinkModuleLoader()
         )
         deepLinkDelegate.dispatchFrom(this)
         finish()

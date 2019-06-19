@@ -3,6 +3,7 @@ package com.cope.core
 import android.app.Application
 import com.cope.core.di.*
 import com.cope.core.exceptions.CoreComponentNotInitializatedException
+import com.squareup.picasso.Picasso
 
 /**
  * @author Oscar Gallon on 2019-06-06.

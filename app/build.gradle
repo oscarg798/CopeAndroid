@@ -96,4 +96,5 @@ dependencies {
     implementation project(path: ':signup')
     implementation project(path: ':copelist')
     implementation project(path: ':copedetail')
+    implementation project(path: ':copecontentdetail')
 }
