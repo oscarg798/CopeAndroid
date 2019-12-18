@@ -1,10 +1,7 @@
 package com.cope.login
 
 import com.cope.core.MockableTest
-import com.cope.core.given
 import com.cope.core.repositories.LocalStorageRepository
-import com.cope.core.then
-import com.cope.core.whenever
 import com.cope.login.domain.interactor.SaveTokenInteractor
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -34,20 +31,14 @@ class SaveTokenInteractorTest : MockableTest {
 
     @Test
     fun `should save token`() {
-        val interactor = given {
-            SaveTokenInteractor(localStorageRepository)
+        val interactor = SaveTokenInteractor(localStorageRepository)
+
+        runBlocking {
+            interactor("123")
         }
 
-        whenever {
-            runBlocking {
-                interactor("123")
-            }
-        }
-
-        then {
-            verify {
-                localStorageRepository.saveData("token", "123")
-            }
+        verify {
+            localStorageRepository.saveData("token", "123")
         }
     }
 }

@@ -103,4 +103,5 @@ dependencies {
     androidTestImplementation testDependencies.mockk
 
     implementation project(path: ':core')
+    testImplementation project(path: ':core')
 }

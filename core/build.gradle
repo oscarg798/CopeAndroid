@@ -79,6 +79,7 @@ dependencies {
     testImplementation testDependencies.kluent
 
     //Test
+    implementation testDependencies.mockk
     testImplementation testDependencies.mockk
     testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.junit
