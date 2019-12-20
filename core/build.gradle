@@ -76,6 +76,8 @@ dependencies {
     implementation networkingDependencies.okhttp3
     implementation networkingDependencies.okhttpLoggingInterceptor
 
+    implementation 'com.google.firebase:firebase-perf:18.0.1'
+
     testImplementation testDependencies.kluent
 
     //Test

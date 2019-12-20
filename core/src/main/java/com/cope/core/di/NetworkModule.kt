@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
  * @author Oscar Gallon on 2019-06-06.
  */
 @Module
-class NetworkModule {
+object NetworkModule {
 
     @Provides
     fun provideGsonConverter(): GsonConverterFactory {
@@ -40,6 +40,7 @@ class NetworkModule {
         val builder = OkHttpClient.Builder()
             .connectTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
+            .addInterceptor(TrackingInterceptor())
             .writeTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
 
