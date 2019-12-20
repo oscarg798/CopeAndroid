@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion 28
@@ -98,3 +99,4 @@ dependencies {
     implementation project(path: ':copedetail')
     implementation project(path: ':copecontentdetail')
 }
+apply plugin: 'com.google.gms.google-services'

@@ -7,13 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
+
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -22,20 +23,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions.unitTests.includeAndroidResources = true
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
-androidExtensions {
-    experimental = true
-}
-kapt { generateStubs = true }
-
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     def androidDependencies = rootProject.ext.androidDependencies
     def acceptanceTesting = rootProject.ext.acceptanceTesting
     def applicationDependencies = rootProject.ext.mainApplication
@@ -43,7 +40,9 @@ dependencies {
     def networkingDependencies = rootProject.ext.networking
     def developmentDependencies = rootProject.ext.development
 
-    implementation applicationDependencies.picasso
+    //Kotlin
+    implementation applicationDependencies.kotlinJDK
+
     implementation androidDependencies.appCompat
     implementation androidDependencies.cardView
     implementation androidDependencies.recyclerView
@@ -56,8 +55,9 @@ dependencies {
     implementation androidDependencies.customTabs
     implementation androidDependencies.multidex
 
-    //Kotlin
-    implementation applicationDependencies.kotlinJDK
+
+    implementation 'com.airbnb:deeplinkdispatch:4.1.0'
+    kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
 
     //Dagger
     implementation applicationDependencies.dagger
@@ -74,18 +74,34 @@ dependencies {
     implementation networkingDependencies.gsonConverter
     implementation networkingDependencies.coroutineAdapter
     implementation networkingDependencies.okhttp3
-    implementation networkingDependencies.okhttpLoggingInterceptor
-
-    implementation 'com.google.firebase:firebase-perf:18.0.1'
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.google.firebase:firebase-analytics:17.2.1'
-
-
-    testImplementation testDependencies.kluent
+    testImplementation networkingDependencies.okhttpLoggingInterceptor
 
     //Test
-    implementation testDependencies.mockk
     testImplementation testDependencies.mockk
     testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.junit
+    testImplementation testDependencies.kluent
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.14.0'
+    testImplementation 'org.robolectric:robolectric:4.2.1'
+    testImplementation("androidx.test:runner:1.1.0")
+    testImplementation("androidx.test.ext:junit:1.0.0")
+    testImplementation("androidx.test.espresso:espresso-intents:3.1.0")
+    testImplementation("androidx.test.espresso:espresso-core:3.1.0")
+    testImplementation("androidx.test.ext:truth:1.0.0")
+
+    //Aceptance Testing
+    androidTestImplementation acceptanceTesting.androidAnnotations
+    androidTestImplementation acceptanceTesting.mockWebServer
+    androidTestImplementation acceptanceTesting.testRunner
+    androidTestImplementation acceptanceTesting.testRules
+    androidTestImplementation acceptanceTesting.espressoCore
+    androidTestImplementation acceptanceTesting.espressoContrib
+    androidTestImplementation acceptanceTesting.espressoIntents
+    androidTestImplementation acceptanceTesting.uiAutomator
+    androidTestImplementation testDependencies.mockitoCore
+    androidTestImplementation acceptanceTesting.daggerMock
+    androidTestImplementation testDependencies.mockk
+
+    implementation project(path: ':core')
+    testImplementation project(path: ':core')
 }
