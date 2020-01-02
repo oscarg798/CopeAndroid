@@ -1,6 +1,7 @@
 package com.cope.login
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
@@ -37,10 +38,11 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View {
 
             presenter.onLoginButtonPressed(email, password)
         }
-
+        
         tvSignUp?.setOnClickListener {
             startDeepLinkIntent(SIGNUP_DEEPLINK)
         }
+
     }
 
     override fun onResume() {
