@@ -13,6 +13,7 @@ import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
 import com.cope.core.models.None
 import com.cope.core.repositories.CopeRepository
+import com.cope.logger.Logger
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -42,10 +43,11 @@ class CopeListModule {
     @Provides
     fun provideCopeListPresenter(
         getCopeListInteractor: Interactor<List<Cope>, None>,
+        logger: Logger,
         @Named(        
                     COROUTINE_IO_CONTEXT_PROVIDER        
                 ) coroutineContextProvider: CoroutineContextProvider
     ): CopeListContract.Presenter {
-        return CopeListPresenter(getCopeListInteractor, ViewCopeMapper, coroutineContextProvider)
+        return CopeListPresenter(getCopeListInteractor, ViewCopeMapper,logger, coroutineContextProvider)
     }
 }

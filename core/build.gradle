@@ -36,56 +36,52 @@ kapt { generateStubs = true }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    def androidDependencies = rootProject.ext.androidDependencies
-    def acceptanceTesting = rootProject.ext.acceptanceTesting
-    def applicationDependencies = rootProject.ext.mainApplication
-    def testDependencies = rootProject.ext.unitTesting
-    def networkingDependencies = rootProject.ext.networking
-    def developmentDependencies = rootProject.ext.development
-
-    implementation applicationDependencies.picasso
-    implementation androidDependencies.appCompat
-    implementation androidDependencies.cardView
-    implementation androidDependencies.recyclerView
-    implementation androidDependencies.design
-    implementation androidDependencies.constraintLayout
-    implementation androidDependencies.appCompatV4
-    implementation androidDependencies.appCompatV7
-    implementation androidDependencies.preferenceV7
-    implementation androidDependencies.preferenceV14
-    implementation androidDependencies.customTabs
-    implementation androidDependencies.multidex
+    implementation picasso
+    implementation appCompat
+    implementation cardView
+    implementation recyclerView
+    implementation design
+    implementation constraintLayout
+    implementation appCompatV4
+    implementation appCompatV7
+    implementation preferenceV7
+    implementation preferenceV14
+    implementation customTabs
+    implementation multidex
 
     //Kotlin
-    implementation applicationDependencies.kotlinJDK
+    implementation kotlinJDK
 
     //Dagger
-    implementation applicationDependencies.dagger
-    implementation applicationDependencies.daggerAndroidSupport
-    kapt applicationDependencies.daggerCompiler
-    kapt applicationDependencies.daggerAndroidProcessor
+    implementation dagger
+    implementation daggerAndroidSupport
+    kapt daggerCompiler
+    kapt daggerAndroidProcessor
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
     //Coroutines
-    implementation applicationDependencies.kotlinCoroutines
-    implementation applicationDependencies.kotlinCoroutinesAndroid
+    implementation kotlinCoroutines
+    implementation kotlinCoroutinesAndroid
 
-    implementation networkingDependencies.retrofit
-    implementation networkingDependencies.gsonConverter
-    implementation networkingDependencies.coroutineAdapter
-    implementation networkingDependencies.okhttp3
-    implementation networkingDependencies.okhttpLoggingInterceptor
+    implementation retrofit
+    implementation gsonConverter
+    implementation coroutineAdapter
+    implementation okhttp3
+    implementation okhttpLoggingInterceptor
 
     implementation 'com.google.firebase:firebase-perf:18.0.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.firebase:firebase-analytics:17.2.1'
 
+    implementation 'ly.count.android:sdk-messaging:18.08.1'
 
-    testImplementation testDependencies.kluent
+
+    testImplementation kluent
 
     //Test
-    implementation testDependencies.mockk
-    testImplementation testDependencies.mockk
-    testImplementation testDependencies.mockitoCore
-    testImplementation testDependencies.junit
+    implementation mockk
+    testImplementation mockk
+    testImplementation mockitoCore
+    testImplementation junit
+    implementation project(path: ':logger')
 }

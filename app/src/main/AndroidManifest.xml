@@ -37,6 +37,19 @@
                 <data android:scheme="deep" />
             </intent-filter>
         </activity>
+
+
+        <service android:name="org.openudid.OpenUDID_service">
+            <intent-filter>
+                <action android:name="org.openudid.GETUDID" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="ly.count.android.sdk.ReferrerReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

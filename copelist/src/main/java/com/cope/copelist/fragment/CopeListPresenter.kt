@@ -5,6 +5,8 @@ import com.cope.core.interactor.Interactor
 import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
 import com.cope.core.models.None
+import com.cope.logger.LogEvent
+import com.cope.logger.Logger
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
 
@@ -14,6 +16,7 @@ import kotlinx.coroutines.withContext
 class CopeListPresenter(
     private val getCopeInteractor: Interactor<List<Cope>, None>,
     private val viewCopeMapper: ViewCopeMapper,
+    private val logger: Logger,
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : CopeListContract.Presenter {
 
@@ -21,6 +24,7 @@ class CopeListPresenter(
     override val parentJob: Job = Job()
 
     override fun onViewCreated() {
+        logger.log(LogEvent.View(CopeListFragment::class.java))
         getCopes()
     }
 

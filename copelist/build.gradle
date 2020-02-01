@@ -3,7 +3,6 @@ apply from: "$rootProject.projectDir/shared.gradle"
 
 dependencies {
 
-    def appDependencies = rootProject.ext.mainApplication
-
-    implementation appDependencies.picasso
+    implementation picasso
+    implementation project(path: ':logger')
 }
