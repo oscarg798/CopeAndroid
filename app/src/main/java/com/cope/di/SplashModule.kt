@@ -4,6 +4,7 @@ import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.constants.Token
 import com.cope.core.interactor.GetTokenInteractor
+import com.cope.core.interactor.InitFirebaseRemoteConfigUseCase
 import com.cope.core.interactor.Interactor
 import com.cope.core.models.None
 import com.cope.core.repositories.LocalStorageRepository
@@ -27,9 +28,14 @@ class SplashModule {
     @Provides
     fun provideSplashPresenter(
         getTokenInteractor: Interactor<Token, None>,
+        initFirebaseRemoteConfigUseCase: Interactor<Unit, Unit>,
         @Named(COROUTINE_IO_CONTEXT_PROVIDER)
         coroutineContextProvider: CoroutineContextProvider
     ): SplashContract.Presenter {
-        return SplashPresenter(getTokenInteractor, coroutineContextProvider)
+        return SplashPresenter(
+            getTokenInteractor,
+            initFirebaseRemoteConfigUseCase,
+            coroutineContextProvider
+        )
     }
 }

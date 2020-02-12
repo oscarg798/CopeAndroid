@@ -1,5 +1,6 @@
 package com.cope.logger
 
+import android.content.Context
 import com.cope.logger.exceptions.LogEventIsNotViewTypeException
 import io.mockk.MockKAnnotations
 import io.mockk.Runs
@@ -16,20 +17,23 @@ import org.junit.Before
 
 class CountlyLoggerProcessorTest {
 
-    @MockK
+    @MockK(relaxed = true)
     lateinit var countly: Countly
+
+    @MockK(relaxed = true)
+    lateinit var context: Context
 
     private lateinit var logger: LoggerProcessor
 
     @Before
     fun setup() {
         MockKAnnotations.init(this)
-        logger = CountlyLoggerProcessor(countly)
+        logger = CountlyLoggerProcessor(context, countly)
         every { countly.recordView(MyView::class.java.name) }.answers { countly }
     }
 
     @Test
-    fun `given a event when its from view type then it should be supported`(){
+    fun `given a event when its from view type then it should be supported`() {
         val event = LogEvent.View(MyView::class.java)
         logger.isEventSupported(event) `should equal` true
     }

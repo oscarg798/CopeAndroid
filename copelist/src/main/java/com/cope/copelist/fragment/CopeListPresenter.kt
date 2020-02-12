@@ -1,9 +1,12 @@
 package com.cope.copelist.fragment
 
+import android.util.Log
 import com.cope.core.CoroutineContextProvider
+import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.interactor.Interactor
 import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
+import com.cope.core.models.FeatureFlag
 import com.cope.core.models.None
 import com.cope.logger.LogEvent
 import com.cope.logger.Logger
@@ -17,6 +20,7 @@ class CopeListPresenter(
     private val getCopeInteractor: Interactor<List<Cope>, None>,
     private val viewCopeMapper: ViewCopeMapper,
     private val logger: Logger,
+    private val featureFlagHandler: FeatureFlagHandler,
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : CopeListContract.Presenter {
 
@@ -50,16 +54,21 @@ class CopeListPresenter(
     private fun getCopes() {
         view?.showProgressDialog()
         launchJobOnMainDispatchers {
-            try {
-                val copes = withContext(coroutinesContextProvider.backgroundContext) {
+            runCatching {
+                withContext(coroutinesContextProvider.backgroundContext) {
+                    Log.i(
+                        "CULO",
+                        featureFlagHandler.isFeatureEnabled(FeatureFlag.NewList).toString()
+                    )
                     getCopeInteractor(None)
                 }
-                view?.showCopes(copes)
-            } catch (t: Throwable) {
-                view?.showError(t.message ?: "Something went wrong")
-            } finally {
-                view?.hideProgressDialog()
-            }
+            }.fold({
+                view?.showCopes(it)
+            }, {
+                view?.showError(it.message ?: "Something went wrong")
+            })
+
+            view?.hideProgressDialog()
         }
     }
 }

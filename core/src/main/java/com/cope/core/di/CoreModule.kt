@@ -5,6 +5,9 @@ import com.cope.core.constants.BASE_URL
 import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.CoroutineContextProvider
+import com.cope.core.featureflags.FirebaseRemoteConfigInitializator
+import com.cope.core.interactor.InitFirebaseRemoteConfigUseCase
+import com.cope.core.interactor.Interactor
 import com.cope.logger.CopeLogger
 import com.cope.logger.CountlyLoggerProcessor
 import com.cope.logger.Logger
@@ -48,7 +51,12 @@ class CoreModule(private val appContext: Context) {
     }
 
     @Provides
-    fun provideLogger(countly: Countly): Logger {
-        return CopeLogger(listOf(CountlyLoggerProcessor(countly)))
+    fun provideLogger(context: Context, countly: Countly): Logger {
+        return CopeLogger(listOf(CountlyLoggerProcessor(context, countly)))
+    }
+
+    @Provides
+    fun provideInitFirebaseRemoteConfigUseCase(initializator: FirebaseRemoteConfigInitializator): Interactor<Unit, Unit> {
+        return InitFirebaseRemoteConfigUseCase(initializator)
     }
 }

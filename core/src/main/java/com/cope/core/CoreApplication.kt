@@ -2,8 +2,6 @@ package com.cope.core
 
 import android.app.Application
 import androidx.multidex.MultiDexApplication
-import com.cope.core.constants.COUNTLY_APPI_KEY
-import com.cope.core.constants.COUNTLY_SERVER_URL
 import com.cope.core.di.*
 import com.cope.core.exceptions.CoreComponentNotInitializatedException
 import com.google.firebase.FirebaseApp
@@ -27,23 +25,6 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider {
         FirebaseApp.initializeApp(this)
 
         getCoreComponent().inject(this)
-
-        setupCountly()
-    }
-
-    private fun setupCountly() {
-        countly.init(
-            this,
-            COUNTLY_SERVER_URL,
-            COUNTLY_APPI_KEY,
-            null,
-            DeviceId.Type.OPEN_UDID
-        )
-
-        countly.setLoggingEnabled(true)
-        countly.setViewTracking(true)
-
-        countly.recordEvent("ABRIMOS", hashMapOf(Pair("HOla", "HOla")),1)
 
     }
 

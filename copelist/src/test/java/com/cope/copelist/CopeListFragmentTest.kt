@@ -10,7 +10,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.cope.copelist.fragment.CopeAdapter
+import com.cope.copelist.fragment.adapter.CopeAdapter
 import com.cope.copelist.fragment.CopeListFragment
 import com.cope.core.CoreTestApplication
 import com.cope.core.models.Cope
