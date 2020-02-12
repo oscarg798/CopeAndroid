@@ -1,5 +1,6 @@
 package com.cope.core.models
 
-sealed class FeatureFlag(val key: String) {
-    object NewList : FeatureFlag("new_List")
+enum class FeatureFlag(val key: String){
+
+    NewList("new_List")
 }

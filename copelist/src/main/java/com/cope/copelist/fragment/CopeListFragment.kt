@@ -24,6 +24,7 @@ import com.cope.core.di.CoreComponentProvider
 import com.cope.core.extensions.startDeepLinkIntent
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.models.Cope
+import com.cope.core.models.FeatureFlag
 import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
@@ -39,7 +40,7 @@ class CopeListFragment : Fragment(), CopeListContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        
         DaggerCopeListComponent.builder()
             .coreComponent((activity!!.application as CoreComponentProvider).getCoreComponent())
             .copeListModule(CopeListModule())
