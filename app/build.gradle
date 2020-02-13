@@ -17,7 +17,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,62 +29,56 @@ android {
 }
 
 dependencies {
-    def androidDependencies = rootProject.ext.androidDependencies
-    def acceptanceTesting = rootProject.ext.acceptanceTesting
-    def applicationDependencies = rootProject.ext.mainApplication
-    def testDependencies = rootProject.ext.unitTesting
-    def networkingDependencies = rootProject.ext.networking
-    def developmentDependencies = rootProject.ext.development
 
     //Kotlin
-    implementation applicationDependencies.kotlinJDK
+    implementation kotlinJDK
 
     //Support libraries
-    implementation androidDependencies.appCompat
-    implementation androidDependencies.cardView
-    implementation androidDependencies.recyclerView
-    implementation androidDependencies.design
-    implementation androidDependencies.constraintLayout
-    implementation androidDependencies.appCompatV4
-    implementation androidDependencies.appCompatV7
-    implementation androidDependencies.preferenceV7
-    implementation androidDependencies.preferenceV14
-    implementation androidDependencies.customTabs
-    implementation androidDependencies.multidex
+    implementation appCompat
+    implementation cardView
+    implementation recyclerView
+    implementation design
+    implementation constraintLayout
+    implementation appCompatV4
+    implementation appCompatV7
+    implementation preferenceV7
+    implementation preferenceV14
+    implementation customTabs
+    implementation multidex
 
 
     implementation 'com.airbnb:deeplinkdispatch:4.1.0'
     kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
 
     //Coroutines
-    implementation applicationDependencies.kotlinCoroutines
-    implementation applicationDependencies.kotlinCoroutinesAndroid
+    implementation kotlinCoroutines
+    implementation kotlinCoroutinesAndroid
 
     //Dagger
-    implementation applicationDependencies.dagger
-    implementation applicationDependencies.daggerAndroidSupport
-    kapt applicationDependencies.daggerCompiler
-    kapt applicationDependencies.daggerAndroidProcessor
+    implementation dagger
+    implementation daggerAndroidSupport
+    kapt daggerCompiler
+    kapt daggerAndroidProcessor
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
     //Test
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation testDependencies.mockk
-    testImplementation testDependencies.mockitoCore
-    testImplementation testDependencies.junit
+    testImplementation mockk
+    testImplementation mockitoCore
+    testImplementation junit
 
     //Aceptance Testing
-    androidTestImplementation acceptanceTesting.androidAnnotations
-    androidTestImplementation acceptanceTesting.mockWebServer
-    androidTestImplementation acceptanceTesting.testRunner
-    androidTestImplementation acceptanceTesting.testRules
-    androidTestImplementation acceptanceTesting.espressoCore
-    androidTestImplementation acceptanceTesting.espressoContrib
-    androidTestImplementation acceptanceTesting.espressoIntents
-    androidTestImplementation acceptanceTesting.uiAutomator
-    androidTestImplementation testDependencies.mockitoCore
-    androidTestImplementation acceptanceTesting.daggerMock
-    androidTestImplementation testDependencies.mockk
+    androidTestImplementation androidAnnotations
+    androidTestImplementation mockWebServer
+    androidTestImplementation testRunner
+    androidTestImplementation testRules
+    androidTestImplementation espressoCore
+    androidTestImplementation espressoContrib
+    androidTestImplementation espressoIntents
+    androidTestImplementation uiAutomator
+    androidTestImplementation mockitoCore
+    androidTestImplementation daggerMock
+    androidTestImplementation mockk
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -98,5 +92,7 @@ dependencies {
     implementation project(path: ':copelist')
     implementation project(path: ':copedetail')
     implementation project(path: ':copecontentdetail')
+
+    implementation 'ly.count.android:sdk-messaging:18.08.1'
 }
 apply plugin: 'com.google.gms.google-services'

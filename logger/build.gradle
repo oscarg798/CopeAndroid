@@ -1,0 +1,6 @@
+apply from: "$rootProject.projectDir/base.gradle"
+
+
+dependencies {
+    implementation 'ly.count.android:sdk-messaging:18.08.1'
+}

@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
  */
 class SplashPresenter(
     private val getTokenInteractor: Interactor<Token, None>,
+    private val initFirebaseRemoteConfigUseCase: Interactor<Unit, Unit>,
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : SplashContract.Presenter {
 
@@ -23,17 +24,29 @@ class SplashPresenter(
         super.bind(view)
 
         launchJobOnMainDispatchers {
-            try {
+            runCatching {
+                withContext(coroutinesContextProvider.backgroundContext) {
+                    initFirebaseRemoteConfigUseCase(Unit)
+                }
+
                 withContext(coroutinesContextProvider.backgroundContext) {
                     getTokenInteractor(None)
                 }
 
+            }.fold({
                 this@SplashPresenter.view?.navigateDashboard()
-            } catch (t: Throwable) {
-                if (t is DataNoFoundOnLocalStorageException) {
+            }, {
+                if (it is DataNoFoundOnLocalStorageException) {
                     this@SplashPresenter.view?.navigateToLogin()
+                } else {
+                    throw it
                 }
-            }
+
+            })
         }
+    }
+
+    private fun initRemoteConfig() {
+
     }
 }

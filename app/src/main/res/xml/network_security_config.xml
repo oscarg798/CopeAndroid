@@ -5,8 +5,7 @@
 
 <network-security-config>
   <domain-config cleartextTrafficPermitted="true">
-    <domain includeSubdomains="true">ac3942bb.ngrok.io</domain>
-    <domain includeSubdomains="true">167.99.146.126</domain>
+    <domain includeSubdomains="true">94.237.29.193</domain>
     <domain includeSubdomains="true">0.0.0.0</domain>
     <domain includeSubdomains="true">localhost</domain>
   </domain-config>

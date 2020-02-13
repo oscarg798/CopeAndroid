@@ -11,24 +11,36 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cope.copelist.R
 import com.cope.copelist.di.CopeListModule
 import com.cope.copelist.di.DaggerCopeListComponent
+import com.cope.copelist.fragment.adapter.CopeAdapter
+import com.cope.copelist.fragment.adapter.CopeViewHolder
+import com.cope.copelist.fragment.adapter.viewholderfactory.CopeItem2ViewHolderFactory
+import com.cope.copelist.fragment.adapter.viewholderfactory.CopeItemViewHolderFactory
+import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
+import com.cope.core.constants.FEATURE_FLAG_HANDLER
 import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
 import com.cope.core.extensions.startDeepLinkIntent
+import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.models.Cope
+import com.cope.core.models.FeatureFlag
 import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
+import javax.inject.Named
 
 class CopeListFragment : Fragment(), CopeListContract.View {
 
     @Inject
     lateinit var presenter: CopeListContract.Presenter
 
+    @Inject
+    lateinit var viewHolderFactories: List<@JvmSuppressWildcards ViewHolderFactory<@JvmSuppressWildcards CopeViewHolder>>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        
         DaggerCopeListComponent.builder()
             .coreComponent((activity!!.application as CoreComponentProvider).getCoreComponent())
             .copeListModule(CopeListModule())
@@ -60,7 +72,10 @@ class CopeListFragment : Fragment(), CopeListContract.View {
         val context = context ?: return
         rvCopes?.layoutManager = LinearLayoutManager(context)
         rvCopes?.setHasFixedSize(true)
-        rvCopes?.adapter = CopeAdapter(presenter)
+        rvCopes?.adapter =
+            CopeAdapter(
+                presenter, viewHolderFactories = viewHolderFactories
+            )
 
         srMain?.setOnRefreshListener(presenter)
 
@@ -68,13 +83,16 @@ class CopeListFragment : Fragment(), CopeListContract.View {
     }
 
     override fun openCopeDetails(viewCope: ViewCope) {
-        (activity as? AppCompatActivity)?.startDeepLinkIntent(COPE_DETAIL_DEEP_LINK, Bundle().apply {
-            putParcelable(ARGUMENT_COPE, viewCope)
-        })
+        (activity as? AppCompatActivity)?.startDeepLinkIntent(
+            COPE_DETAIL_DEEP_LINK,
+            Bundle().apply {
+                putParcelable(ARGUMENT_COPE, viewCope)
+            })
     }
 
     override fun showCopes(copes: List<Cope>) {
-        val adapter = rvCopes?.adapter as? CopeAdapter ?: return
+        val adapter = rvCopes?.adapter as? CopeAdapter
+            ?: return
         adapter.add(copes)
     }
 
