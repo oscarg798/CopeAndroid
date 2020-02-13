@@ -1,9 +1,8 @@
 package com.cope.signup
 
 import com.cope.core.models.User
-import com.cope.signup.data.entities.APIUser
-import com.cope.signup.data.mapper.UserMapper
-import org.amshove.kluent.`should equal`
+import co.cope.data.entities.APIUser
+import co.cope.data.mapper.UserMapper
 import org.junit.Test
 
 /**
@@ -14,11 +13,11 @@ class UserMapperTest {
     @Test
     fun `should map from api user`() {
         val apiUser = given {
-            APIUser("1", "2", "3")
+            co.cope.data.entities.APIUser("1", "2", "3")
         }
 
         val result = whenever {
-            UserMapper.map(apiUser)
+            co.cope.data.mapper.UserMapper.map(apiUser)
         }
 
         then {

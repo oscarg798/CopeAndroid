@@ -1,9 +1,11 @@
 package com.cope.core
 
 import android.app.Application
+import android.content.Context
 import androidx.multidex.MultiDexApplication
 import com.cope.core.di.*
 import com.cope.core.exceptions.CoreComponentNotInitializatedException
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.firebase.FirebaseApp
 import com.squareup.picasso.Picasso
 import ly.count.android.sdk.Countly
@@ -20,8 +22,14 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider {
     @Inject
     lateinit var countly: Countly
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        SplitCompat.install(this )
+    }
+
     override fun onCreate() {
         super.onCreate()
+
         FirebaseApp.initializeApp(this)
 
         getCoreComponent().inject(this)

@@ -1,13 +1,12 @@
 package com.cope.signup
 
 import com.cope.core.di.NetworkModule
-import com.cope.signup.data.entities.APISignUpParams
-import com.cope.signup.data.entities.APIUser
-import com.cope.signup.data.service.SignupService
+import co.cope.data.entities.APISignUpParams
+import co.cope.data.entities.APIUser
+import co.cope.data.service.SignupService
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
-import org.amshove.kluent.`should equal`
 import org.junit.Before
 import org.junit.Test
 
@@ -47,17 +46,17 @@ class SignUpServiceTest : MockServerTest {
                 mockServer.url(" ").toString(),
                 networkModule.provideGsonConverter(),
                 networkModule.provideHttpClient(networkModule.provideLogginInterceptor())
-            ).create(SignupService::class.java)
+            ).create(co.cope.data.service.SignupService::class.java)
         }
 
         val result = whenever {
             runBlocking {
-                service.signUp(APISignUpParams("1", "2", "3"))
+                service.signUp(co.cope.data.entities.APISignUpParams("1", "2", "3"))
             }
         }
 
         then {
-            result `should equal` APIUser(
+            result `should equal` co.cope.data.entities.APIUser(
                 "5cf9541257fb9d072a902490",
                 "Oscar Gallon",
                 "oscarg798@gmail.com"

@@ -75,6 +75,8 @@ dependencies {
 
     implementation 'ly.count.android:sdk-messaging:18.08.1'
 
+    implementation 'com.google.android.play:core:1.6.4'
+
 
     testImplementation kluent
 

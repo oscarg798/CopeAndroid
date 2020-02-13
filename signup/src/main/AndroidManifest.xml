@@ -3,7 +3,7 @@
           package="com.cope.signup">
 
     <application>
-        <activity android:name=".SignUpActivity"
+        <activity android:name="co.cope.SignUpActivity"
                   android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
         </activity>
     </application>
