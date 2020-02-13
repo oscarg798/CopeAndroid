@@ -40,6 +40,7 @@ class DeepLinkHandlerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         if (intent.data != null && intent.data.toString() == SIGNUP_DEEPLINK) {
             navigateToDynamicFeatureModule()
+            finish()
             return
         }
 
