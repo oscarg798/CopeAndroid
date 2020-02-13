@@ -1,7 +1,0 @@
-
-·kotlin:S100_"˜Rename function "when login button is clicked and username and password are correct it should login" to match the regular expression ^[a-z][a-zA-Z0-9]*$(¥‡Û¬8ÀÙÑÈñ-
-¯kotlin:S100;"Rename function "when login button is clicked but password is empty it should you the error" to match the regular expression ^[a-z][a-zA-Z0-9]*$(Øçòä8ı²ÍÈñ-
-Ákotlin:S100G"¢Rename function "when login button is clicked but password has less than 6 parameters it should you the error" to match the regular expression ^[a-z][a-zA-Z0-9]*$(İ•©8ú‹äÈñ-
-´kotlin:S100/"Rename function "when login button is clicked but username is empty it should you the error" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ç±· úÿÿÿÿ8¥¹Èñ-
-Ãkotlin:S100q"¤Rename function "when login button is clicked and username and password are not correct it should show an error" to match the regular expression ^[a-z][a-zA-Z0-9]*$(šˆ®°8ÙøÉñ-
-¼kotlin:S100S"Rename function "when login button is clicked but username and password is empty it should you the error" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ß®Àò8ó£ÏÈñ-
