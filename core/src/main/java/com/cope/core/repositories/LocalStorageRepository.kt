@@ -10,4 +10,6 @@ interface LocalStorageRepository {
     fun <T> saveData(key: LocalStorageKey, value: T)
 
     fun <T> getData(key: LocalStorageKey, classType: Class<T>): T
+
+    fun clear()
 }

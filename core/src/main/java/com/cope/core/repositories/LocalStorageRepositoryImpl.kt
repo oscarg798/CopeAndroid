@@ -27,4 +27,8 @@ class LocalStorageRepositoryImpl(
         preferenceEditor.putString(key, gson.toJson(value))
         preferenceEditor.apply()
     }
+
+    override fun clear() {
+        SharePreferenceGetter(context).edit().clear().apply()
+    }
 }

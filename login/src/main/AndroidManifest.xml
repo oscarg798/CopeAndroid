@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.cope.login">
+        package="com.cope.login">
 
     <application>
-        <activity android:name=".LoginActivity"
-                  android:theme="@style/AppThemeAppBarMaterialAnimatedRightToLeft">
-        </activity>
-        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+        <activity
+                android:name=".LoginActivity"
+                android:launchMode="singleInstance"
+                android:theme="@style/AppThemeAppBarMaterialAnimatedRightToLeft"></activity>
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

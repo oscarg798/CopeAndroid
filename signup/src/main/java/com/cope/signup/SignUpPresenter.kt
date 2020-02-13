@@ -19,7 +19,12 @@ class SignUpPresenter(
     override var view: SignUpContract.View? = null
     override val parentJob: Job = Job()
 
-    override fun onLoginButtonClick(name: String, email: String, password: String, passwordConfirmation: String) {
+    override fun onLoginButtonClick(
+        name: String,
+        email: String,
+        password: String,
+        passwordConfirmation: String
+    ) {
         if (name.isEmpty()) {
             view?.showError(R.string.name_error)
             return
@@ -45,19 +50,19 @@ class SignUpPresenter(
         }
 
         launchJobOnMainDispatchers {
-            try {
-                val user = withContext(coroutinesContextProvider.backgroundContext) {
+            runCatching {
+                withContext(coroutinesContextProvider.backgroundContext) {
                     signUpInteractor(SignUpParams(email, password, name))
                 }
-
+            }.fold({
                 view?.onLoginSuccess()
-            } catch (t: Throwable) {
-                if (t.message != null) {
-                    view?.showError(t.message!!)
+            }, {
+                if (it.message != null) {
+                    view?.showError(it.message!!)
                 } else {
                     view?.showError(R.string.general_error)
                 }
-            }
+            })
         }
     }
 

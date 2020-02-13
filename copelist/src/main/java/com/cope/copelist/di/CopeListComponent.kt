@@ -1,5 +1,6 @@
 package com.cope.copelist.di
 
+import com.cope.copelist.CopeListActivity
 import com.cope.copelist.fragment.CopeListFragment
 import com.cope.core.di.CoreComponent
 import com.cope.core.di.FeatureScope
@@ -16,4 +17,6 @@ import dagger.Component
 interface CopeListComponent {
 
     fun inject(copeListFragment: CopeListFragment)
+
+    fun inject(copeListActivity: CopeListActivity)
 }
