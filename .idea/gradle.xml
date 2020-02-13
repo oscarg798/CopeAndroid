@@ -17,7 +17,6 @@
             <option value="$PROJECT_DIR$/logger" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/settings" />
-            <option value="$PROJECT_DIR$/signup" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

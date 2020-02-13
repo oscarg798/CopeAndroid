@@ -91,7 +91,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation project(path: ':core')
     implementation project(path: ':login')
-    implementation project(path: ':signup')
     implementation project(path: ':copelist')
     implementation project(path: ':copedetail')
     implementation project(path: ':copecontentdetail')

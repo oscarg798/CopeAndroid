@@ -21,7 +21,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
@@ -74,7 +73,6 @@ class DeepLinkHandlerActivity : AppCompatActivity() {
     }
 
     private fun navigateToFeature() {
-
         val newContext = createPackageContext(packageName, 0)
         SplitInstallHelper.updateAppInfo(newContext)
         val intent = Intent().setClassName(

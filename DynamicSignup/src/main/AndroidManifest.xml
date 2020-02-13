@@ -10,5 +10,11 @@
         </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
+
+    <application>
+        <activity android:name="co.cope.SignUpActivity"
+                android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
+        </activity>
+    </application>
 </manifest>
 
