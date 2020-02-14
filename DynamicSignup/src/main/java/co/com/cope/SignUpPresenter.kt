@@ -68,6 +68,6 @@ class SignUpPresenter(
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.isEmpty() || password.length < 6
+        return password.isNotEmpty() && password.length >= 6
     }
 }
