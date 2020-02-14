@@ -28,7 +28,7 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
         setContentView(R.layout.activity_cope_detail)
 
         DaggerCopeDetailComponent.builder()
-            .copeModule(CopeModule())
+            .copeModule(CopeModule)
             .coreComponent((application as CoreComponentProvider).getCoreComponent())
             .build()
             .inject(this)

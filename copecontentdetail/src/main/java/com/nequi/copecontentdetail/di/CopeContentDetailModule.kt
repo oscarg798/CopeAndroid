@@ -12,7 +12,7 @@ import javax.inject.Named
  * @author Oscar Gallon on 2019-06-13.
  */
 @Module
-class CopeContentDetailModule {
+object CopeContentDetailModule {
 
     @Provides
     fun provideCopeDetailPresenter(

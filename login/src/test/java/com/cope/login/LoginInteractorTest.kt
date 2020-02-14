@@ -1,8 +1,8 @@
 package com.cope.login
 
+import com.cope.login.domain.entities.LoginParams
 import com.cope.login.domain.interactor.LoginInteractor
 import com.cope.login.domain.repositories.LoginRepository
-import com.cope.login.domain.entities.LoginParams
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking

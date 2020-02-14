@@ -11,17 +11,19 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class FeatureFlagModule {
+object FeatureFlagModule {
 
     private val firebaseRemoteConfigFeatureFlagHandler: FirebaseRemoteConfigFeatureFlagHandler =
         FirebaseRemoteConfigFeatureFlagHandler()
 
+    @CoreComponentScope
     @Named(FIREBASE_REMOTE_CONFIG_FEATURE_FLAG_HANDLER)
     @Provides
     fun provideFirebaseRemoteConfigFeatureHandler(): FeatureFlagHandler {
         return firebaseRemoteConfigFeatureFlagHandler
     }
 
+    @CoreComponentScope
     @Named(FEATURE_FLAG_HANDLER)
     @Provides
     fun provideCopeFeatureFlagHandler(@Named(FIREBASE_REMOTE_CONFIG_FEATURE_FLAG_HANDLER) firebaseRemoteConfigFeatureFlagHandler: FeatureFlagHandler): FeatureFlagHandler {

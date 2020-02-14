@@ -1,9 +1,9 @@
 package com.cope.login
 
 import com.cope.login.data.LoginRepositoryImpl
-import com.cope.login.data.services.LoginService
 import com.cope.login.data.entities.APiLoginParams
 import com.cope.login.data.entities.UserLoginReponse
+import com.cope.login.data.services.LoginService
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK

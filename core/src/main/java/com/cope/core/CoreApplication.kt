@@ -24,7 +24,7 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        SplitCompat.install(this )
+        SplitCompat.install(this)
     }
 
     override fun onCreate() {
@@ -39,6 +39,7 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider {
     override fun getCoreComponent(): CoreComponent {
         if (coreComponent == null) {
             coreComponent = DaggerCoreComponent.builder()
+                .featureFlagModule(FeatureFlagModule)
                 .coreModule(CoreModule(this))
                 .networkModule(NetworkModule)
                 .repositoryModule(RepositoryModule(this))

@@ -7,9 +7,7 @@ import com.cope.login.domain.entities.LoginParams
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.amshove.kluent.was
 import org.junit.Before
 import org.junit.Test
 import kotlin.coroutines.CoroutineContext

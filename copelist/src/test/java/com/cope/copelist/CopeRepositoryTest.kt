@@ -6,7 +6,6 @@ import com.cope.copelist.data.mapper.APICopeMapper
 import com.cope.copelist.data.repository.CopeRepositoryImpl
 import com.cope.copelist.data.service.GetCopeService
 import com.cope.core.DateParser
-import com.cope.core.models.CopeContent
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking

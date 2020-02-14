@@ -1,9 +1,7 @@
 package com.cope.copelist.fragment.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.cope.copelist.R
 import com.cope.copelist.fragment.CopeClickListener
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.models.Cope

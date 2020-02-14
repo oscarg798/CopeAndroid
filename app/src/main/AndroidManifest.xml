@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="co.com.cope">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="co.com.cope">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:name="com.cope.core.CoreApplication"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:networkSecurityConfig="@xml/network_security_config"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            android:usesCleartextTraffic="true">
+        android:name="com.cope.core.CoreApplication"
+        android:hasCode="true"
+        tools:replace="android:hasCode"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <meta-data
-                android:name="firebase_performance_collection_enabled"
-                android:value="false" />
+            android:name="firebase_performance_collection_enabled"
+            android:value="false" />
+
         <activity
-                android:name=".splash.SplashActivity"
-                android:noHistory="true"
-                android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+            android:name=".splash.SplashActivity"
+            android:noHistory="true"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".deeplink.DeepLinkHandlerActivity">
+        <activity android:name=".deeplink.staticfeatures.DeepLinkHandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="deep" />
+                <data android:scheme="copestatic" />
             </intent-filter>
         </activity>
 
-
-        <service android:name="org.openudid.OpenUDID_service">
+        <activity android:name=".deeplink.dynamicfeature.DynamicFeaturesDeepLinkHandlerActivity">
             <intent-filter>
-                <action android:name="org.openudid.GETUDID" />
-            </intent-filter>
-        </service>
+                <action android:name="android.intent.action.VIEW" />
 
-        <receiver android:name="ly.count.android.sdk.ReferrerReceiver" android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="copedynamic" />
             </intent-filter>
-        </receiver>
+        </activity>
     </application>
 
 </manifest>

@@ -3,16 +3,13 @@ package com.cope.logger
 import android.content.Context
 import com.cope.logger.exceptions.LogEventIsNotViewTypeException
 import io.mockk.MockKAnnotations
-import io.mockk.Runs
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.verify
 import ly.count.android.sdk.Countly
 import org.amshove.kluent.`should equal`
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Test
 
 
 class CountlyLoggerProcessorTest {

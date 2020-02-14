@@ -13,22 +13,16 @@ import com.cope.copelist.di.CopeListModule
 import com.cope.copelist.di.DaggerCopeListComponent
 import com.cope.copelist.fragment.adapter.CopeAdapter
 import com.cope.copelist.fragment.adapter.CopeViewHolder
-import com.cope.copelist.fragment.adapter.viewholderfactory.CopeItem2ViewHolderFactory
-import com.cope.copelist.fragment.adapter.viewholderfactory.CopeItemViewHolderFactory
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
-import com.cope.core.constants.FEATURE_FLAG_HANDLER
 import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
 import com.cope.core.extensions.startDeepLinkIntent
-import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.models.Cope
-import com.cope.core.models.FeatureFlag
 import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
-import javax.inject.Named
 
 class CopeListFragment : Fragment(), CopeListContract.View {
 
@@ -43,7 +37,7 @@ class CopeListFragment : Fragment(), CopeListContract.View {
         
         DaggerCopeListComponent.builder()
             .coreComponent((activity!!.application as CoreComponentProvider).getCoreComponent())
-            .copeListModule(CopeListModule())
+            .copeListModule(CopeListModule)
             .build()
             .inject(this)
     }

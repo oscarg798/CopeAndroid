@@ -33,4 +33,10 @@ interface BasePresenter<View : BaseView> {
             job()
         }
     }
+
+    fun handleException(error: Throwable){
+        if(error !is Exception){
+            throw error
+        }
+    }
 }

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:dist="http://schemas.android.com/apk/distribution"
-        package="co.com.cope">
+        package="co.com.cope.signup">
 
     <dist:module
             dist:instant="false"
@@ -13,8 +13,8 @@
 
     <application android:hasCode="true">
         <activity
-                android:name="co.com.cope.SignUpActivity"
-                android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"></activity>
+                android:name="co.com.cope.signup.SignUpActivity"
+                android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
     </application>
 </manifest>
 

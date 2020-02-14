@@ -13,6 +13,7 @@ import dagger.Provides
 @Module
 class RepositoryModule(private val context: Context) {
 
+    @CoreComponentScope
     @Provides
     fun provideLocalStorageRepository(): LocalStorageRepository {
         return LocalStorageRepositoryImpl(context) {

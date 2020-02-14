@@ -25,7 +25,7 @@ class CopeContentDetailActivity : AppCompatActivity(), CopeContentDetailContract
 
         DaggerCopeContentDetailComponent.builder()
             .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .copeContentDetailModule(CopeContentDetailModule())
+            .copeContentDetailModule(CopeContentDetailModule)
             .build()
             .inject(this)
     }

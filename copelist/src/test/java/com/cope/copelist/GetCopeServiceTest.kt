@@ -8,7 +8,6 @@ import com.cope.core.di.NetworkModule
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
-import org.amshove.kluent.shouldEqual
 import org.junit.Before
 import org.junit.Test
 

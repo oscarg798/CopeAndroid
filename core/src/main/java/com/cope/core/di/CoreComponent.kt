@@ -1,7 +1,9 @@
 package com.cope.core.di
 
+import android.content.Context
 import com.cope.core.CoreApplication
 import com.cope.core.CoroutineContextProvider
+import com.cope.core.DynamicFeatureMappers
 import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.constants.FEATURE_FLAG_HANDLER
@@ -19,6 +21,7 @@ import javax.inject.Named
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
+@CoreComponentScope
 @Component(modules = [CoreModule::class, NetworkModule::class, RepositoryModule::class, FeatureFlagModule::class])
 interface CoreComponent {
 
@@ -46,5 +49,7 @@ interface CoreComponent {
 
     fun provideInitFirebaseRemoteConfigUseCase(): Interactor<Unit, Unit>
 
+    fun provideDynamicFeatureMappers(): DynamicFeatureMappers
 
+    fun provideContext(): Context
 }

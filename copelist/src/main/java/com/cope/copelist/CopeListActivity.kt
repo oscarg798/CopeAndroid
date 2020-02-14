@@ -1,9 +1,7 @@
 package com.cope.copelist
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
@@ -28,7 +26,7 @@ class CopeListActivity : AppCompatActivity(), CopeListContract.View {
 
         DaggerCopeListComponent.builder()
             .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .copeListModule(CopeListModule())
+            .copeListModule(CopeListModule)
             .build()
             .inject(this)
 

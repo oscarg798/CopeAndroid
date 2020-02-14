@@ -3,7 +3,6 @@ package com.cope.copelist.fragment.adapter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.cope.copelist.R
 import com.cope.copelist.fragment.CopeClickListener
 import com.cope.core.constants.DISPLAY_DATE_FORMAT

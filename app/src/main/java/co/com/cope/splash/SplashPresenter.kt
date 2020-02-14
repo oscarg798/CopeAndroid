@@ -36,17 +36,17 @@ class SplashPresenter(
             }.fold({
                 this@SplashPresenter.view?.navigateDashboard()
             }, {
-                if (it is DataNoFoundOnLocalStorageException) {
-                    this@SplashPresenter.view?.navigateToLogin()
-                } else {
-                    throw it
-                }
+                handleException(it)
 
             })
         }
     }
 
-    private fun initRemoteConfig() {
+    override fun handleException(error: Throwable) {
+        super.handleException(error)
 
+        if (error is DataNoFoundOnLocalStorageException) {
+            this@SplashPresenter.view?.navigateToLogin()
+        }
     }
 }

@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit
 @Module
 object NetworkModule {
 
+    @CoreComponentScope
     @Provides
     fun provideGsonConverter(): GsonConverterFactory {
         val gson = GsonBuilder()
@@ -25,6 +26,7 @@ object NetworkModule {
         return GsonConverterFactory.create(gson)
     }
 
+    @CoreComponentScope
     @Provides
     fun provideLogginInterceptor(): HttpLoggingInterceptor {
         val loggingInterceptor = HttpLoggingInterceptor()
@@ -33,6 +35,7 @@ object NetworkModule {
         return loggingInterceptor
     }
 
+    @CoreComponentScope
     @Provides
     fun provideHttpClient(
         loggingInterceptor: HttpLoggingInterceptor
@@ -47,6 +50,7 @@ object NetworkModule {
         return builder.build()
     }
 
+    @CoreComponentScope
     @Provides
     fun provideRetrofit(
         baseUrl: String,

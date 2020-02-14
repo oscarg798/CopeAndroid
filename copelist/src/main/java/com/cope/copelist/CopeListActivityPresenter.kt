@@ -26,9 +26,13 @@ class CopeListActivityPresenter(
             }.fold({
                 view?.returnToLogIn()
             }, {
-                throw it
+                handleException(it)
             })
         }
+    }
+
+    override fun handleException(error: Throwable) {
+        super.handleException(error)
     }
 
 }

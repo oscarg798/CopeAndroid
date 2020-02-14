@@ -1,12 +1,10 @@
 package com.cope.copelist.fragment
 
-import android.util.Log
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.interactor.Interactor
 import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
-import com.cope.core.models.FeatureFlag
 import com.cope.core.models.None
 import com.cope.logger.LogEvent
 import com.cope.logger.Logger
@@ -56,19 +54,21 @@ class CopeListPresenter(
         launchJobOnMainDispatchers {
             runCatching {
                 withContext(coroutinesContextProvider.backgroundContext) {
-                    Log.i(
-                        "CULO",
-                        featureFlagHandler.isFeatureEnabled(FeatureFlag.NewList).toString()
-                    )
                     getCopeInteractor(None)
                 }
             }.fold({
                 view?.showCopes(it)
             }, {
-                view?.showError(it.message ?: "Something went wrong")
+
             })
 
             view?.hideProgressDialog()
         }
+    }
+
+    override fun handleException(error: Throwable) {
+        super.handleException(error)
+        view?.showError(error.message ?: "Something went wrong")
+
     }
 }

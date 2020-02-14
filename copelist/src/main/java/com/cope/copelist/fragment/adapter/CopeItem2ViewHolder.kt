@@ -3,14 +3,10 @@ package com.cope.copelist.fragment.adapter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.cope.copelist.R
 import com.cope.copelist.fragment.CopeClickListener
-import com.cope.core.constants.DISPLAY_DATE_FORMAT
 import com.cope.core.models.Cope
 import com.squareup.picasso.Picasso
-import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * @author Oscar Gallon on 2019-06-11.

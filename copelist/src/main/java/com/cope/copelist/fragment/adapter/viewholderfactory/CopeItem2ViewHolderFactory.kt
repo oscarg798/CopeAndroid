@@ -4,13 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.cope.copelist.R
 import com.cope.copelist.fragment.adapter.CopeItem2ViewHolder
-import com.cope.copelist.fragment.adapter.CopeItemViewHolder
 import com.cope.copelist.fragment.adapter.CopeViewHolder
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.models.FeatureFlag
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.Deferred
-import java.util.*
 
 class CopeItem2ViewHolderFactory(private val featureFlagHandler: FeatureFlagHandler) :
     ViewHolderFactory<CopeViewHolder> {

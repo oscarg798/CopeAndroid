@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import co.com.cope.R
 import co.com.cope.di.DaggerSplashComponent
-import co.com.cope.di.SplashModule
+import co.com.cope.di.splash.SplashModule
 import com.cope.core.constants.COPE_LIST_DEEP_LINK
 import com.cope.core.constants.LOGIN_DEEPLINK
 import com.cope.core.di.CoreComponentProvider
@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity(), SplashContract.View {
 
         DaggerSplashComponent.builder()
             .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .splashModule(SplashModule())
+            .splashModule(SplashModule)
             .build()
             .inject(this)
     }

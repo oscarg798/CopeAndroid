@@ -32,17 +32,22 @@ class LoginPresenter(
         }
 
         launchJobOnMainDispatchers {
-            try {
-
+            runCatching {
                 withContext(coroutinesContextProvider.backgroundContext) {
                     val token = loginInteractor(LoginParams(username, password))
                     saveTokenInteractor(token)
                 }
-
+            }.fold({
                 view?.onLoginSuccess()
-            } catch (t: Throwable) {
-                view?.showError(R.string.general_error)
-            }
+
+            },{
+                handleException(it)
+            })
         }
+    }
+
+    override fun handleException(error: Throwable) {
+        super.handleException(error)
+        view?.showError(R.string.general_error)
     }
 }
