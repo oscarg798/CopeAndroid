@@ -3,7 +3,7 @@ package co.com.cope.splash
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import co.com.cope.R
-import co.com.cope.di.DaggerSplashComponent
+import co.com.cope.di.splash.DaggerSplashComponent
 import co.com.cope.di.splash.SplashModule
 import com.cope.core.constants.COPE_LIST_DEEP_LINK
 import com.cope.core.constants.LOGIN_DEEPLINK

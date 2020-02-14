@@ -3,7 +3,7 @@ package co.com.cope.deeplink.dynamicfeature
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import co.com.cope.di.DaggerDynamicFeatureHandlerComponent
+import co.com.cope.di.dynamicfeature.DaggerDynamicFeatureHandlerComponent
 import co.com.cope.di.dynamicfeature.DynamicFeatureHandlerModule
 import com.cope.core.di.CoreComponentProvider
 import javax.inject.Inject
