@@ -1,0 +1,11 @@
+
+wkotlin:S100"aRename function "should have name text field" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ç©à
+ykotlin:S100"bRename function "should have email text field" to match the regular expression ^[a-z][a-zA-Z0-9]*$(˜­•«
+kotlin:S100#"eRename function "should have password text field" to match the regular expression ^[a-z][a-zA-Z0-9]*$(æ²î¡ùÿÿÿÿ
+‰kotlin:S100)"rRename function "should have password confirmation text field" to match the regular expression ^[a-z][a-zA-Z0-9]*$(Â˜‰ÿ
+wkotlin:S1000"`Rename function "should have sign up button" to match the regular expression ^[a-z][a-zA-Z0-9]*$(¤á‰ú
+kotlin:S1006"iRename function "btn sign up should have proper text" to match the regular expression ^[a-z][a-zA-Z0-9]*$(¢àåI
+…kotlin:S100<"nRename function "email text field should have proper hint" to match the regular expression ^[a-z][a-zA-Z0-9]*$(èéÊÔ
+ˆkotlin:S100D"qRename function "password text field should have proper hint" to match the regular expression ^[a-z][a-zA-Z0-9]*$(³ÜÈ
+škotlin:S100L"~Rename function "password confirmation text field should have proper hint" to match the regular expression ^[a-z][a-zA-Z0-9]*$(äËÜëÿÿÿÿÿ
+‰kotlin:S100T"mRename function "name text field should have proper hint" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ÇŠâÂøÿÿÿÿ

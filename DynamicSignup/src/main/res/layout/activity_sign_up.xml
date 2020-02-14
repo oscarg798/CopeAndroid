@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:padding="16dp"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        tools:context="co.cope.SignUpActivity">
+        tools:context="co.com.cope.SignUpActivity">
 
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
