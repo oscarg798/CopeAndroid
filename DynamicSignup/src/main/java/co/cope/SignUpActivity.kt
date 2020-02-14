@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import co.com.cope.R
 import co.cope.di.DaggerSignUpComponent
 import com.airbnb.deeplinkdispatch.DeepLink
 import com.cope.core.constants.SIGNUP_DEEPLINK

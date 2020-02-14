@@ -1,6 +1,7 @@
 package co.cope
 
 import android.util.Patterns
+import co.com.cope.R
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.interactor.Interactor
 import com.cope.core.models.User

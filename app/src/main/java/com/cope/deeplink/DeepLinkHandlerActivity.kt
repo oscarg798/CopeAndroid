@@ -77,7 +77,7 @@ class DeepLinkHandlerActivity : AppCompatActivity() {
         SplitInstallHelper.updateAppInfo(newContext)
         val intent = Intent().setClassName(
             packageName,
-            "co.cope.SignUpActivity"
+            "co.com.cope.SignUpActivity"
         )
         startActivity(intent)
     }
