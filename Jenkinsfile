@@ -9,7 +9,7 @@ pipeline {
 
     stage('Compile') {
       steps {
-        sh './gradlew compileDebugKotlin '
+        sh './gradlew compileDebugKotlin --stacktrace  '
       }
     }
 
