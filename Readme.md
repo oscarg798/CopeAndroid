@@ -45,17 +45,19 @@ Notice that *Feature Modules* do not depend on each other, they do not know that
 
 ## Setup 
 
-1.Just clone this project, import it in Android Studio and press Play. 
+1. Clone this project, import it in Android Studio and press Play. 
 
-2. D ownload the following unpacked chrome [extension](https://drive.google.com/file/d/1Js21eF5VA-n_x_02MsytYGfiBpyDXGn8/view?usp=sharing), and install it on Chrome brower. 
+2. Create a google-service.json file creating a Firebase Project. On remote config create a variable called new_list with true or false. 
 
-3. Create a new user on the Android App. (Signup is not redirecting to the Cope list activity, for now you have to close the app and opening it again).
+3. Download the following unpacked chrome [extension](https://drive.google.com/file/d/1Js21eF5VA-n_x_02MsytYGfiBpyDXGn8/view?usp=sharing), and install it on Chrome brower. 
 
-4. Click on chrome extension and login with the created user. (After press login thats it, even if you do not see a confirmation message) 
+4. Create a new user on the Android App. (Signup is not redirecting to the Cope list activity, for now you have to close the app and opening it again).
 
-5. Go to a web page select something and send it to Cope using right click, and then *Select and sent to Cope*, option. If it was sent successful you will see an alert dialog with *Sent* message. If you do not see confirmation dialog please log in again on the chrome extension. 
+5. Click on chrome extension and login with the created user. (After press login thats it, even if you do not see a confirmation message) 
 
-6. Open the Android App, Log In and thats it
+6. Go to a web page select something and send it to Cope using right click, and then *Select and sent to Cope*, option. If it was sent successful you will see an alert dialog with *Sent* message. If you do not see confirmation dialog please log in again on the chrome extension. 
+
+7. Open the Android App, Log In and thats it
 
 ![](./readmefiles/cope1.png) 
 ![](./readmefiles/cope2.png) 
@@ -78,7 +80,7 @@ Also will be nice if we can redirect the user to Cope List after a successful re
 
 Feel free to create a PR or open an Issue, I write the backend so if you want to improve or implement something that requires backend work, let me know and we can sync.
 
-The app is uploaded into the play store as Alpha and Internal Sharing release, if you want to be part of let me know. Also if you want to get invited to the Firebase project as developer.
+The app is uploaded into the play store as Alpha and Internal Sharing release, if you want to be part of let me know. 
 
 If you contribute I will add you to the license of the project, be sure to include yourself for the new files you create
 
