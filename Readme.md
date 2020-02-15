@@ -1,4 +1,4 @@
-# Cope Android  
+# Cope Android
 
 This is an application to watch your Copes. A Cope is a content that you select from a web page and you save using the chrome extension with the same name. 
 
@@ -72,6 +72,7 @@ I have some ideas to implement on it like:
 - Delete a Cope
 - Add comments to a Cope Detail
 - Be able share a Cope with other users
+- Search copes with related topics
 
 Also will be nice if we can redirect the user to Cope List after a successful registration. 
 
@@ -79,6 +80,21 @@ Feel free to create a PR or open an Issue, I write the backend so if you want to
 
 The app is uploaded into the play store as Alpha and Internal Sharing release, if you want to be part of let me know. Also if you want to get invited to the Firebase project as developer.
 
+If you contribute I will add you to the license of the project, be sure to include yourself for the new files you create
+
 # License 
 
-This project is open source and is only for education purposes, **I do not authorized** anyone or any company to use it or its code with other purpose. 
+/*
+ * Copyright (C) 2020 Oscar Gallon <oscarg798@gmail.com>
+ * This file is part of Cope.
+ * Cope is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
