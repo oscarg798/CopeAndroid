@@ -9,7 +9,7 @@ pipeline {
 
     stage('Compile') {
       steps {
-        sh 'export ANDROID_HOME=/usr/lib/android-sdk && ./gradlew compileDebugKotlin --stacktrace  '
+        sh 'export ANDROID_SDK_ROOT=/usr/lib/android-sdk && ./gradlew compileDebugKotlin --stacktrace  '
       }
     }
 
