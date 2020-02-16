@@ -11,6 +11,7 @@ pipeline {
       steps {
         sh 'cd /tmp'
         sh 'rm -rf local.properties'
+        sh 'touch local.properties && echo -e "sdk.dir=/opt/android" >> local.properties'
       }
     }
 
