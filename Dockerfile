@@ -8,7 +8,7 @@ ARG ANDROID_BUILD_TOOLS_LEVEL=28.0.3
 ENV GRADLE_HOME=/opt/gradle/gradle-$GRADLE_VERSION
 ENV ANDROID_HOME=/opt/android
 ENV ANDROID_SDK_ROOT=/opt/android
-ENV PATH "$PATH:$GRADLE_HOME/bin:/opt/gradlew:$ANDROID_HOME/emulator:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_SDK_ROOT:/tools/bin:$ANDROID_SDK_ROOT/emulator"
+ENV PATH "$PATH:$GRADLE_HOME/bin:/opt/gradlew:$ANDROID_HOME/emulator:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_SDK_ROOT:/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_SDK_ROOT/emulator"
 ENV LD_LIBRARY_PATH "$ANDROID_HOME/emulator/lib64:$ANDROID_HOME/emulator/lib64/qt/lib"
 
 RUN apt update && \ 
