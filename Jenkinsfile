@@ -10,7 +10,7 @@ pipeline {
     stage('prepare environment'){
       steps {
         sh 'cd /tmp'
-        sh 'rm rf local.properties'
+        sh 'rm -rf local.properties'
       }
     }
 
