@@ -7,9 +7,16 @@ pipeline {
       }
     }
 
+    stage('prepare environment'){
+      steps {
+        sh 'cd /tmp'
+        sh 'rm rf local.properties'
+      }
+    }
+
     stage('run unit tests') {
       steps {
-        sh 'docker run -ti -v ${PWD}:/tmp android /bin/bash'
+        sh 'docker run -ti -v ${PWD}:/tmp android /bin/bash `./gradlew test --stacktrace`'
       }
     }
   }
