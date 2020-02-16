@@ -9,7 +9,7 @@ pipeline {
 
     stage('run unit tests') {
       steps {
-        sh 'docker run -ti -v ${PWD}:/tmp android /bin/bash "`./gradlew test --stacktrace`"'
+        sh 'docker run -ti -v ${PWD}:/tmp android /bin/bash'
       }
     }
   }
