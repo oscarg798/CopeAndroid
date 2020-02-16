@@ -45,7 +45,7 @@ class CoreTestApplication : Application(), CoreComponentProvider {
         if (coreComponent == null) {
             coreComponent = DaggerCoreComponent.builder()
                 .coreModule(CoreModule(this))
-                .networkModule(NetworkModule())
+                .networkModule(NetworkModule)
                 .repositoryModule(RepositoryModule(this))
                 .build()
         }
