@@ -27,7 +27,6 @@ dependencies {
     implementation design
     implementation constraintLayout
     implementation appCompatV4
-    implementation appCompatV7
     implementation preferenceV7
     implementation preferenceV14
     implementation customTabs
@@ -59,13 +58,15 @@ dependencies {
     testImplementation mockitoCore
     testImplementation junit
     testImplementation kluent
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.14.0'
-    testImplementation 'org.robolectric:robolectric:4.2.1'
-    testImplementation("androidx.test:runner:1.1.0")
-    testImplementation("androidx.test.ext:junit:1.0.0")
-    testImplementation("androidx.test.espresso:espresso-intents:3.1.0")
-    testImplementation("androidx.test.espresso:espresso-core:3.1.0")
-    testImplementation("androidx.test.ext:truth:1.0.0")
+    testImplementation androidXCoreTest
+    testImplementation mockWebServer
+    testImplementation robolectric
+    testImplementation testRunner
+    testImplementation espressoIntents
+    testImplementation espressoCore
+    testImplementation truth
+    testImplementation androidXCoreTest
+    debugImplementation fragmentTesting
 
     //Aceptance Testing
     androidTestImplementation androidAnnotations
@@ -79,6 +80,8 @@ dependencies {
     androidTestImplementation mockitoCore
     androidTestImplementation daggerMock
     androidTestImplementation mockk
+
+
 
     implementation project(path: ':core')
     testImplementation project(path: ':core')

@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
+
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cope.core.CoreApplication
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
@@ -28,7 +29,9 @@ import com.nequi.copecontentdetail.exceptions.CopeContentArgumentNotFoundExcepti
 import org.amshove.kluent.shouldEqual
 import org.junit.Test
 import org.junit.runner.RunWith
+
 import org.robolectric.annotation.Config
+import java.util.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -41,12 +44,7 @@ class CopeDetailActivityTest {
 
     @Test(expected = CopeContentArgumentNotFoundException::class)
     fun `should throw an exception if no cope content is provided`() {
-        ActivityScenario.launch<CopeContentDetailActivity>(
-            Intent(
-                ApplicationProvider.getApplicationContext<CoreApplication>(),
-                CopeContentDetailActivity::class.java
-            )
-        )
+        ActivityScenario.launch<CopeContentDetailActivity>(CopeContentDetailActivity::class.java)
     }
 
     @Test
@@ -58,7 +56,7 @@ class CopeDetailActivityTest {
                     CopeContentDetailActivity::class.java
                 ).apply {
                     putExtras(Bundle().apply {
-                        putParcelable(ARGUMENT_COPE_CONTENT, ViewCopeContent("1", "2"))
+                        putParcelable(ARGUMENT_COPE_CONTENT, ViewCopeContent("1", "2", Date(), Date()))
                     })
                 }
             )

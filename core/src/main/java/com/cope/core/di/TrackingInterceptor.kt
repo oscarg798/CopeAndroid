@@ -31,7 +31,7 @@ class TrackingInterceptor : Interceptor {
         val request = chain.request()
         startTracking(request)
         val response = chain.proceed(request)
-        stopMetricts(response.code())
+        stopMetricts(response.code)
         return response
     }
 
@@ -41,7 +41,7 @@ class TrackingInterceptor : Interceptor {
             url.toString(),
             method
         )
-        metric?.setRequestPayloadSize(request.body()?.contentLength() ?: 0)
+        metric?.setRequestPayloadSize(request.body?.contentLength() ?: 0)
         metric?.start()
     }
 
@@ -53,5 +53,5 @@ class TrackingInterceptor : Interceptor {
 
 }
 
-private operator fun Request.component2(): String = method()
-private operator fun Request.component1(): HttpUrl = url()
+private operator fun Request.component2(): String = method
+private operator fun Request.component1(): HttpUrl = url

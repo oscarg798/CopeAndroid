@@ -58,14 +58,13 @@ dependencies {
     implementation design
     implementation constraintLayout
     implementation appCompatV4
-    implementation appCompatV7
     implementation preferenceV7
     implementation preferenceV14
     implementation customTabs
-    implementation multidex
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     //Kotlin
-    implementation kotlinJDK
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
 
     //Dagger
     implementation dagger
@@ -84,20 +83,20 @@ dependencies {
     implementation okhttp3
     implementation okhttpLoggingInterceptor
 
-    implementation 'com.google.firebase:firebase-perf:18.0.1'
+    implementation 'com.google.firebase:firebase-perf:19.0.5'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     implementation 'ly.count.android:sdk-messaging:18.08.1'
 
-    implementation 'com.google.android.play:core:1.6.4'
+    implementation 'com.google.android.play:core:1.6.5'
 
 
     testImplementation kluent
 
     //Test
-    implementation mockk
-    testImplementation mockk
+    implementation 'io.mockk:mockk:1.9.3.kotlin12'
+    testImplementation 'io.mockk:mockk:1.9.3.kotlin12'
     testImplementation mockitoCore
     testImplementation junit
     implementation project(path: ':logger')

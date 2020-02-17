@@ -11,10 +11,11 @@ pipeline {
         sh 'docker run android'
       }
     }
-    stage('delete container') {
-      steps {
-        sh 'docker rm android'
-      }
-    }
   }
+  post {
+        always {
+            sh 'docker rm android'
+            deleteDir()
+        }
+    }
 }
