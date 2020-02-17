@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /tmp && ls -la 
+cd /App && ./gradlew 
 
 exec "$@"
 
