@@ -8,7 +8,7 @@ pipeline {
     }
     stage('run unit tests') {
       steps {
-        sh 'docker run -v android'
+        sh 'docker run android'
       }
     }
     stage('delete container') {
