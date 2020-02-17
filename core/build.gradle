@@ -95,8 +95,8 @@ dependencies {
     testImplementation kluent
 
     //Test
-    implementation 'io.mockk:mockk:1.9.3.kotlin12'
-    testImplementation 'io.mockk:mockk:1.9.3.kotlin12'
+    implementation 'io.mockk:mockk:1.9.3'
+    testImplementation 'io.mockk:mockk:1.9.3'
     testImplementation mockitoCore
     testImplementation junit
     implementation project(path: ':logger')

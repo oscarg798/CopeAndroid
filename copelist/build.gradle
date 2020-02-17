@@ -20,4 +20,6 @@ dependencies {
 
     implementation picasso
     implementation project(path: ':logger')
+    implementation project(':core')
+    testImplementation project(':core')
 }

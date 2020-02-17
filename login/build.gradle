@@ -15,3 +15,7 @@
 
 apply from: "$rootProject.projectDir/shared.gradle"
 
+dependencies {
+    implementation project(':core')
+    testImplementation project(':core')
+}
