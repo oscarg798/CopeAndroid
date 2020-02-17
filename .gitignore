@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 app/google-services.json
+/.idea/sonarlint
+.idea/sonarlint/*
+.idea/sonarlint/
+/.idea/sonarlint/
