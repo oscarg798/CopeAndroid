@@ -28,4 +28,5 @@ RUN apt update && \
 
 RUN cd /App && \
     rm -rf local.properties && \
-    touch local.properties && echo -e "sdk.dir=/opt/android" >> local.properties
+    touch local.properties && echo -e "sdk.dir=/opt/android" >> local.properties && \
+    ./gradlew build --stacktrace
