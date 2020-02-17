@@ -8,7 +8,12 @@ pipeline {
     }
     stage('run unit tests') {
       steps {
-        sh 'docker run -v ${PWD}:/tmp android'
+        sh 'docker run -v android'
+      }
+    }
+    stage('delete container') {
+      steps {
+        sh 'docker rm android'
       }
     }
   }
