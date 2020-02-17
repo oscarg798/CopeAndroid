@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /project && ./gradlew testDebugUnitTest
+cd /App/project/ && ./gradlew testDebugUnitTest
 
 exec "$@"
 
