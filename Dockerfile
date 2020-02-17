@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM openjdk:8
 
 ARG GRADLE_VERSION=5.4.1
 ARG ANDROID_API_LEVEL=28
@@ -16,7 +16,6 @@ ENV ANDROID_SDK_ROOT=/opt/android
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
 RUN apt update && \ 
-    apt install -y openjdk-8-jdk vim git unzip libglu1 libpulse-dev libasound2 libc6  libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxi6  libxtst6 libnss3 wget  && \
     wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -P /tmp && \
     unzip -d /opt/gradle /tmp/gradle-${GRADLE_VERSION}-bin.zip && \
     mkdir /opt/gradlew && \
