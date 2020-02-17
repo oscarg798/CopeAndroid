@@ -5,10 +5,13 @@ ARG ANDROID_API_LEVEL=28
 ARG ANDROID_BUILD_TOOLS_LEVEL=28.0.3
 #ARG EMULATOR_NAME='test'  
 
+ADD . /App/
+
+
 ENV GRADLE_HOME=/opt/gradle/gradle-$GRADLE_VERSION
-ENV ANDROID_HOME=/opt/android
+ENV ANDROID_HOME1=/opt/android
 ENV ANDROID_SDK_ROOT=/opt/android
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+ENV PATH ${PATH}:${ANDROID_HOME1}/tools:${ANDROID_HOME1}/tools/bin:${ANDROID_HOME1}/platform-tools
 ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/tools:${ANDROID_SDK_ROOT}/tools/bin:${ANDROID_SDK_ROOT}/platform-tools
 
 RUN apt update && \ 
@@ -22,3 +25,7 @@ RUN apt update && \
     unzip -d /opt/android /tmp/sdk-tools-linux-4333796.zip && \
     yes Y | /opt/android/tools/bin/sdkmanager --install "platform-tools" "system-images;android-${ANDROID_API_LEVEL};google_apis;x86" "platforms;android-${ANDROID_API_LEVEL}" "build-tools;${ANDROID_BUILD_TOOLS_LEVEL}" && \
     yes Y | /opt/android/tools/bin/sdkmanager --licenses 
+
+RUN cd /App && \
+    rm -rf local.properties && \
+    touch local.properties && echo -e "sdk.dir=/opt/android" >> local.properties

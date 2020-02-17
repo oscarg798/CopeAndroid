@@ -7,17 +7,10 @@ pipeline {
       }
     }
 
-    stage('prepare environment'){
-      steps {
-        sh 'cd /tmp'
-        sh 'rm -rf local.properties'
-        sh 'touch local.properties && echo -e "sdk.dir=/opt/android" >> local.properties'
-      }
-    }
-
     stage('run unit tests') {
       steps {
-        sh 'docker run -ti -v ${PWD}:/tmp android /bin/bash `./gradlew test --stacktrace`'
+        sh 'cd /App'
+        sh 'docker run android /bin/bash `./gradlew test --stacktrace`'
       }
     }
   }
