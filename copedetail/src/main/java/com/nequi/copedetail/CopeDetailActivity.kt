@@ -52,6 +52,10 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
             .inject(this)
 
         initComponents()
+
+        tvCopeUrl.setOnClickListener {
+            presenter.onCopeSourceClicked()
+        }
     }
 
     override fun onResume() {
