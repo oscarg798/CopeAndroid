@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1025555437343",
+    "firebase_url": "https://cope-48bea.firebaseio.com",
+    "project_id": "cope-48bea",
+    "storage_bucket": "cope-48bea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025555437343:android:8182f0da265cacc2c9022a",
+        "android_client_info": {
+          "package_name": "co.com.cope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025555437343-abuo5d628ht0s1tv5hgbkrmfpjo3lfeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_wmBg5BuS9Ve3rMIyPJEJs6xmir9dXcI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025555437343-abuo5d628ht0s1tv5hgbkrmfpjo3lfeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025555437343:android:ce2c99410cb8cec7c9022a",
+        "android_client_info": {
+          "package_name": "com.cope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025555437343-abuo5d628ht0s1tv5hgbkrmfpjo3lfeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_wmBg5BuS9Ve3rMIyPJEJs6xmir9dXcI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025555437343-abuo5d628ht0s1tv5hgbkrmfpjo3lfeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
