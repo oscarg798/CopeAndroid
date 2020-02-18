@@ -28,6 +28,6 @@ typealias DeepLink = String
 typealias Password = String
 typealias LocalStorageKey = String
 
-typealias sharePreferenceGetter = (Context) -> SharedPreferences
+typealias SharePreferenceGetter = (Context) -> SharedPreferences
 
 typealias BackgroundColor = Int

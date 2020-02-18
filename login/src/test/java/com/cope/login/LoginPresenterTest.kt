@@ -15,25 +15,54 @@
 
 package com.cope.login
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.cope.core.CoroutineContextProvider
+import com.cope.core.constants.SharePreferenceGetter
 import com.cope.core.constants.Token
 import com.cope.core.interactor.Interactor
+import com.cope.core.repositories.LocalStorageRepository
+import com.cope.core.repositories.LocalStorageRepositoryImpl
+import com.cope.login.data.LoginRepositoryImpl
+import com.cope.login.data.entities.UserLoginReponse
+import com.cope.login.data.services.LoginService
 import com.cope.login.domain.entities.LoginParams
+import com.cope.login.domain.interactor.LoginInteractor
+import com.cope.login.domain.interactor.SaveTokenInteractor
+import com.cope.login.domain.repositories.LoginRepository
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
+import io.mockk.impl.annotations.SpyK
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import okio.IOException
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mock
 import kotlin.coroutines.CoroutineContext
 
-class LoginPresenterTest {
+class LoginPresenterIntegrationTest {
+
+    @MockK(relaxed = true)
+    lateinit var context: Context
+
+    @MockK(relaxed = true)
+    lateinit var sharePreferenceEditor: SharedPreferences.Editor
+
+    @MockK(relaxed = true)
+    lateinit var sharedPreferences: SharedPreferences
+
+    private lateinit var localStorageRepository: LocalStorageRepository
 
     @MockK
-    lateinit var loginInteractor: Interactor<Token, LoginParams>
+    lateinit var loginService: LoginService
 
-    @MockK
-    lateinit var saveTokenInteractor: Interactor<Unit, Token>
+    private lateinit var loginRepository: LoginRepository
+
+    private lateinit var loginInteractor: Interactor<Token, LoginParams>
+
+    private lateinit var saveTokenInteractor: Interactor<Unit, Token>
+
 
     @MockK
     lateinit var view: LoginActivityContract.View
@@ -43,17 +72,26 @@ class LoginPresenterTest {
 
     lateinit var presenter: LoginActivityContract.Presenter
 
+    init {
+        MockKAnnotations.init(this, relaxed = true)
+    }
+
     @Before
     fun setup() {
-        MockKAnnotations.init(this, relaxed = true)
-        presenter = LoginPresenter(loginInteractor, saveTokenInteractor, coroutinesContextProvider)
-        coEvery {
-            loginInteractor.invoke(match {
-                it.username == MOCKED_LOGIN_PARAMS.username && it.password == MOCKED_LOGIN_PARAMS.password
-            })
-        } answers {
-            MOCKED_TOKEN
+        coEvery { loginService.login(any()) } answers { UserLoginReponse(MOCKED_TOKEN) }
+        every { sharedPreferences.edit() } answers { sharePreferenceEditor }
+        every { sharePreferenceEditor.putString(any(), any()) }.answers { sharePreferenceEditor }
+
+        loginRepository = LoginRepositoryImpl(loginService)
+        localStorageRepository = LocalStorageRepositoryImpl(context) {
+            sharedPreferences
         }
+
+
+        loginInteractor = spyk(LoginInteractor(loginRepository))
+        saveTokenInteractor = spyk(SaveTokenInteractor(localStorageRepository))
+
+        presenter = LoginPresenter(loginInteractor, saveTokenInteractor, coroutinesContextProvider)
     }
 
     @Test
@@ -113,7 +151,9 @@ class LoginPresenterTest {
             loginInteractor.invoke(match {
                 it.username == MOCKED_LOGIN_PARAMS.username && it.password == MOCKED_LOGIN_PARAMS.password
             })
+
             saveTokenInteractor.invoke(MOCKED_TOKEN)
+
             view.onLoginSuccess()
         }
 
@@ -125,12 +165,10 @@ class LoginPresenterTest {
     @Test
     fun `when login button is clicked and username and password are not correct it should show an error`() {
         coEvery {
-            loginInteractor.invoke(match {
-                it.username == "123" && it.password == "1234567"
+            loginService.login(match {
+                it.email == MOCKED_LOGIN_PARAMS.username && it.password == "1234567"
             })
-        } answers {
-            throw  NullPointerException()
-        }
+        } answers { throw  IOException() }
 
         presenter.bind(view)
         presenter.onLoginButtonPressed("123", "1234567")

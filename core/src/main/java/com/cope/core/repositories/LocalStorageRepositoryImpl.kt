@@ -17,7 +17,7 @@ package com.cope.core.repositories
 
 import android.content.Context
 import com.cope.core.constants.LocalStorageKey
-import com.cope.core.constants.sharePreferenceGetter
+import com.cope.core.constants.SharePreferenceGetter
 import com.cope.core.exceptions.DataNoFoundOnLocalStorageException
 import com.google.gson.Gson
 
@@ -26,24 +26,24 @@ import com.google.gson.Gson
  */
 class LocalStorageRepositoryImpl(
     private val context: Context,
-    private val SharePreferenceGetter: sharePreferenceGetter
+    private val sharePreferenceGetter: SharePreferenceGetter
 ) : LocalStorageRepository {
 
     private val gson = Gson()
 
     override fun <T> getData(key: LocalStorageKey, classType: Class<T>): T {
-        val preference = SharePreferenceGetter(context)
+        val preference = sharePreferenceGetter(context)
         val data = preference.getString(key, null) ?: throw DataNoFoundOnLocalStorageException(key)
         return gson.fromJson(data, classType)
     }
 
     override fun <T> saveData(key: LocalStorageKey, value: T) {
-        val preferenceEditor = SharePreferenceGetter(context).edit()
+        val preferenceEditor = sharePreferenceGetter(context).edit()
         preferenceEditor.putString(key, gson.toJson(value))
         preferenceEditor.apply()
     }
 
     override fun clear() {
-        SharePreferenceGetter(context).edit().clear().apply()
+        sharePreferenceGetter(context).edit().clear().apply()
     }
 }
