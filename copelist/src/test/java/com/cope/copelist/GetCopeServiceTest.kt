@@ -21,6 +21,8 @@ import com.cope.copelist.data.service.GetCopeService
 import com.cope.core.DateParser
 import com.cope.core.di.NetworkModule
 import kotlinx.coroutines.runBlocking
+import okhttp3.Interceptor
+import okhttp3.Response
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.amshove.kluent.shouldEqual
@@ -35,6 +37,7 @@ class GetCopeServiceTest : MockServerTest {
     override lateinit var mockServer: MockWebServer
 
     private val networkModule = NetworkModule
+
 
     @Before
     override fun setUp() {
@@ -75,7 +78,12 @@ class GetCopeServiceTest : MockServerTest {
             networkModule.provideRetrofit(
                 mockServer.url(" ").toString(),
                 networkModule.provideGsonConverter(),
-                networkModule.provideHttpClient(networkModule.provideLogginInterceptor())
+                networkModule.provideHttpClient(networkModule.provideLogginInterceptor(), object: Interceptor {
+                    override fun intercept(chain: Interceptor.Chain): Response {
+                        return chain.proceed(chain.request())
+                    }
+
+                })
             ).create(GetCopeService::class.java)
         }
 

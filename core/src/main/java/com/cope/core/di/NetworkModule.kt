@@ -17,9 +17,11 @@ package com.cope.core.di
 
 import com.cope.core.constants.BACKEND_DATE_FORMAT
 import com.cope.core.constants.TIME_OUT_SECONDS
+import com.google.firebase.FirebaseApp
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -52,15 +54,20 @@ object NetworkModule {
 
     @CoreComponentScope
     @Provides
+    fun provideTrackingInterceptor(): Interceptor  = TrackingInterceptor()
+
+    @CoreComponentScope
+    @Provides
     fun provideHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor
+        loggingInterceptor: HttpLoggingInterceptor,
+        trackingInterceptor: Interceptor
     ): OkHttpClient {
         val builder = OkHttpClient.Builder()
             .connectTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
-            .addInterceptor(TrackingInterceptor())
             .writeTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(trackingInterceptor)
 
         return builder.build()
     }

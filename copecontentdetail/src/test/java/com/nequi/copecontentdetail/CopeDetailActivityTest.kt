@@ -21,8 +21,9 @@ import android.widget.TextView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 
-import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.runner.AndroidJUnit4
 import com.cope.core.CoreApplication
+import com.cope.core.CoreTestApplication
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
 import com.cope.core.models.ViewCopeContent
 import com.nequi.copecontentdetail.exceptions.CopeContentArgumentNotFoundException
@@ -39,7 +40,7 @@ import java.util.*
  * @see [Testing documentation](http://d.android.com/tools/testing)
  */
 @RunWith(AndroidJUnit4::class)
-@Config(application = CoreApplication::class)
+@Config(application = CoreTestApplication::class)
 class CopeDetailActivityTest {
 
     @Test(expected = CopeContentArgumentNotFoundException::class)

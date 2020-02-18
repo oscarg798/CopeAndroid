@@ -20,6 +20,8 @@ import com.cope.login.data.entities.APiLoginParams
 import com.cope.login.data.entities.UserLoginReponse
 import com.cope.login.data.services.LoginService
 import kotlinx.coroutines.runBlocking
+import okhttp3.Interceptor
+import okhttp3.Response
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.amshove.kluent.shouldEqual
@@ -58,7 +60,13 @@ class LoginServiceTest : MockServerTest {
             networkModule.provideRetrofit(
                 mockServer.url(" ").toString(),
                 networkModule.provideGsonConverter(),
-                networkModule.provideHttpClient(networkModule.provideLogginInterceptor())
+                networkModule.provideHttpClient(networkModule.provideLogginInterceptor(),  object:
+                    Interceptor {
+                    override fun intercept(chain: Interceptor.Chain): Response {
+                        return chain.proceed(chain.request())
+                    }
+
+                })
             ).create(LoginService::class.java)
         }
 

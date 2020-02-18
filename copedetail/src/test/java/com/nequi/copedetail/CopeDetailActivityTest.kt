@@ -26,6 +26,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import com.cope.core.CoreApplication
+import com.cope.core.CoreTestApplication
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.models.ViewCope
 import com.cope.core.models.ViewCopeContent
@@ -44,7 +45,7 @@ import java.util.*
  * @author Oscar Gallon on 2019-06-12.
  */
 @RunWith(AndroidJUnit4::class)
-@Config(application = CoreApplication::class)
+@Config(application = CoreTestApplication::class)
 class CopeDetailActivityTest {
 
     @get:Rule
