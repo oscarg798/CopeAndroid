@@ -34,10 +34,14 @@ interface CopeDetailContract {
         fun showCopeContents(viewCopeContents: List<ViewCopeContent>)
 
         fun showCopeContentDetail(viewCopeContent: ViewCopeContent)
+
+        fun openCopeSource(url: String)
     }
 
     interface Presenter : BasePresenter<View>, CopeContentClickListener {
 
         fun onViewCreated(viewCope: ViewCope)
+
+        fun onCopeSourceClicked()
     }
 }

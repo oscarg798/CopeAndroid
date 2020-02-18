@@ -15,6 +15,8 @@
 
 package com.nequi.copedetail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -31,6 +33,7 @@ import com.nequi.copedetail.di.CopeModule
 import com.nequi.copedetail.di.DaggerCopeDetailComponent
 import kotlinx.android.synthetic.main.activity_cope_detail.*
 import javax.inject.Inject
+
 
 @DeepLink(COPE_DETAIL_DEEP_LINK)
 class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
@@ -54,7 +57,8 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
     override fun onResume() {
         super.onResume()
         presenter.bind(this)
-        val viewCope = intent?.extras?.getParcelable<ViewCope>(ARGUMENT_COPE) ?: throw RuntimeException()
+        val viewCope =
+            intent?.extras?.getParcelable<ViewCope>(ARGUMENT_COPE) ?: throw RuntimeException()
         presenter.onViewCreated(viewCope)
     }
 
@@ -69,7 +73,13 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
 
     override fun showCopeContentDetail(viewCopeContent: ViewCopeContent) {
         startDeepLinkIntent(COPE_CONTENT_DETAIL_DEEP_LINK, Bundle().apply {
-            putParcelable(ARGUMENT_COPE_CONTENT,viewCopeContent)
+            putParcelable(ARGUMENT_COPE_CONTENT, viewCopeContent)
+        })
+    }
+
+    override fun openCopeSource(url: String) {
+        startActivity(Intent(Intent.ACTION_VIEW).apply {
+            data = Uri.parse(url)
         })
     }
 
@@ -83,7 +93,8 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
 
     private fun initComponents() {
         rvCopeContent?.setHasFixedSize(false)
-        rvCopeContent?.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rvCopeContent?.layoutManager =
+            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rvCopeContent?.adapter = CopeDetailAdapter(presenter)
     }
 }

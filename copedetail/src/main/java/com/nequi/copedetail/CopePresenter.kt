@@ -28,8 +28,10 @@ class CopePresenter(override val coroutinesContextProvider: CoroutineContextProv
 
     override var parentJob: Job = Job()
     override var view: CopeDetailContract.View? = null
+    private lateinit var viewCope: ViewCope
 
     override fun onViewCreated(viewCope: ViewCope) {
+        this.viewCope = viewCope
         view?.showCopeTitle(viewCope.title)
         view?.showCopeUrl(viewCope.url)
         view?.showCopeContents(viewCope.content)
@@ -37,5 +39,9 @@ class CopePresenter(override val coroutinesContextProvider: CoroutineContextProv
 
     override fun onCopeConntentClickListener(copeContent: ViewCopeContent) {
         view?.showCopeContentDetail(copeContent)
+    }
+
+    override fun onCopeSourceClicked() {
+        view?.openCopeSource(viewCope.url)
     }
 }
