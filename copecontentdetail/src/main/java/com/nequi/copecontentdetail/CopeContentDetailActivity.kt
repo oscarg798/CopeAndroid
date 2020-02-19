@@ -18,6 +18,7 @@ package com.nequi.copecontentdetail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
+import com.cope.core.InjectableActivity
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
 import com.cope.core.constants.COPE_CONTENT_DETAIL_DEEP_LINK
 import com.cope.core.di.CoreComponentProvider
@@ -29,7 +30,7 @@ import kotlinx.android.synthetic.main.activity_cope_content_detail.*
 import javax.inject.Inject
 
 @DeepLink(COPE_CONTENT_DETAIL_DEEP_LINK)
-class CopeContentDetailActivity : AppCompatActivity(), CopeContentDetailContract.View {
+class CopeContentDetailActivity : InjectableActivity(), CopeContentDetailContract.View {
 
     @Inject
     lateinit var presenter: CopeContentDetailContract.Presenter
@@ -37,12 +38,6 @@ class CopeContentDetailActivity : AppCompatActivity(), CopeContentDetailContract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cope_content_detail)
-
-        DaggerCopeContentDetailComponent.builder()
-            .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .copeContentDetailModule(CopeContentDetailModule)
-            .build()
-            .inject(this)
     }
 
     override fun onResume() {

@@ -29,33 +29,25 @@ import com.cope.copelist.di.DaggerCopeListComponent
 import com.cope.copelist.fragment.adapter.CopeAdapter
 import com.cope.copelist.fragment.adapter.CopeViewHolder
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
+import com.cope.core.InjectableFragment
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
 import com.cope.core.constants.StringResourceId
 import com.cope.core.di.CoreComponentProvider
+import com.cope.core.di.injector.InjectorProvider
 import com.cope.core.extensions.startDeepLinkIntent
 import com.cope.core.models.Cope
 import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
 
-class CopeListFragment : Fragment(), CopeListContract.View {
+class CopeListFragment : InjectableFragment(R.layout.fragment_cope_list), CopeListContract.View {
 
     @Inject
     lateinit var presenter: CopeListContract.Presenter
 
     @Inject
     lateinit var viewHolderFactories: List<@JvmSuppressWildcards ViewHolderFactory<@JvmSuppressWildcards CopeViewHolder>>
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        DaggerCopeListComponent.builder()
-            .coreComponent((activity!!.application as CoreComponentProvider).getCoreComponent())
-            .copeListModule(CopeListModule)
-            .build()
-            .inject(this)
-    }
 
     override fun onResume() {
         super.onResume()
@@ -65,14 +57,6 @@ class CopeListFragment : Fragment(), CopeListContract.View {
     override fun onStop() {
         super.onStop()
         presenter.unBind()
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_cope_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

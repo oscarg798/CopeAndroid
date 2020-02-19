@@ -25,7 +25,7 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import com.cope.core.CoreApplication
+import co.com.cope.CoreApplication
 import com.cope.core.CoreTestApplication
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.models.ViewCope

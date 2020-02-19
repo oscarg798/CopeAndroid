@@ -22,7 +22,7 @@ import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 
 import androidx.test.runner.AndroidJUnit4
-import com.cope.core.CoreApplication
+import co.com.cope.CoreApplication
 import com.cope.core.CoreTestApplication
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
 import com.cope.core.models.ViewCopeContent
@@ -53,7 +53,7 @@ class CopeDetailActivityTest {
         val scenario = given {
             ActivityScenario.launch<CopeContentDetailActivity>(
                 Intent(
-                    ApplicationProvider.getApplicationContext<CoreApplication>(),
+                    ApplicationProvider.getApplicationContext<co.com.cope.CoreApplication>(),
                     CopeContentDetailActivity::class.java
                 ).apply {
                     putExtras(Bundle().apply {

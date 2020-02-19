@@ -23,14 +23,17 @@ import com.airbnb.deeplinkdispatch.DeepLink
 import com.cope.copelist.di.CopeListModule
 import com.cope.copelist.di.DaggerCopeListComponent
 import com.cope.copelist.fragment.CopeListFragment
+import com.cope.core.InjectableActivity
 import com.cope.core.constants.COPE_LIST_DEEP_LINK
 import com.cope.core.constants.LOGIN_DEEPLINK
 import com.cope.core.di.CoreComponentProvider
+import com.cope.core.di.injector.Injector
+import com.cope.core.di.injector.InjectorProvider
 import com.cope.core.extensions.startDeepLinkIntent
 import javax.inject.Inject
 
 @DeepLink(COPE_LIST_DEEP_LINK)
-class CopeListActivity : AppCompatActivity(), CopeListContract.View {
+class CopeListActivity : InjectableActivity(), CopeListContract.View {
 
     @Inject
     lateinit var presenter: CopeListContract.Presenter
@@ -38,12 +41,6 @@ class CopeListActivity : AppCompatActivity(), CopeListContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cope_list)
-
-        DaggerCopeListComponent.builder()
-            .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .copeListModule(CopeListModule)
-            .build()
-            .inject(this)
 
         presenter.bind(this)
 

@@ -16,6 +16,8 @@
 package co.com.cope.splash
 
 import android.os.Bundle
+import android.text.Html
+import android.text.util.Linkify
 import androidx.appcompat.app.AppCompatActivity
 import co.com.cope.R
 import co.com.cope.di.splash.DaggerSplashComponent
@@ -24,6 +26,7 @@ import com.cope.core.constants.COPE_LIST_DEEP_LINK
 import com.cope.core.constants.LOGIN_DEEPLINK
 import com.cope.core.di.CoreComponentProvider
 import com.cope.core.extensions.startDeepLinkIntent
+import kotlinx.android.synthetic.main.activity_splash.*
 
 import javax.inject.Inject
 
@@ -58,6 +61,6 @@ class SplashActivity : AppCompatActivity(), SplashContract.View {
     }
 
     override fun navigateDashboard() {
-        startDeepLinkIntent(COPE_LIST_DEEP_LINK)
+       startDeepLinkIntent(COPE_LIST_DEEP_LINK)
     }
 }

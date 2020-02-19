@@ -37,7 +37,7 @@ import javax.inject.Named
  * @author Oscar Gallon on 2019-06-06.
  */
 @Module
-class LoginModule {
+object LoginModule {
 
     @Provides
     fun provideLoginService(retrofit: Retrofit): LoginService {

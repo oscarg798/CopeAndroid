@@ -13,16 +13,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cope.core
+package co.com.cope
 
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDexApplication
+import com.cope.copelist.di.CopeListInjectorProcessor
 import com.cope.core.di.*
+import com.cope.core.di.injector.ApplicationInjector
+import com.cope.core.di.injector.Injector
+import com.cope.core.di.injector.InjectorProvider
 import com.cope.core.exceptions.CoreComponentNotInitializatedException
+import com.cope.login.di.LoginInjectorProcessor
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.firebase.FirebaseApp
-import com.squareup.picasso.Picasso
+import com.nequi.copecontentdetail.di.CopeContentDetailInjectorProcessor
+import com.nequi.copedetail.di.CopeDetailInjectorProcessor
 import ly.count.android.sdk.Countly
 import ly.count.android.sdk.DeviceId
 import javax.inject.Inject
@@ -30,12 +36,11 @@ import javax.inject.Inject
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
-class CoreApplication : MultiDexApplication(), CoreComponentProvider {
+class CoreApplication : MultiDexApplication(), CoreComponentProvider, InjectorProvider {
 
     private var coreComponent: CoreComponent? = null
 
-    @Inject
-    lateinit var countly: Countly
+    private var injector: Injector? = null
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
@@ -46,9 +51,22 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider {
         super.onCreate()
 
         FirebaseApp.initializeApp(this)
+    }
 
-        getCoreComponent().inject(this)
+    override fun getInjector(): Injector {
+        if (injector == null) {
+            injector = ApplicationInjector(
+                listOf(
+                    LoginInjectorProcessor(),
+                    CopeListInjectorProcessor(),
+                    CopeDetailInjectorProcessor(),
+                    CopeContentDetailInjectorProcessor()
+                ),
+                getCoreComponent()
+            )
+        }
 
+        return injector!!
     }
 
     override fun getCoreComponent(): CoreComponent {

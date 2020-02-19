@@ -21,6 +21,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.airbnb.deeplinkdispatch.DeepLink
+import com.cope.core.InjectableActivity
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
 import com.cope.core.constants.COPE_CONTENT_DETAIL_DEEP_LINK
@@ -34,9 +35,8 @@ import com.nequi.copedetail.di.DaggerCopeDetailComponent
 import kotlinx.android.synthetic.main.activity_cope_detail.*
 import javax.inject.Inject
 
-
 @DeepLink(COPE_DETAIL_DEEP_LINK)
-class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
+class CopeDetailActivity : InjectableActivity(), CopeDetailContract.View {
 
     @Inject
     lateinit var presenter: CopeDetailContract.Presenter
@@ -44,12 +44,6 @@ class CopeDetailActivity : AppCompatActivity(), CopeDetailContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cope_detail)
-
-        DaggerCopeDetailComponent.builder()
-            .copeModule(CopeModule)
-            .coreComponent((application as CoreComponentProvider).getCoreComponent())
-            .build()
-            .inject(this)
 
         initComponents()
 

@@ -16,7 +16,6 @@
 package com.cope.core.di
 
 import android.content.Context
-import com.cope.core.CoreApplication
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.DynamicFeatureMappers
 import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
@@ -29,7 +28,6 @@ import com.cope.core.interactor.Interactor
 import com.cope.core.repositories.LocalStorageRepository
 import com.cope.logger.Logger
 import dagger.Component
-import dagger.Provides
 import retrofit2.Retrofit
 import javax.inject.Named
 
@@ -39,8 +37,6 @@ import javax.inject.Named
 @CoreComponentScope
 @Component(modules = [CoreModule::class, NetworkModule::class, RepositoryModule::class, FeatureFlagModule::class])
 interface CoreComponent {
-
-    fun inject(coreApplication: CoreApplication)
 
     @Named(COROUTINE_IO_CONTEXT_PROVIDER)
     fun provideIOCoroutineContextProvider(): CoroutineContextProvider
