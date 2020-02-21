@@ -12,4 +12,6 @@ interface InjectorProcessor {
 
     fun inject(field: Any)
 
+    fun destroy(field: Any)
+
 }

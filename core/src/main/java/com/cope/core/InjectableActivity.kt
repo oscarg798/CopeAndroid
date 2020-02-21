@@ -10,4 +10,10 @@ abstract class InjectableActivity: AppCompatActivity(){
         super.onCreate(savedInstanceState)
         (application as InjectorProvider).getInjector().inject(this)
     }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        (application as InjectorProvider).getInjector().destroy(this)
+    }
 }

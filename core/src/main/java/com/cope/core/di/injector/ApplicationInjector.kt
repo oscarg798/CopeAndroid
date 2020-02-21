@@ -15,4 +15,10 @@ class ApplicationInjector(
         processor.buildComponent(coreComponent)
         processor.inject(field)
     }
+
+    override fun destroy(field: Any) {
+        processors.first {
+            it.supportedFields.contains(field::class)
+        }.destroy(field)
+    }
 }

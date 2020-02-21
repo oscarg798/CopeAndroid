@@ -1,5 +1,6 @@
 package com.nequi.copecontentdetail.di
 
+import android.util.Log
 import com.cope.core.di.CoreComponent
 import com.cope.core.di.injector.InjectorProcessor
 import com.nequi.copecontentdetail.CopeContentDetailActivity
@@ -24,5 +25,7 @@ class CopeContentDetailInjectorProcessor : InjectorProcessor {
         component.get()!!.inject(field as CopeContentDetailActivity)
     }
 
-
+    override fun destroy(field: Any) {
+        component.clear()
+    }
 }

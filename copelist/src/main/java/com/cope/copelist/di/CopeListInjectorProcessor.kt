@@ -1,5 +1,9 @@
 package com.cope.copelist.di
 
+import android.util.Log
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.cope.copelist.CopeListActivity
 import com.cope.copelist.fragment.CopeListFragment
 import com.cope.core.di.CoreComponent
@@ -30,5 +34,9 @@ class CopeListInjectorProcessor : InjectorProcessor {
             is CopeListFragment -> component.get()!!.inject(field)
             else -> throw IllegalArgumentException("Not supported field, availables fields are $supportedFields")
         }
+    }
+
+    override fun destroy(field: Any) {
+        component.clear()
     }
 }

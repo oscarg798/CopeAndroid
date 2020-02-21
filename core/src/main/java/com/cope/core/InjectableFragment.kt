@@ -10,7 +10,7 @@ abstract class InjectableFragment(@LayoutRes contentLayoutId: Int) : Fragment(co
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity!!.application as InjectorProvider).getInjector().inject(this)
+        (requireActivity().application as InjectorProvider).getInjector().inject(this)
     }
 
 }

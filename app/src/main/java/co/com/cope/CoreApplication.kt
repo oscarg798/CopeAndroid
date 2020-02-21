@@ -55,7 +55,7 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider, InjectorPr
 
     override fun getInjector(): Injector {
         if (injector == null) {
-            injector = ApplicationInjector(
+            injector =ApplicationInjector(
                 listOf(
                     LoginInjectorProcessor(),
                     CopeListInjectorProcessor(),

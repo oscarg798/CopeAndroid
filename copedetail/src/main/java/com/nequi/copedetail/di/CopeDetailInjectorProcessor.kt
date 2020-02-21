@@ -25,5 +25,8 @@ class CopeDetailInjectorProcessor : InjectorProcessor {
         component.get()!!.inject(field as CopeDetailActivity)
     }
 
+    override fun destroy(field: Any) {
+        component.clear()
+    }
 
 }

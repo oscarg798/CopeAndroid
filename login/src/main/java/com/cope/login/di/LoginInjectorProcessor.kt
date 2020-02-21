@@ -1,5 +1,9 @@
 package com.cope.login.di
 
+import android.util.Log
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.cope.core.di.CoreComponent
 import com.cope.core.di.injector.InjectorProcessor
 import com.cope.login.LoginActivity
@@ -27,4 +31,7 @@ class LoginInjectorProcessor : InjectorProcessor {
 
     }
 
+    override fun destroy(field: Any) {
+        loginComponent.clear()
+    }
 }
