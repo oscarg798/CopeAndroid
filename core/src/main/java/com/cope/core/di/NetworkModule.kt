@@ -15,8 +15,11 @@
 
 package com.cope.core.di
 
+import com.cope.core.constants.AUTH_INTERCEPTOR
 import com.cope.core.constants.BACKEND_DATE_FORMAT
 import com.cope.core.constants.TIME_OUT_SECONDS
+import com.cope.core.constants.TRACKING_INTERCEPTOR
+import com.cope.core.repositories.LocalStorageRepository
 import com.google.firebase.FirebaseApp
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -27,6 +30,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 
 /**
  * @author Oscar Gallon on 2019-06-06.
@@ -43,6 +47,13 @@ object NetworkModule {
         return GsonConverterFactory.create(gson)
     }
 
+    @Named(AUTH_INTERCEPTOR)
+    @CoreComponentScope
+    @Provides
+    fun provideAuthorizationInterceptor(localStorageRepository: LocalStorageRepository): Interceptor {
+        return AuthInterceptor(localStorageRepository)
+    }
+
     @CoreComponentScope
     @Provides
     fun provideLogginInterceptor(): HttpLoggingInterceptor {
@@ -52,15 +63,19 @@ object NetworkModule {
         return loggingInterceptor
     }
 
+    @Named(TRACKING_INTERCEPTOR)
     @CoreComponentScope
     @Provides
-    fun provideTrackingInterceptor(): Interceptor  = TrackingInterceptor()
+    fun provideTrackingInterceptor(): Interceptor = TrackingInterceptor()
 
     @CoreComponentScope
     @Provides
     fun provideHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-        trackingInterceptor: Interceptor
+        @Named(
+            TRACKING_INTERCEPTOR
+        ) trackingInterceptor: Interceptor,
+        @Named(AUTH_INTERCEPTOR) authInterceptor: Interceptor
     ): OkHttpClient {
         val builder = OkHttpClient.Builder()
             .connectTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
@@ -68,6 +83,7 @@ object NetworkModule {
             .writeTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
             .addInterceptor(trackingInterceptor)
+            .addInterceptor(authInterceptor)
 
         return builder.build()
     }
