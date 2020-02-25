@@ -16,9 +16,8 @@
 package com.cope.copelist.di
 
 import com.cope.copelist.CopeListActivityPresenter
-import com.cope.copelist.data.mapper.APICopeMapper
-import com.cope.copelist.data.repository.CopeRepositoryImpl
-import com.cope.copelist.data.service.GetCopeService
+import com.cope.core.repositories.CopeRepositoryImpl
+import com.cope.core.services.CopeService
 import com.cope.copelist.domain.GetCopesInteractor
 import com.cope.copelist.domain.LogoutInteractor
 import com.cope.copelist.fragment.CopeListContract
@@ -51,16 +50,6 @@ import javax.inject.Named
 object CopeListModule {
 
     @Provides
-    fun provideGetCopeListService(retrofit: Retrofit): GetCopeService {
-        return retrofit.create(GetCopeService::class.java)
-    }
-
-    @Provides
-    fun provideGetCopeRepository(getCopeService: GetCopeService): CopeRepository {
-        return CopeRepositoryImpl(getCopeService, APICopeMapper)
-    }
-
-    @Provides
     fun provideGetCopesInteractor(copeRepository: CopeRepository): Interactor<List<Cope>, None> {
         return GetCopesInteractor(copeRepository)
     }
@@ -72,7 +61,6 @@ object CopeListModule {
             CopeItemViewHolderFactory(featureFlagHandler)
         )
     }
-
 
     @Named(LOGOUT_INTERACTOR)
     @Provides

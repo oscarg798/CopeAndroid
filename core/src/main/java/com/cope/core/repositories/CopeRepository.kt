@@ -23,4 +23,6 @@ import com.cope.core.models.Cope
 interface CopeRepository {
 
     suspend fun getCopes(): List<Cope>
+
+    suspend fun shareCope(id: String, email: String)
 }

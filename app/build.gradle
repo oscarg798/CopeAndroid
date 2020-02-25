@@ -114,6 +114,7 @@ dependencies {
     implementation project(path: ':copedetail')
     implementation project(path: ':copecontentdetail')
     implementation project(path: ':copecreator')
+    implementation project(path: ':sharedialog')
 
     implementation 'ly.count.android:sdk-messaging:18.08.1'
     implementation 'com.google.android.play:core:1.6.5'

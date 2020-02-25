@@ -13,22 +13,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cope.copelist.data.mapper
+package com.cope.core.models.network
 
-import com.cope.copelist.data.entities.APICopeContent
-import com.cope.core.DateParser
-import com.cope.core.models.CopeContent
+import com.cope.core.models.network.APICopeContent
+import com.google.gson.annotations.SerializedName
+import java.util.*
 
 /**
- * @author Oscar Gallon on 2019-06-12.
+ * @author Oscar Gallon on 2019-06-11.
  */
-object APICopeContentMapper {
-
-    fun map(apiCopeContent: APICopeContent): CopeContent {
-        return CopeContent(
-            apiCopeContent.id, apiCopeContent.text,
-            DateParser.getCopeDateFromBackendDate(apiCopeContent.createdAt),
-            DateParser.getCopeDateFromBackendDate(apiCopeContent.updatedAt)
-        )
-    }
-}
+data class APICope(
+    @SerializedName("_id") val id: String,
+    val url: String,
+    val title: String,
+    val createdAt: Date,
+    val updatedAt: Date,
+    val content: List<APICopeContent>,
+    val icon: String?
+)

@@ -13,7 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cope.copelist.data.entities
+package com.cope.core.models.network
 
 import com.google.gson.annotations.SerializedName
 import java.util.*

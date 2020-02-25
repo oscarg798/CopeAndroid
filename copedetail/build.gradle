@@ -17,5 +17,7 @@ apply from: "$rootProject.projectDir/shared.gradle"
 
 dependencies {
     implementation project(':core')
+    implementation project(':sharedialog')
+
     testImplementation project(':core')
 }

@@ -18,20 +18,19 @@ package com.nequi.copedetail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import co.com.sharedialog.ShareDialogFragment
 import com.airbnb.deeplinkdispatch.DeepLink
 import com.cope.core.InjectableActivity
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.ARGUMENT_COPE_CONTENT
 import com.cope.core.constants.COPE_CONTENT_DETAIL_DEEP_LINK
 import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
-import com.cope.core.di.CoreComponentProvider
 import com.cope.core.extensions.startDeepLinkIntent
 import com.cope.core.models.ViewCope
 import com.cope.core.models.ViewCopeContent
-import com.nequi.copedetail.di.CopeModule
-import com.nequi.copedetail.di.DaggerCopeDetailComponent
 import kotlinx.android.synthetic.main.activity_cope_detail.*
 import javax.inject.Inject
 
@@ -65,6 +64,26 @@ class CopeDetailActivity : InjectableActivity(), CopeDetailContract.View {
         presenter.unBind()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu?.let {
+            menuInflater.inflate(R.menu.cope_detail_menu, menu)
+        }
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        item?.let {
+            if (item.itemId == R.id.actionShare) {
+                presenter.onSharePressed()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun showCopeContents(viewCopeContents: List<ViewCopeContent>) {
         (rvCopeContent?.adapter as? CopeDetailAdapter)?.add(viewCopeContents)
     }
@@ -87,6 +106,12 @@ class CopeDetailActivity : InjectableActivity(), CopeDetailContract.View {
 
     override fun showCopeUrl(url: String) {
         tvCopeUrl?.text = url
+    }
+
+    override fun openShareDialog(copeId: String) {
+        val dialog = ShareDialogFragment.newInstance(copeId)
+
+        dialog.show(supportFragmentManager, ShareDialogFragment::class.java.name)
     }
 
     private fun initComponents() {

@@ -25,6 +25,7 @@ import com.cope.core.constants.FIREBASE_REMOTE_CONFIG_FEATURE_FLAG_HANDLER
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.featureflags.FirebaseRemoteConfigInitializator
 import com.cope.core.interactor.Interactor
+import com.cope.core.repositories.CopeRepository
 import com.cope.core.repositories.LocalStorageRepository
 import com.cope.logger.Logger
 import dagger.Component
@@ -63,4 +64,6 @@ interface CoreComponent {
     fun provideDynamicFeatureMappers(): DynamicFeatureMappers
 
     fun provideContext(): Context
+
+    fun provideGetCopeRepository(): CopeRepository
 }

@@ -15,9 +15,9 @@
 
 package com.cope.copelist
 
-import com.cope.copelist.data.entities.APICopeContent
-import com.cope.copelist.data.mapper.APICopeContentMapper
+import com.cope.core.models.network.APICopeContent
 import com.cope.core.DateParser
+import com.cope.core.mapper.map
 import org.amshove.kluent.shouldEqual
 import org.junit.Test
 import java.util.*
@@ -29,14 +29,11 @@ class APICopeContentMapperTest {
 
     @Test
     fun `should map from api cope content`() {
-        val mapper = given { APICopeContentMapper }
         val result = whenever {
-            mapper.map(
-                APICopeContent(
-                    "1", "2", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
-                    DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
-                )
-            )
+            APICopeContent(
+                "1", "2", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
+            ).map()
         }
 
         then {

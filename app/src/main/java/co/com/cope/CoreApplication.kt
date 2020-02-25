@@ -18,6 +18,7 @@ package co.com.cope
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDexApplication
+import co.com.sharedialog.di.ShareDialogInjectorProcessor
 import com.cope.copelist.di.CopeListInjectorProcessor
 import com.cope.core.di.*
 import com.cope.core.di.injector.ApplicationInjector
@@ -60,7 +61,8 @@ class CoreApplication : MultiDexApplication(), CoreComponentProvider, InjectorPr
                     LoginInjectorProcessor(),
                     CopeListInjectorProcessor(),
                     CopeDetailInjectorProcessor(),
-                    CopeContentDetailInjectorProcessor()
+                    CopeContentDetailInjectorProcessor(),
+                    ShareDialogInjectorProcessor()
                 ),
                 getCoreComponent()
             )

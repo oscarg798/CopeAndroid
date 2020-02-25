@@ -15,13 +15,15 @@
 
 package com.cope.copelist
 
-import com.cope.copelist.data.entities.APICope
-import com.cope.copelist.data.entities.APICopeContent
-import com.cope.copelist.data.mapper.APICopeMapper
-import com.cope.copelist.data.repository.CopeRepositoryImpl
-import com.cope.copelist.data.service.GetCopeService
+import com.cope.core.models.network.APICope
+import com.cope.core.models.network.APICopeContent
+import com.cope.core.repositories.CopeRepositoryImpl
+import com.cope.core.services.CopeService
 import com.cope.core.DateParser
+import com.cope.core.models.network.APIShareCope
+import com.cope.core.repositories.CopeRepository
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.shouldEqual
@@ -34,32 +36,57 @@ import java.util.*
  */
 class CopeRepositoryTest : MockableTest {
 
-    @MockK
-    lateinit var getCopeService: GetCopeService
+    @MockK(relaxed = true)
+    lateinit var copeService: CopeService
+
     @Before
     override fun setup() {
         super.setup()
 
         coEvery {
-            getCopeService.getCopes()
+            copeService.getCopes()
         }.answers {
             listOf(
                 APICope(
-                    "1", "2", "3", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"), DateParser.getBackendDate("2019-06-12T16:48:13.477Z"), listOf(
-                        APICopeContent("12", "13", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
-                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z")),
-                        APICopeContent("15", "16", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
-                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z"))
-                    ), "4"
+                    "1",
+                    "2",
+                    "3",
+                    DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                    DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                    listOf(
+                        APICopeContent(
+                            "12", "13", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
+                        ),
+                        APICopeContent(
+                            "15", "16", DateParser.getBackendDate("2019-06-12T16:48:13.477Z"),
+                            DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
+                        )
+                    ),
+                    "4"
                 )
             )
+        }
+    }
+
+    fun `should share cope`() {
+        val repo = CopeRepositoryImpl(copeService)
+
+        runBlocking {
+            repo.shareCope("1", "3")
+        }
+
+        coVerify {
+            copeService.shareCope("1", APIShareCope("3"))
         }
     }
 
     @Test
     fun `should get copes`() {
         val repository = given {
-            CopeRepositoryImpl(getCopeService, APICopeMapper)
+            CopeRepositoryImpl(
+                copeService
+            )
         }
 
         val result = whenever {

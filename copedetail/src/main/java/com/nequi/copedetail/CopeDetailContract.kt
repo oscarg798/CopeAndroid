@@ -36,6 +36,8 @@ interface CopeDetailContract {
         fun showCopeContentDetail(viewCopeContent: ViewCopeContent)
 
         fun openCopeSource(url: String)
+
+        fun openShareDialog(copeId: String)
     }
 
     interface Presenter : BasePresenter<View>, CopeContentClickListener {
@@ -43,5 +45,7 @@ interface CopeDetailContract {
         fun onViewCreated(viewCope: ViewCope)
 
         fun onCopeSourceClicked()
+
+        fun onSharePressed()
     }
 }

@@ -17,10 +17,14 @@ package com.cope.core.di
 
 import android.content.Context
 import android.preference.PreferenceManager
+import com.cope.core.repositories.CopeRepository
+import com.cope.core.repositories.CopeRepositoryImpl
 import com.cope.core.repositories.LocalStorageRepository
 import com.cope.core.repositories.LocalStorageRepositoryImpl
+import com.cope.core.services.CopeService
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -28,6 +32,13 @@ import dagger.Provides
 @Module
 class RepositoryModule(private val context: Context) {
 
+    @CoreComponentScope
+    @Provides
+    fun provideGetCopeRepository(copeService: CopeService): CopeRepository {
+        return CopeRepositoryImpl(
+            copeService
+        )
+    }
     @CoreComponentScope
     @Provides
     fun provideLocalStorageRepository(): LocalStorageRepository {

@@ -44,4 +44,8 @@ class CopePresenter(override val coroutinesContextProvider: CoroutineContextProv
     override fun onCopeSourceClicked() {
         view?.openCopeSource(viewCope.url)
     }
+
+    override fun onSharePressed() {
+        view?.openShareDialog(viewCope.id)
+    }
 }

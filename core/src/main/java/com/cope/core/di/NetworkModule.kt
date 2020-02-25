@@ -20,6 +20,7 @@ import com.cope.core.constants.BACKEND_DATE_FORMAT
 import com.cope.core.constants.TIME_OUT_SECONDS
 import com.cope.core.constants.TRACKING_INTERCEPTOR
 import com.cope.core.repositories.LocalStorageRepository
+import com.cope.core.services.CopeService
 import com.google.firebase.FirebaseApp
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -101,4 +102,11 @@ object NetworkModule {
             .client(httpClient)
             .build()
     }
+
+    @CoreComponentScope
+    @Provides
+    fun provideGetCopeListService(retrofit: Retrofit): CopeService {
+        return retrofit.create(CopeService::class.java)
+    }
+
 }
