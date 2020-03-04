@@ -69,7 +69,7 @@ class CopeListPresenter(
         launchJobOnMainDispatchers {
             runCatching {
                 withContext(coroutinesContextProvider.backgroundContext) {
-                    getCopeInteractor(None)
+                    getCopeInteractor(None).sortedByDescending { it.updateAt }
                 }
             }.fold({
                 view?.showCopes(it)
