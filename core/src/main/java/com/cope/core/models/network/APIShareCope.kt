@@ -17,4 +17,6 @@
 
 package com.cope.core.models.network
 
-data class APIShareCope(private val email: String)
+import com.google.gson.annotations.SerializedName
+
+data class APIShareCope(@SerializedName("email") private val email: String)

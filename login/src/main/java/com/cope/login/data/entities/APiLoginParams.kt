@@ -15,10 +15,14 @@
 
 package com.cope.login.data.entities
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
 data class APiLoginParams(
+    @SerializedName("email")
     val email: String,
+    @SerializedName("password")
     val password: String
 )

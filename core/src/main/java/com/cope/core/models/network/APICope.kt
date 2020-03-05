@@ -24,10 +24,16 @@ import java.util.*
  */
 data class APICope(
     @SerializedName("_id") val id: String,
+    @SerializedName("url")
     val url: String,
+    @SerializedName("title")
     val title: String,
+    @SerializedName("createdAt")
     val createdAt: Date,
+    @SerializedName("updatedAt")
     val updatedAt: Date,
+    @SerializedName("content")
     val content: List<APICopeContent>,
+    @SerializedName("icon")
     val icon: String?
 )

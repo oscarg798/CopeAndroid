@@ -22,8 +22,12 @@ import java.util.*
  * @author Oscar Gallon on 2019-06-12.
  */
 data class APICopeContent(
-    @SerializedName("_id") val id: String,
+    @SerializedName("_id")
+    val id: String,
+    @SerializedName("text")
     val text: String,
+    @SerializedName("createdAt")
     val createdAt: Date,
+    @SerializedName("updatedAt")
     val updatedAt: Date
 )
