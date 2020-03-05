@@ -26,6 +26,6 @@ object ViewCopeMapper {
     fun map(cope: Cope): ViewCope {
         return ViewCope(cope.id, cope.url, cope.title, cope.createdAt, cope.updateAt, cope.content.map {
             ViewCopeContentMapper.map(it)
-        }, cope.icon)
+        }, cope.icon, cope.mainImage)
     }
 }

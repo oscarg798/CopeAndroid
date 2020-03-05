@@ -30,5 +30,6 @@ data class ViewCope(
     val createdAt: Date,
     val updateAt: Date,
     val content: List<ViewCopeContent>,
-    val icon: String? = null
+    val icon: String? = null,
+    val mainImage: String? = null
 ) : Parcelable

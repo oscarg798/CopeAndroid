@@ -16,11 +16,12 @@
 package com.cope.copelist.fragment
 
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 
 /**
  * @author Oscar Gallon on 2019-06-12.
  */
 interface CopeClickListener {
 
-    fun onCopeClick(cope: Cope)
+    fun onCopeClick(cope: ViewCope)
 }

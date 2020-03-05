@@ -37,7 +37,7 @@ class CopeItem2ViewHolder(itemView: View) : CopeViewHolder(itemView) {
         tvUrl.text = cope.url
 
         itemView.setOnClickListener {
-            copeClickListener.onCopeClick(cope)
+            //copeClickListener.onCopeClick(cope)
         }
 
         val iconView = ivICon ?: return

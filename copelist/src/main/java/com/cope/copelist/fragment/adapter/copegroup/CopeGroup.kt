@@ -15,24 +15,16 @@
  *
  */
 
-package com.cope.core.mapper
+package com.cope.copelist.fragment.adapter.copegroup
 
-import com.cope.core.models.network.APICope
-import com.cope.core.DateParser
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
+import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup
 
-/**
- * @author Oscar Gallon on 2019-06-11.
- */
-fun APICope.map(): Cope {
-    return Cope(
-        id,
-        url,
-        title,
-        DateParser.getCopeDateFromBackendDate(createdAt),
-        DateParser.getCopeDateFromBackendDate(updatedAt),
-        content.map { it.map() },
-        icon,
-        mainImage
-    )
+class CopeGroup(
+    title: String,
+    items: List<ViewCope>,
+    val icon: String?
+) : ExpandableGroup<ViewCope>(title, items) {
+
 }

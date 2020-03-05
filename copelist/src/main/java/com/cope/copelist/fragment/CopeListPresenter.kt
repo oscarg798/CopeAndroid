@@ -15,16 +15,20 @@
 
 package com.cope.copelist.fragment
 
+import com.cope.copelist.fragment.adapter.copegroup.CopeGroup
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.interactor.Interactor
 import com.cope.core.mapper.ViewCopeMapper
 import com.cope.core.models.Cope
 import com.cope.core.models.None
+import com.cope.core.models.ViewCope
 import com.cope.logger.LogEvent
 import com.cope.logger.Logger
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
+import java.net.URL
+
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -54,13 +58,9 @@ class CopeListPresenter(
         onViewCreated()
     }
 
-    override fun onCopeClick(cope: Cope) {
+    override fun onCopeClick(cope: ViewCope) {
         launchJobOnMainDispatchers {
-            val viewCope = withContext(coroutinesContextProvider.backgroundContext) {
-                viewCopeMapper.map(cope)
-            }
-
-            view?.openCopeDetails(viewCope)
+            view?.openCopeDetails(cope)
         }
     }
 
@@ -69,16 +69,53 @@ class CopeListPresenter(
         launchJobOnMainDispatchers {
             runCatching {
                 withContext(coroutinesContextProvider.backgroundContext) {
-                    getCopeInteractor(None).sortedByDescending { it.updateAt }
+                    val groups = getCopeInteractor(None).map {
+                        viewCopeMapper.map(it)
+                    }.sortedByDescending { it.updateAt }
+
+                    createCopeGroup(groups)
                 }
             }.fold({
                 view?.showCopes(it)
             }, {
-
+                it.printStackTrace()
             })
 
             view?.hideProgressDialog()
         }
+    }
+
+    private fun createCopeGroup(copes: List<ViewCope>): List<CopeGroup> {
+        val groups = HashMap<String, CopeGroup>()
+
+        copes.forEach {viewCope->
+            val url = getHostFromUrl(viewCope.url)
+            if (groups.containsKey(url)) {
+                val group = groups[url]
+                val items = group!!.items
+                groups[url] = CopeGroup(group.title, ArrayList<ViewCope>().apply {
+                    addAll(items)
+                    add(viewCope)
+                }, viewCope.icon ?: group.icon)
+            } else {
+                groups[url] = CopeGroup(url, listOf(viewCope), viewCope.icon)
+            }
+        }
+
+        return groups.mapTo(ArrayList<CopeGroup>(), {
+            it.value
+        })
+    }
+
+    private fun getHostFromUrl(url: String): String {
+        return runCatching {
+            val urlObject = URL(url)
+            urlObject.getHost()
+        }.fold({
+            it
+        }, {
+            "ERROR"
+        })
     }
 
     override fun handleException(error: Throwable) {

@@ -22,8 +22,10 @@ import com.cope.copelist.R
 import com.cope.copelist.fragment.CopeClickListener
 import com.cope.core.constants.DISPLAY_DATE_FORMAT
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,15 +33,15 @@ import java.util.*
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
-class CopeItemViewHolder(itemView: View) : CopeViewHolder(itemView) {
+class CopeItemViewHolder(itemView: View) : ChildViewHolder(itemView) {
 
     private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
     private val tvUrl = itemView.findViewById<TextView>(R.id.tvUrl)
-    private val ivICon = itemView.findViewById<ImageView>(R.id.ivIcon)
+    private val ivMainImage = itemView.findViewById<ImageView>(R.id.ivMainImage)
 
     private val dateFormatter = SimpleDateFormat(DISPLAY_DATE_FORMAT, Locale.ENGLISH)
 
-    override fun bind(cope: Cope, copeClickListener: CopeClickListener) {
+    fun bind(cope: ViewCope, copeClickListener: CopeClickListener) {
         tvTitle?.text = cope.title
         tvUrl?.text = cope.url
 
@@ -47,20 +49,14 @@ class CopeItemViewHolder(itemView: View) : CopeViewHolder(itemView) {
             copeClickListener.onCopeClick(cope)
         }
 
-        val iconView = ivICon ?: return
-
-        if (cope.icon == null) {
-            iconView.visibility = View.GONE
-            return
-        }
-
-        Picasso.get().load(cope.icon).into(iconView, object : Callback {
+        val mainImage = cope.mainImage ?: return
+        Picasso.get().load(mainImage).into(ivMainImage, object : Callback {
             override fun onSuccess() {
-                ivICon.visibility = View.VISIBLE
+
             }
 
             override fun onError(e: Exception?) {
-                ivICon.visibility = View.GONE
+                e?.printStackTrace()
             }
 
         })

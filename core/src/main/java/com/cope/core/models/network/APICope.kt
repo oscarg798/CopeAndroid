@@ -23,7 +23,8 @@ import java.util.*
  * @author Oscar Gallon on 2019-06-11.
  */
 data class APICope(
-    @SerializedName("_id") val id: String,
+    @SerializedName("_id")
+    val id: String,
     @SerializedName("url")
     val url: String,
     @SerializedName("title")
@@ -35,5 +36,7 @@ data class APICope(
     @SerializedName("content")
     val content: List<APICopeContent>,
     @SerializedName("icon")
-    val icon: String?
+    val icon: String?,
+    @SerializedName("mainImage")
+    val mainImage: String?
 )

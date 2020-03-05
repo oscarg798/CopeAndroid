@@ -27,7 +27,9 @@ import com.cope.copelist.R
 import com.cope.copelist.di.CopeListModule
 import com.cope.copelist.di.DaggerCopeListComponent
 import com.cope.copelist.fragment.adapter.CopeAdapter
+import com.cope.copelist.fragment.adapter.CopeExpandableAdapter
 import com.cope.copelist.fragment.adapter.CopeViewHolder
+import com.cope.copelist.fragment.adapter.copegroup.CopeGroup
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.InjectableFragment
 import com.cope.core.constants.ARGUMENT_COPE
@@ -65,10 +67,6 @@ class CopeListFragment : InjectableFragment(R.layout.fragment_cope_list), CopeLi
         val context = context ?: return
         rvCopes?.layoutManager = LinearLayoutManager(context)
         rvCopes?.setHasFixedSize(true)
-        rvCopes?.adapter =
-            CopeAdapter(
-                presenter, viewHolderFactories = viewHolderFactories
-            )
 
         srMain?.setOnRefreshListener(presenter)
 
@@ -83,10 +81,8 @@ class CopeListFragment : InjectableFragment(R.layout.fragment_cope_list), CopeLi
             })
     }
 
-    override fun showCopes(copes: List<Cope>) {
-        val adapter = rvCopes?.adapter as? CopeAdapter
-            ?: return
-        adapter.add(copes)
+    override fun showCopes(copes: List<CopeGroup>) {
+        rvCopes?.adapter = CopeExpandableAdapter(copes, presenter)
     }
 
     override fun showError(error: String) {
