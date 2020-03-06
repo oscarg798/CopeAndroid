@@ -50,16 +50,7 @@ class CopeItemViewHolder(itemView: View) : ChildViewHolder(itemView) {
         }
 
         val mainImage = cope.mainImage ?: return
-        Picasso.get().load(mainImage).into(ivMainImage, object : Callback {
-            override fun onSuccess() {
-
-            }
-
-            override fun onError(e: Exception?) {
-                e?.printStackTrace()
-            }
-
-        })
+        Picasso.get().load(mainImage).into(ivMainImage)
     }
 
 }

@@ -22,5 +22,5 @@ import com.cope.core.models.Cope
 
 abstract class CopeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    abstract fun bind(cope: Cope, copeClickListener: CopeClickListener)
+    abstract fun bind(cope: View, copeClickListener: CopeClickListener)
 }

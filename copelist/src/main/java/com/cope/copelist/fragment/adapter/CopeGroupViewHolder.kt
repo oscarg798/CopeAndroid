@@ -31,13 +31,11 @@ import java.lang.Exception
 class CopeGroupViewHolder(itemView: View) : GroupViewHolder(itemView) {
 
     private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
-    private val ivICon = itemView.findViewById<ImageView>(R.id.ivIcon)
+    private val tvCount = itemView.findViewById<TextView>(R.id.tvCount)
 
     fun bind(expandableGroup: ExpandableGroup<CopeGroup>) {
         val copeGroup = expandableGroup as CopeGroup
         tvTitle.setText(copeGroup.title)
-
-        val iconView = ivICon ?: return
-        Picasso.get().load(copeGroup.icon).into(iconView)
+        tvCount.text = copeGroup.itemCount.toString()
     }
 }
