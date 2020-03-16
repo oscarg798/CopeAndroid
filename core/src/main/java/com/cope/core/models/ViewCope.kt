@@ -26,6 +26,7 @@ import java.util.*
 data class ViewCope(
     val id: String,
     val url: String,
+    val host: String,
     val title: String,
     val createdAt: Date,
     val updateAt: Date,

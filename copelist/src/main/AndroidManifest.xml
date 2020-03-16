@@ -23,9 +23,6 @@
         </activity>
         <activity android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"/>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

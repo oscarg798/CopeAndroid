@@ -16,29 +16,19 @@
 package com.cope.copelist.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cope.copelist.R
-import com.cope.copelist.di.CopeListModule
-import com.cope.copelist.di.DaggerCopeListComponent
 import com.cope.copelist.fragment.adapter.CopeAdapter
-import com.cope.copelist.fragment.adapter.CopeExpandableAdapter
 import com.cope.copelist.fragment.adapter.CopeViewHolder
-import com.cope.copelist.fragment.adapter.copegroup.CopeGroup
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.InjectableFragment
 import com.cope.core.constants.ARGUMENT_COPE
 import com.cope.core.constants.COPE_DETAIL_DEEP_LINK
 import com.cope.core.constants.StringResourceId
-import com.cope.core.di.CoreComponentProvider
-import com.cope.core.di.injector.InjectorProvider
 import com.cope.core.extensions.startDeepLinkIntent
-import com.cope.core.models.Cope
 import com.cope.core.models.ViewCope
 import kotlinx.android.synthetic.main.fragment_cope_list.*
 import javax.inject.Inject
@@ -65,8 +55,9 @@ class CopeListFragment : InjectableFragment(R.layout.fragment_cope_list), CopeLi
         super.onViewCreated(view, savedInstanceState)
 
         val context = context ?: return
-        rvCopes?.layoutManager = LinearLayoutManager(context)
-        rvCopes?.setHasFixedSize(true)
+        rvCopes.layoutManager = LinearLayoutManager(context)
+        rvCopes.adapter = CopeAdapter(presenter, viewHolderFactories)
+        rvCopes.setHasFixedSize(true)
 
         srMain?.setOnRefreshListener(presenter)
 
@@ -81,8 +72,9 @@ class CopeListFragment : InjectableFragment(R.layout.fragment_cope_list), CopeLi
             })
     }
 
-    override fun showCopes(copes: List<CopeGroup>) {
-        rvCopes?.adapter = CopeExpandableAdapter(copes, presenter)
+    override fun showCopes(copes: List<ViewCope>) {
+        val adapter = rvCopes.adapter as? CopeAdapter ?: return
+        adapter.add(copes)
     }
 
     override fun showError(error: String) {

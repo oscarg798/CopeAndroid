@@ -31,13 +31,12 @@ class CopeItemViewHolderFactory(private val featureFlagHandler: FeatureFlagHandl
     }
 
     override fun build(parent: ViewGroup): CopeViewHolder {
-        TODO()
-//        return CopeItemViewHolder(
-//            LayoutInflater.from(parent.context).inflate(
-//                R.layout.cope_item,
-//                parent,
-//                false
-//            )
-//        )
+        return CopeItemViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.cope_item,
+                parent,
+                false
+            )
+        )
     }
 }

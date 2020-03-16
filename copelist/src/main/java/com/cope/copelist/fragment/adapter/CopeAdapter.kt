@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cope.copelist.fragment.CopeClickListener
 import com.cope.copelist.fragment.adapter.viewholderfactory.ViewHolderFactory
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -27,7 +28,7 @@ import com.cope.core.models.Cope
 class CopeAdapter(
     private val copeClickListener: CopeClickListener,
     private val viewHolderFactories: List<ViewHolderFactory<CopeViewHolder>>,
-    private val copes: ArrayList<Cope> = ArrayList()
+    private val copes: ArrayList<ViewCope> = ArrayList()
 ) :
     RecyclerView.Adapter<CopeViewHolder>() {
 
@@ -45,7 +46,7 @@ class CopeAdapter(
         }.build(parent)
     }
 
-    fun add(copes: List<Cope>) {
+    fun add(copes: List<ViewCope>) {
         this.copes.clear()
         this.copes.addAll(copes)
         notifyDataSetChanged()

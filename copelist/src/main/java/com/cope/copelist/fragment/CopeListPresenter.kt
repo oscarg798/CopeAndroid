@@ -15,7 +15,6 @@
 
 package com.cope.copelist.fragment
 
-import com.cope.copelist.fragment.adapter.copegroup.CopeGroup
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.interactor.Interactor
@@ -69,11 +68,9 @@ class CopeListPresenter(
         launchJobOnMainDispatchers {
             runCatching {
                 withContext(coroutinesContextProvider.backgroundContext) {
-                    val groups = getCopeInteractor(None).map {
+                    getCopeInteractor(None).map {
                         viewCopeMapper.map(it)
-                    }.sortedByDescending { it.updateAt }
-
-                    createCopeGroup(groups)
+                    }.sortedByDescending { it.createdAt }
                 }
             }.fold({
                 view?.showCopes(it)
@@ -83,39 +80,6 @@ class CopeListPresenter(
 
             view?.hideProgressDialog()
         }
-    }
-
-    private fun createCopeGroup(copes: List<ViewCope>): List<CopeGroup> {
-        val groups = HashMap<String, CopeGroup>()
-
-        copes.forEach {viewCope->
-            val url = getHostFromUrl(viewCope.url)
-            if (groups.containsKey(url)) {
-                val group = groups[url]
-                val items = group!!.items
-                groups[url] = CopeGroup(group.title, ArrayList<ViewCope>().apply {
-                    addAll(items)
-                    add(viewCope)
-                }, viewCope.icon ?: group.icon)
-            } else {
-                groups[url] = CopeGroup(url, listOf(viewCope), viewCope.icon)
-            }
-        }
-
-        return groups.mapTo(ArrayList<CopeGroup>(), {
-            it.value
-        })
-    }
-
-    private fun getHostFromUrl(url: String): String {
-        return runCatching {
-            val urlObject = URL(url)
-            urlObject.getHost()
-        }.fold({
-            it
-        }, {
-            "ERROR"
-        })
     }
 
     override fun handleException(error: Throwable) {

@@ -19,8 +19,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.cope.copelist.fragment.CopeClickListener
 import com.cope.core.models.Cope
+import com.cope.core.models.ViewCope
 
 abstract class CopeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    abstract fun bind(cope: View, copeClickListener: CopeClickListener)
+    abstract fun bind(cope: ViewCope, copeClickListener: CopeClickListener)
 }

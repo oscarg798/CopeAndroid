@@ -16,11 +16,9 @@
 package com.cope.copelist.fragment
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.cope.copelist.fragment.adapter.copegroup.CopeGroup
 import com.cope.core.constants.StringResourceId
 import com.cope.core.contract.BasePresenter
 import com.cope.core.contract.BaseView
-import com.cope.core.models.Cope
 import com.cope.core.models.ViewCope
 
 /**
@@ -30,7 +28,7 @@ interface CopeListContract {
 
     interface View : BaseView {
 
-        fun showCopes(copes: List<CopeGroup>)
+        fun showCopes(copes: List<ViewCope>)
 
         fun showProgressDialog()
 

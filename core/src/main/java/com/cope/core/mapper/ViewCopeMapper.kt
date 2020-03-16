@@ -17,6 +17,7 @@ package com.cope.core.mapper
 
 import com.cope.core.models.Cope
 import com.cope.core.models.ViewCope
+import java.net.URL
 
 /**
  * @author Oscar Gallon on 2019-06-12.
@@ -24,8 +25,25 @@ import com.cope.core.models.ViewCope
 object ViewCopeMapper {
 
     fun map(cope: Cope): ViewCope {
-        return ViewCope(cope.id, cope.url, cope.title, cope.createdAt, cope.updateAt, cope.content.map {
-            ViewCopeContentMapper.map(it)
-        }, cope.icon, cope.mainImage)
+        return ViewCope(
+            cope.id,
+            cope.url,
+            getHostFromUrl(cope.url),
+            cope.title,
+            cope.createdAt,
+            cope.updateAt,
+            cope.content.map {
+                ViewCopeContentMapper.map(it)
+            },
+            cope.icon,
+            cope.mainImage
+        )
+    }
+
+    private fun getHostFromUrl(url: String): String {
+        return runCatching {
+            val urlObject = URL(url)
+            urlObject.getHost()
+        }.getOrElse { url }
     }
 }

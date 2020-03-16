@@ -33,7 +33,7 @@ import java.util.*
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
-class CopeItemViewHolder(itemView: View) : ChildViewHolder(itemView) {
+class CopeItemViewHolder(itemView: View) : CopeViewHolder(itemView) {
 
     private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
     private val tvUrl = itemView.findViewById<TextView>(R.id.tvUrl)
@@ -41,9 +41,9 @@ class CopeItemViewHolder(itemView: View) : ChildViewHolder(itemView) {
 
     private val dateFormatter = SimpleDateFormat(DISPLAY_DATE_FORMAT, Locale.ENGLISH)
 
-    fun bind(cope: ViewCope, copeClickListener: CopeClickListener) {
-        tvTitle?.text = cope.title
-        tvUrl?.text = cope.url
+    override fun bind(cope: ViewCope, copeClickListener: CopeClickListener) {
+        tvTitle.text = cope.title
+        tvUrl.text = cope.host
 
         itemView.setOnClickListener {
             copeClickListener.onCopeClick(cope)

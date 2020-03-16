@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2020 Oscar Gallon <oscarg798@gmail.com>
   ~ This file is part of Cope.
   ~ Cope is free software: you can redistribute it and/or modify
@@ -16,8 +15,24 @@
 
 <resources>
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/primaryDarkColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+        <item name="colorOnSecondary">@color/secondaryDarkColor</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#212121</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+    </style>
 
-    <style name="AppThemeAppBarMaterialAnimatedRightToLeft" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
+    <style name="AppThemeAppBarMaterialAnimatedRightToLeft" parent="AppTheme">
         <item name="android:windowAnimationStyle">@style/RightToLeftAnimation</item>
         <item name="android:windowContentTransitions">true</item>
     </style>

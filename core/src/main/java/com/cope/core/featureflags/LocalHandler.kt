@@ -15,16 +15,15 @@
  *
  */
 
-package com.cope.copelist.fragment.adapter.copegroup
+package com.cope.core.featureflags
 
-import com.cope.core.models.Cope
-import com.cope.core.models.ViewCope
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup
+import com.cope.core.models.FeatureFlag
 
-class CopeGroup(
-    title: String,
-    items: List<ViewCope>,
-    val icon: String?
-) : ExpandableGroup<ViewCope>(title, items) {
+class LocalHandler : FeatureFlagHandler {
 
+    val map = HashMap<String, Boolean>()
+
+    override fun isFeatureEnabled(featureFlag: FeatureFlag): Boolean {
+        return true
+    }
 }
