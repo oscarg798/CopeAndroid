@@ -15,11 +15,14 @@
 
 package co.com.cope.di.splash
 
+import arrow.core.Either
 import co.com.cope.splash.SplashContract
 import co.com.cope.splash.SplashPresenter
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.constants.Token
+import com.cope.core.exceptions.DataNoFoundOnLocalStorageException
+import com.cope.core.exceptions.FirebaseRemoteConfigInitializationException
 import com.cope.core.interactor.GetTokenInteractor
 import com.cope.core.interactor.Interactor
 import com.cope.core.models.None
@@ -35,14 +38,14 @@ import javax.inject.Named
 object SplashModule {
 
     @Provides
-    fun provideGetTokenInteractor(localStorageRepository: LocalStorageRepository): Interactor<Token, None> {
+    fun provideGetTokenInteractor(localStorageRepository: LocalStorageRepository): Interactor<Either<DataNoFoundOnLocalStorageException, Token>, None> {
         return GetTokenInteractor(localStorageRepository)
     }
 
     @Provides
     fun provideSplashPresenter(
-        getTokenInteractor: Interactor<Token, None>,
-        initFirebaseRemoteConfigUseCase: Interactor<Unit, Unit>,
+        getTokenInteractor: Interactor<Either<DataNoFoundOnLocalStorageException, Token>, None>,
+        initFirebaseRemoteConfigUseCase: Interactor<Either<FirebaseRemoteConfigInitializationException, Unit>, Unit>,
         @Named(COROUTINE_IO_CONTEXT_PROVIDER)
         coroutineContextProvider: CoroutineContextProvider
     ): SplashContract.Presenter {

@@ -15,6 +15,9 @@
 
 package com.cope.copelist.fragment
 
+import arrow.core.Either
+import arrow.core.flatMap
+import arrow.core.getOrHandle
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.interactor.Interactor
@@ -33,7 +36,7 @@ import java.net.URL
  * @author Oscar Gallon on 2019-06-11.
  */
 class CopeListPresenter(
-    private val getCopeInteractor: Interactor<List<Cope>, None>,
+    private val getCopeInteractor: Interactor<Either<Exception, List<Cope>>, None>,
     private val viewCopeMapper: ViewCopeMapper,
     private val logger: Logger,
     private val featureFlagHandler: FeatureFlagHandler,
@@ -66,20 +69,26 @@ class CopeListPresenter(
     private fun getCopes() {
         view?.showProgressDialog()
         launchJobOnMainDispatchers {
-            runCatching {
-                withContext(coroutinesContextProvider.backgroundContext) {
-                    getCopeInteractor(None).map {
-                        viewCopeMapper.map(it)
-                    }.sortedByDescending { it.createdAt }
+            withContext(coroutinesContextProvider.backgroundContext) {
+                getCopeInteractor(None).map { copes ->
+                    mapToViewModel(copes)
                 }
             }.fold({
-                view?.showCopes(it)
+                handleException(it)
             }, {
-                it.printStackTrace()
+                view?.showCopes(it)
             })
 
             view?.hideProgressDialog()
+
+
         }
+    }
+
+    private fun mapToViewModel(copes: List<Cope>): List<ViewCope> {
+        return copes.map {
+            viewCopeMapper.map(it)
+        }.sortedByDescending { it.createdAt }
     }
 
     override fun handleException(error: Throwable) {

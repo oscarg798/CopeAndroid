@@ -16,12 +16,14 @@
 package com.cope.core.di
 
 import android.content.Context
+import arrow.core.Either
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.DynamicFeatureMappers
 import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.constants.FEATURE_FLAG_HANDLER
 import com.cope.core.constants.FIREBASE_REMOTE_CONFIG_FEATURE_FLAG_HANDLER
+import com.cope.core.exceptions.FirebaseRemoteConfigInitializationException
 import com.cope.core.featureflags.FeatureFlagHandler
 import com.cope.core.featureflags.FirebaseRemoteConfigInitializator
 import com.cope.core.interactor.Interactor
@@ -59,7 +61,7 @@ interface CoreComponent {
 
     fun provideFirebaseRemoteConfigInitializator(): FirebaseRemoteConfigInitializator
 
-    fun provideInitFirebaseRemoteConfigUseCase(): Interactor<Unit, Unit>
+    fun provideInitFirebaseRemoteConfigUseCase(): Interactor<Either<FirebaseRemoteConfigInitializationException, Unit>, Unit>
 
     fun provideDynamicFeatureMappers(): DynamicFeatureMappers
 

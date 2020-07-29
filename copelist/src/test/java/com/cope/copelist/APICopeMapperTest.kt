@@ -43,7 +43,7 @@ class APICopeMapperTest {
                         DateParser.getBackendDate("2019-06-12T16:48:13.477Z")
                     )
                 ),
-                "4"
+                "4","image"
             )
         }
 
@@ -55,6 +55,7 @@ class APICopeMapperTest {
             result.id shouldEqual "1"
             result.url shouldEqual "2"
             result.title shouldEqual "3"
+            result.mainImage shouldEqual "image"
             val calendar1 = Calendar.getInstance().apply {
                 time = result.createdAt
             }

@@ -16,10 +16,7 @@
 package com.cope.core.contract
 
 import com.cope.core.CoroutineContextProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelChildren
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 /**
  * @author Oscar Gallon on 2019-06-06.
@@ -31,6 +28,7 @@ interface BasePresenter<View : BaseView> {
     val parentJob: Job
 
     val coroutinesContextProvider: CoroutineContextProvider
+
 
     fun bind(view: View) {
         this.view = view
@@ -44,13 +42,15 @@ interface BasePresenter<View : BaseView> {
     }
 
     fun launchJobOnMainDispatchers(job: suspend CoroutineScope.() -> Unit) {
-        CoroutineScope(coroutinesContextProvider.mainContext + parentJob).launch {
+        CoroutineScope(coroutinesContextProvider.mainContext + parentJob + CoroutineExceptionHandler { _, throwable ->
+            handleException(throwable)
+        }).launch {
             job()
         }
     }
 
-    fun handleException(error: Throwable){
-        if(error !is Exception){
+    fun handleException(error: Throwable) {
+        if (error !is Exception) {
             throw error
         }
     }

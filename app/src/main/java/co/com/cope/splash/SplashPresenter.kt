@@ -15,51 +15,59 @@
 
 package co.com.cope.splash
 
+import arrow.core.*
+import arrow.core.extensions.either.applicativeError.handleError
+import arrow.core.flatMap
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.Token
 import com.cope.core.exceptions.DataNoFoundOnLocalStorageException
+import com.cope.core.exceptions.FirebaseRemoteConfigInitializationException
 import com.cope.core.interactor.Interactor
 import com.cope.core.models.None
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 
 /**
  * @author Oscar Gallon on 2019-06-11.
  */
 class SplashPresenter(
-    private val getTokenInteractor: Interactor<Token, None>,
-    private val initFirebaseRemoteConfigUseCase: Interactor<Unit, Unit>,
+    private val getTokenInteractor: Interactor<Either<DataNoFoundOnLocalStorageException, Token>, None>,
+    private val initFirebaseRemoteConfigUseCase: Interactor<Either<FirebaseRemoteConfigInitializationException, Unit>, Unit>,
     override val coroutinesContextProvider: CoroutineContextProvider
 ) : SplashContract.Presenter {
+
 
     override val parentJob: Job = Job()
     override var view: SplashContract.View? = null
 
     override fun bind(view: SplashContract.View) {
         super.bind(view)
+        checkToken()
+    }
 
+    private fun checkToken() {
         launchJobOnMainDispatchers {
-            runCatching {
-                withContext(coroutinesContextProvider.backgroundContext) {
-                    initFirebaseRemoteConfigUseCase(Unit)
+            withContext(coroutinesContextProvider.backgroundContext) {
+                val initResult = initFirebaseRemoteConfigUseCase.invoke(Unit)
+
+                if (initResult.isLeft()) {
+                    return@withContext initResult
                 }
 
-                withContext(coroutinesContextProvider.backgroundContext) {
-                    getTokenInteractor(None)
-                }
-
-            }.fold({
-                this@SplashPresenter.view?.navigateDashboard()
-            }, {
+                getTokenInteractor(None)
+            }.map {
+                view?.navigateDashboard()
+            }.handleError {
                 handleException(it)
-
-            })
+            }
         }
     }
 
     override fun handleException(error: Throwable) {
         super.handleException(error)
-
         if (error is DataNoFoundOnLocalStorageException) {
             this@SplashPresenter.view?.navigateToLogin()
         }

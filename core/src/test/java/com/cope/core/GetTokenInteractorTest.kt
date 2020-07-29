@@ -15,15 +15,22 @@
 
 package com.cope.core
 
+import arrow.core.orNull
+import com.cope.core.constants.Token
+import com.cope.core.exceptions.DataNoFoundOnLocalStorageException
 import com.cope.core.interactor.GetTokenInteractor
+import com.cope.core.interactor.isFailure
+import com.cope.core.interactor.isSuccess
 import com.cope.core.models.None
 import com.cope.core.repositories.LocalStorageRepository
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
+import org.amshove.kluent.shouldBe
 import org.amshove.kluent.shouldEqual
 import org.junit.Before
 import org.junit.Test
+import java.io.IOException
 
 /**
  * @author Oscar Gallon on 2019-06-11.
@@ -33,31 +40,58 @@ class GetTokenInteractorTest : MockableTest {
     @MockK
     lateinit var localStorageRepository: LocalStorageRepository
 
+    lateinit var interactor: GetTokenInteractor
+
     @Before
     override fun setup() {
         super.setup()
-
         every {
             localStorageRepository.getData("token", String::class.java)
         }.answers {
             "123"
         }
+
+        interactor = GetTokenInteractor(localStorageRepository)
     }
 
     @Test
-    fun `should get token`() {
-        val interactor = given {
-            GetTokenInteractor(localStorageRepository)
+    fun `when usecase is executed then it should get the token as either`() {
+        val result = runBlocking {
+            interactor(None)
         }
 
-        val token = whenever {
-            runBlocking {
-                interactor(None)
-            }
+        result.isSuccess() shouldBe true
+        result.orNull() shouldEqual "123"
+
+    }
+
+    @Test
+    fun `when there is a DataNoFoundOnLocalStorageException getting the token then it should be returned as either`() {
+        every {
+            localStorageRepository.getData(
+                "token",
+                String::class.java
+            )
+        } answers { throw DataNoFoundOnLocalStorageException("token") }
+
+        val result = runBlocking {
+            interactor(None)
         }
 
-        then {
-            token shouldEqual "123"
+        result.isFailure() shouldBe true
+    }
+
+    @Test(expected = IOException::class)
+    fun `if there is any error not excepted getting the token then it should crash`() {
+        every {
+            localStorageRepository.getData(
+                "token",
+                String::class.java
+            )
+        } answers { throw IOException() }
+
+        runBlocking {
+            interactor(None)
         }
     }
 }

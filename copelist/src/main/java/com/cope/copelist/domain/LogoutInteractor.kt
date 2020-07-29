@@ -15,14 +15,18 @@
 
 package com.cope.copelist.domain
 
+import arrow.core.Either
 import com.cope.core.interactor.Interactor
+import com.cope.core.interactor.runSafe
 import com.cope.core.models.None
 import com.cope.core.repositories.LocalStorageRepository
 
 class LogoutInteractor(private val localStorageRepository: LocalStorageRepository) :
-    Interactor<Unit, None> {
+    Interactor<Either<Exception, Unit>, None> {
 
-    override suspend fun invoke(params: None) {
-        localStorageRepository.clear()
+    override suspend fun invoke(params: None): Either<Exception, Unit> {
+        return runSafe {
+            localStorageRepository.clear()
+        }
     }
 }

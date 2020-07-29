@@ -49,6 +49,11 @@ class CopeListActivity : InjectableActivity(), CopeListContract.View {
             .commitAllowingStateLoss()
     }
 
+    override fun onDestroy() {
+        presenter.unBind()
+        super.onDestroy()
+    }
+
     override fun returnToLogIn() {
         startDeepLinkIntent(LOGIN_DEEPLINK)
         finish()

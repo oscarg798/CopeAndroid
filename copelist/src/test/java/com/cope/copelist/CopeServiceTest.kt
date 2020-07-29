@@ -22,9 +22,6 @@ import com.cope.core.models.network.APICope
 import com.cope.core.models.network.APICopeContent
 import com.cope.core.services.CopeService
 import com.cope.core.di.NetworkModule
-import com.cope.core.given
-import com.cope.core.then
-import com.cope.core.whenever
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response

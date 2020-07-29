@@ -44,6 +44,8 @@ allprojects {
         maven { url 'https://dl.bintray.com/camerakit/camerakit-android-snapshots' }
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url "http://dl.bintray.com/countly/maven" }
+        maven { url "https://dl.bintray.com/arrow-kt/arrow-kt/" }
+        maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/' }
     }
 }
 

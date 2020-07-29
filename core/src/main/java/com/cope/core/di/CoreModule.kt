@@ -16,11 +16,13 @@
 package com.cope.core.di
 
 import android.content.Context
+import arrow.core.Either
 import com.cope.core.constants.BASE_URL
 import com.cope.core.constants.COROUTINE_COMPUTATIONAL_CONTEXT_PROVIDER
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.DynamicFeatureMappers
+import com.cope.core.exceptions.FirebaseRemoteConfigInitializationException
 import com.cope.core.featureflags.FirebaseRemoteConfigInitializator
 import com.cope.core.interactor.InitFirebaseRemoteConfigUseCase
 import com.cope.core.interactor.Interactor
@@ -78,7 +80,7 @@ class CoreModule(private val appContext: Context) {
 
     @CoreComponentScope
     @Provides
-    fun provideInitFirebaseRemoteConfigUseCase(initializator: FirebaseRemoteConfigInitializator): Interactor<Unit, Unit> {
+    fun provideInitFirebaseRemoteConfigUseCase(initializator: FirebaseRemoteConfigInitializator): Interactor<Either<FirebaseRemoteConfigInitializationException, Unit>, Unit> {
         return InitFirebaseRemoteConfigUseCase(initializator)
     }
 

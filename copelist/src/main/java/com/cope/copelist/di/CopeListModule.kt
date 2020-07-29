@@ -15,6 +15,7 @@
 
 package com.cope.copelist.di
 
+import arrow.core.Either
 import com.cope.copelist.CopeListActivityPresenter
 import com.cope.core.repositories.CopeRepositoryImpl
 import com.cope.core.services.CopeService
@@ -50,7 +51,7 @@ import javax.inject.Named
 object CopeListModule {
 
     @Provides
-    fun provideGetCopesInteractor(copeRepository: CopeRepository): Interactor<List<Cope>, None> {
+    fun provideGetCopesInteractor(copeRepository: CopeRepository): Interactor<Either<Exception, List<@JvmSuppressWildcards Cope>>, None> {
         return GetCopesInteractor(copeRepository)
     }
 
@@ -64,13 +65,13 @@ object CopeListModule {
 
     @Named(LOGOUT_INTERACTOR)
     @Provides
-    fun provideLogoutInteractor(localStorageRepository: LocalStorageRepository): Interactor<Unit, None> {
+    fun provideLogoutInteractor(localStorageRepository: LocalStorageRepository): Interactor<Either<Exception, Unit>, None> {
         return LogoutInteractor(localStorageRepository)
     }
 
     @Provides
     fun provideCopeListActivityPresenter(
-        @Named(LOGOUT_INTERACTOR) logoutInteractor: Interactor<Unit, None>,
+        @Named(LOGOUT_INTERACTOR) logoutInteractor: Interactor<Either<Exception, Unit>, None>,
         @Named(
             COROUTINE_IO_CONTEXT_PROVIDER
         ) coroutineContextProvider: CoroutineContextProvider
@@ -78,10 +79,9 @@ object CopeListModule {
         return CopeListActivityPresenter(logoutInteractor, coroutineContextProvider)
     }
 
-
     @Provides
     fun provideCopeListPresenter(
-        getCopeListInteractor: Interactor<List<Cope>, None>,
+        getCopeListInteractor: Interactor<Either<Exception, List<Cope>>, None>,
         @Named(FEATURE_FLAG_HANDLER) featureFlagHandler: FeatureFlagHandler,
         logger: Logger,
         @Named(

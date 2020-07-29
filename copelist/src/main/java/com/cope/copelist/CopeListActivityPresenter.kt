@@ -15,6 +15,7 @@
 
 package com.cope.copelist
 
+import arrow.core.Either
 import com.cope.core.CoroutineContextProvider
 import com.cope.core.constants.COROUTINE_IO_CONTEXT_PROVIDER
 import com.cope.core.constants.LOGOUT_INTERACTOR
@@ -25,7 +26,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Named
 
 class CopeListActivityPresenter(
-    @Named(LOGOUT_INTERACTOR) private val logoutInteractor: Interactor<Unit, None>,
+    @Named(LOGOUT_INTERACTOR) private val logoutInteractor: Interactor<Either<Exception, Unit>, None>,
     @Named(COROUTINE_IO_CONTEXT_PROVIDER) override val coroutinesContextProvider: CoroutineContextProvider
 ) : CopeListContract.Presenter {
 
@@ -34,20 +35,13 @@ class CopeListActivityPresenter(
 
     override fun onLogoutPressed() {
         launchJobOnMainDispatchers {
-            runCatching {
-                withContext(coroutinesContextProvider.backgroundContext) {
-                    logoutInteractor(None)
-                }
+            withContext(coroutinesContextProvider.backgroundContext) {
+                logoutInteractor(None)
             }.fold({
-                view?.returnToLogIn()
-            }, {
                 handleException(it)
+            }, {
+                view?.returnToLogIn()
             })
         }
     }
-
-    override fun handleException(error: Throwable) {
-        super.handleException(error)
-    }
-
 }

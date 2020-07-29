@@ -15,12 +15,17 @@
 
 package com.cope.core.interactor
 
+import arrow.core.Either
+import com.cope.core.exceptions.FirebaseRemoteConfigInitializationException
 import com.cope.core.featureflags.FirebaseRemoteConfigInitializator
+import java.lang.Exception
 
 class InitFirebaseRemoteConfigUseCase(private val firebaseRemoteConfigInitializator: FirebaseRemoteConfigInitializator) :
-    Interactor<Unit, Unit> {
+    Interactor<Either<FirebaseRemoteConfigInitializationException, Unit>, Unit> {
 
-    override suspend fun invoke(params: Unit) {
-        firebaseRemoteConfigInitializator.activateAsync().await()
+    override suspend fun invoke(params: Unit): Either<FirebaseRemoteConfigInitializationException, Unit> {
+        return runSafe {
+            firebaseRemoteConfigInitializator.activateAsync().await()
+        }
     }
 }

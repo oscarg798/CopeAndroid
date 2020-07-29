@@ -67,6 +67,9 @@ dependencies {
     implementation customTabs
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    implementation arrowCompat
+    implementation arrowSintax
+    kapt arrowMeta
 
     implementation 'com.airbnb:deeplinkdispatch:4.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -88,6 +91,7 @@ dependencies {
     testImplementation 'io.mockk:mockk:1.9.3'
     testImplementation mockitoCore
     testImplementation junit
+    testImplementation kotlinCoroutinesTest
 
     //Aceptance Testing
     androidTestImplementation androidAnnotations

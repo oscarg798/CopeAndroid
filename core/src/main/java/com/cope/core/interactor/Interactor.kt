@@ -15,6 +15,9 @@
 
 package com.cope.core.interactor
 
+import arrow.core.Either
+import kotlin.Exception
+
 /**
  * @author Oscar Gallon on 2019-06-06.
  */
@@ -24,3 +27,20 @@ interface Interactor<Response, Params> where Response : Any {
         params: Params
     ): Response
 }
+
+inline fun <reified E, R : Any> runSafe(
+    block: () -> R
+): Either<E, R> {
+    return try {
+        Either.right(block())
+    } catch (e: Exception) {
+        if (e is E) {
+            Either.left(e)
+        }else{
+            throw e
+        }
+    }
+}
+
+fun <A, B> Either<A, B>.isSuccess(): Boolean = isRight()
+fun <A, B> Either<A, B>.isFailure(): Boolean = isLeft()

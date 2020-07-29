@@ -38,5 +38,5 @@ data class APICope(
     @SerializedName("icon")
     val icon: String?,
     @SerializedName("mainImage")
-    val mainImage: String?
+    val mainImage: String? = null
 )

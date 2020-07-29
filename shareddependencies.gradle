@@ -13,6 +13,9 @@ dependencies {
     implementation customTabs
     implementation multidex
 
+    implementation arrowCompat
+    implementation arrowSintax
+    kapt arrowMeta
 
     implementation 'com.airbnb:deeplinkdispatch:4.1.0'
     kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
@@ -47,6 +50,7 @@ dependencies {
     testImplementation espressoCore
     testImplementation truth
     testImplementation androidXCoreTest
+    testImplementation kotlinCoroutinesTest
     debugImplementation fragmentTesting
 
     //Aceptance Testing
